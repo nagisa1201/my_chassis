@@ -6,7 +6,7 @@ xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/STM32F4xx_HAL_Driver/I
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Include/core_cm4.h
-xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: F:\tools\keil\ARM\ARMCC\Bin\..\include\stdint.h
+xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: E:\tools2\KEIL\ARM\5version\Bin\..\include\stdint.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Include/cmsis_version.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -14,7 +14,7 @@ xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Include/mpu_armv
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: F:\tools\keil\ARM\ARMCC\Bin\..\include\stddef.h
+xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: E:\tools2\KEIL\ARM\5version\Bin\..\include\stddef.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 xiaosai_project\stm32f4xx_hal_flash_ramfunc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
