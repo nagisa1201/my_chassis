@@ -32,3 +32,4 @@ xiaosai_project\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 xiaosai_project\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 xiaosai_project\main.o: ../Core/Inc/tim.h
 xiaosai_project\main.o: ../Core/Inc/gpio.h
+xiaosai_project\main.o: ../Core/Inc/Motor.h

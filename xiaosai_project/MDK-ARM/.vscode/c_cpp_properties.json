@@ -3,17 +3,16 @@
         {
             "name": "xiaosai_project",
             "includePath": [
-                "f:\\project\\cubemax\\xiaosai_project\\Core\\Inc",
-                "f:\\project\\cubemax\\xiaosai_project\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
-                "f:\\project\\cubemax\\xiaosai_project\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
-                "f:\\project\\cubemax\\xiaosai_project\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
-                "f:\\project\\cubemax\\xiaosai_project\\Drivers\\CMSIS\\Include",
-                "f:\\project\\cubemax\\xiaosai_project\\MDK-ARM\\Hardware",
-                "F:\\tools\\keil\\ARM\\ARMCC\\include",
-                "F:\\tools\\keil\\ARM\\ARMCC\\include\\rw",
-                "f:\\project\\cubemax\\xiaosai_project\\MDK-ARM",
-                "f:\\project\\cubemax\\xiaosai_project\\Core\\Src",
-                "f:\\project\\cubemax\\xiaosai_project\\Drivers\\STM32F4xx_HAL_Driver\\Src"
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Core\\Inc",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Drivers\\CMSIS\\Include",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\MDK-ARM\\Hardware",
+                "E:\\tools2\\KEIL\\ARM\\ARMCC\\include",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\MDK-ARM",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Core\\Src",
+                "e:\\project\\git\\my_chassis\\xiaosai_project\\Drivers\\STM32F4xx_HAL_Driver\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

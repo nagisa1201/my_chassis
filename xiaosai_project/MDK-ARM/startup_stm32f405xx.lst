@@ -825,13 +825,12 @@ ARM Macro Assembler    Page 13
               00000400 
               00000200 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=xiaosai_project\startup_stm32f405xx.d -oxiaosai_project\startup
-_stm32f405xx.o -I.\RTE\_xiaosai_project -IF:\tools\keil\ARM\CMSIS\5.0.1\CMSIS\I
-nclude -IF:\tools\keil\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4
-xx\Include --predefine="__UVISION_VERSION SETA 524" --predefine="_RTE_ SETA 1" 
---predefine="STM32F405xx SETA 1" --list=startup_stm32f405xx.lst startup_stm32f4
-05xx.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=xiaosai_project\startup_stm32f405xx.d -oxiaosai_project\star
+tup_stm32f405xx.o -I.\RTE\_xiaosai_project -IE:\tools2\keilpackage\ARM\CMSIS\5.
+9.0\CMSIS\Core\Include --predefine="__UVISION_VERSION SETA 538" --predefine="_R
+TE_ SETA 1" --predefine="STM32F405xx SETA 1" --predefine="_RTE_ SETA 1" --list=
+startup_stm32f405xx.lst startup_stm32f405xx.s
 
 
 
