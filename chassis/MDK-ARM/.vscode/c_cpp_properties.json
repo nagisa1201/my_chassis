@@ -3,17 +3,17 @@
         {
             "name": "chassis",
             "includePath": [
-                "f:\\project\\cubemax\\chassis\\Core\\Inc",
-                "f:\\project\\cubemax\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
-                "f:\\project\\cubemax\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
-                "f:\\project\\cubemax\\chassis\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
-                "f:\\project\\cubemax\\chassis\\Drivers\\CMSIS\\Include",
-                "f:\\project\\cubemax\\chassis\\Hardware",
+                "f:\\project\\git\\my_chassis\\chassis\\Core\\Inc",
+                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
+                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
+                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
+                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Include",
+                "f:\\project\\git\\my_chassis\\chassis\\Hardware",
                 "F:\\tools\\keil\\ARM\\ARMCC\\include",
                 "F:\\tools\\keil\\ARM\\ARMCC\\include\\rw",
-                "f:\\project\\cubemax\\chassis\\MDK-ARM",
-                "f:\\project\\cubemax\\chassis\\Core\\Src",
-                "f:\\project\\cubemax\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Src"
+                "f:\\project\\git\\my_chassis\\chassis\\MDK-ARM",
+                "f:\\project\\git\\my_chassis\\chassis\\Core\\Src",
+                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
