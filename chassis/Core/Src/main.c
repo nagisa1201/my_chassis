@@ -88,14 +88,21 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM8_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   main_cpp();
+  HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
+ 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+   int16_t encoder_count=0;
   while (1)
   {
+
+    encoder_count=2;
+    // encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

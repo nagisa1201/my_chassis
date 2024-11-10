@@ -1,11 +1,11 @@
---cpu=Cortex-M4.fp
+--cpu=Cortex-M4.fp.sp
 "chassis\startup_stm32f405xx.o"
-"chassis\main.o"
+"chassis\maincpp.o"
+"chassis\main_1.o"
 "chassis\gpio.o"
 "chassis\tim.o"
 "chassis\stm32f4xx_it.o"
 "chassis\stm32f4xx_hal_msp.o"
-"chassis\main_1.o"
 "chassis\stm32f4xx_hal_tim.o"
 "chassis\stm32f4xx_hal_tim_ex.o"
 "chassis\stm32f4xx_hal_rcc.o"
