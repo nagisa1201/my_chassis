@@ -19,11 +19,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "maincpp.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +47,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-// int16_t encoder_count=0;
+int16_t encoder_count=0;
+char buffer[20];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -89,6 +94,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM8_Init();
   MX_TIM1_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   main_cpp();
   // HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
@@ -100,9 +106,22 @@ int main(void)
 
   while (1)
   {
+    
+    encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
+    sprintf(buffer, "Encoder Count: %d\r\n", encoder_count);
+    HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+
+ 
+
+		
+    // HAL_UART_Transmit(&huart2, (uint8_t*)&encoder_count, sizeof(encoder_count), HAL_MAX_DELAY);
+
+    HAL_Delay(10);
+
+
 
     // encoder_count=2;
-    // encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

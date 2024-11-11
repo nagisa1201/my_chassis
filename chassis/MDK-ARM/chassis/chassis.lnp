@@ -1,9 +1,10 @@
---cpu=Cortex-M4.fp
+--cpu=Cortex-M4.fp.sp
 "chassis\startup_stm32f405xx.o"
 "chassis\maincpp.o"
 "chassis\main.o"
 "chassis\gpio.o"
 "chassis\tim.o"
+"chassis\usart.o"
 "chassis\stm32f4xx_it.o"
 "chassis\stm32f4xx_hal_msp.o"
 "chassis\stm32f4xx_hal_tim.o"
@@ -21,6 +22,7 @@
 "chassis\stm32f4xx_hal_cortex.o"
 "chassis\stm32f4xx_hal.o"
 "chassis\stm32f4xx_hal_exti.o"
+"chassis\stm32f4xx_hal_uart.o"
 "chassis\system_stm32f4xx.o"
 "chassis\motor.o"
 --strict --scatter "chassis\chassis.sct"
