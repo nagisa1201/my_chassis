@@ -1,1 +1,1 @@
-chassis/motor.o: ..\Hardware\motor.cpp
+chassis/motor.o: ../Hardware/motor.cpp

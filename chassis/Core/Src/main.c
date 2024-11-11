@@ -44,7 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+int16_t encoder_count=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,12 +97,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-   int16_t encoder_count=0;
+
   while (1)
   {
 
     encoder_count=2;
-    // encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
+    encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
