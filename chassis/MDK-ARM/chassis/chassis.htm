@@ -3,7 +3,7 @@
 <title>Static Call Graph - [chassis\chassis.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image chassis\chassis.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6070001: Last Updated: Mon Nov 11 14:53:40 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6070001: Last Updated: Mon Nov 11 16:59:19 2024
 <BR><P>
 <H3>Maximum Stack Usage =        188 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -730,7 +730,7 @@ Global Symbols
 <P><STRONG><a name="[9b]"></a>HAL_TIM_Encoder_Start</STRONG> (Thumb, 172 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_Encoder_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_TIM_Encoder_Start
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_cpp
 </UL>
 
 <P><STRONG><a name="[87]"></a>HAL_TIM_MspPostInit</STRONG> (Thumb, 84 bytes, Stack size 32 bytes, tim.o(.text.HAL_TIM_MspPostInit))
@@ -877,24 +877,24 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_cpp
 </UL>
 
-<P><STRONG><a name="[69]"></a>main</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(.text.main))
+<P><STRONG><a name="[69]"></a>main</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 188<LI>Call Chain = main &rArr; MX_TIM8_Init &rArr; HAL_TIM_MspPostInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM1_Init
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_cpp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[9a]"></a>main_cpp</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, maincpp.o(.text.main_cpp))
+<P><STRONG><a name="[9a]"></a>main_cpp</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, maincpp.o(.text.main_cpp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = main_cpp &rArr; Motor::MotorInterface_t::Motor_start()
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor::MotorInterface_t::Motor_start()
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start
 </UL>
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>

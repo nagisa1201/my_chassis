@@ -33,4 +33,5 @@ chassis/maincpp.o: ../Core/Src/maincpp.cpp ../Core/Inc\maincpp.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_tim.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  ../Hardware/motor.h ../Hardware/common.h ../Hardware/pid.h
+  ../Hardware/motor.h ../Hardware/common.h ../Hardware/pid.h \
+  ../Hardware/encoder.h

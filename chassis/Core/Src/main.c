@@ -44,7 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-int16_t encoder_count=0;
+// int16_t encoder_count=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,7 +91,7 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   main_cpp();
-  HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
+  // HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
  
   /* USER CODE END 2 */
 
@@ -101,8 +101,8 @@ int main(void)
   while (1)
   {
 
-    encoder_count=2;
-    encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
+    // encoder_count=2;
+    // encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
