@@ -27,6 +27,7 @@
 #include "maincpp.h"
 #include <stdio.h>
 #include <string.h>
+#include "pid_copy.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,14 +48,49 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-int16_t encoder_count=0;
-char buffer[20];
+PID postion_pid;
+PID speed_pid;
 
+float Encoder_Speed = 0;
+float Target_val = 500;  // 目标总的脉冲�??
+float Speed = 30;         // 实际速度
+float Position = 0;
+int16_t Temp;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+
+int16_t Encoder_Get(void)
+{
+
+    Temp = __HAL_TIM_GET_COUNTER(&htim8); // 获取编码器当前�??
+    __HAL_TIM_SET_COUNTER(&htim8, 0);     // 将编码器计数器清0
+    return Temp;
+}
+
+// 设置 PWM
+void Set_Pwm(int motor_pwm)
+{
+    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, motor_pwm);
+}
+
+void MotorControl(void)
+{
+    Encoder_Speed = Encoder_Get();                       // 1.获取电机1s的脉冲数，即速度
+    Position += Encoder_Speed;                           // 累计实际脉冲数，即�?�路�??
+    Speed = pidPosisionCalc(&postion_pid, Target_val, Position); // 2.位置�?? PID 计算
+    Speed = pidIncrementCalc(&speed_pid, Speed, Encoder_Speed);  // 增量�?? PID 计算
+    Set_Pwm(Speed);                                      // 3.输出 PWM 给电�??
+}
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (htim->Instance == TIM2) // �?查是否为 TIM2 的中�?
+  {
+    MotorControl(); // 调用电机控制函数
+  }
+}
 
 /* USER CODE END PFP */
 
@@ -95,33 +131,25 @@ int main(void)
   MX_TIM8_Init();
   MX_TIM1_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   main_cpp();
-  // HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_ALL);
- 
+
+  // 启动编码器模式的定时�??
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // 启动PWM
+  HAL_TIM_Encoder_Start(&htim8, TIM_CHANNEL_ALL);
+  HAL_TIM_Base_Start_IT(&htim2);  // 启动定时�??2中断
+
+  // 初始�?? PID 控制�??
+  pidInitPosition(&postion_pid, 1.0, 0.1, 0.01, 300, 200); // 位置�?? PID 参数
+  pidInitIncrement(&speed_pid, 1.0, 0.1, 0.01, 300, 200);  // 增量�?? PID 参数
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
   while (1)
   {
-    
-    encoder_count = __HAL_TIM_GET_COUNTER(&htim1);
-    sprintf(buffer, "Encoder Count: %d\r\n", encoder_count);
-    HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
-
- 
-
-		
-    // HAL_UART_Transmit(&huart2, (uint8_t*)&encoder_count, sizeof(encoder_count), HAL_MAX_DELAY);
-
-    HAL_Delay(10);
-
-
-
-    // encoder_count=2;
-    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -186,7 +214,6 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
   {
@@ -205,8 +232,6 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

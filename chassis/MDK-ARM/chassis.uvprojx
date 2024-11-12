@@ -657,6 +657,11 @@
               <FileType>5</FileType>
               <FilePath>..\Hardware\encoder.h</FilePath>
             </File>
+            <File>
+              <FileName>pid_copy.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Hardware\pid_copy.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

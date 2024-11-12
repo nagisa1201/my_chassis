@@ -32,4 +32,5 @@ chassis/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\tim.h ..\Core\Inc\usart.h ..\Core\Inc\gpio.h \
   ..\Core\Inc\maincpp.h \
   E:\tools2\KEIL\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  E:\tools2\KEIL\ARM\ARMCLANG\Bin\..\include\string.h
+  E:\tools2\KEIL\ARM\ARMCLANG\Bin\..\include\string.h \
+  ..\Hardware\pid_copy.h
