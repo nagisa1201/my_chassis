@@ -59,6 +59,7 @@ float pidPosisionCalc(PID *pid, float target_val, float current_val)
 
     pid->output = pid->Kp * pid->error + pid->Ki * pid->error_sum + pid->Kd * pid->error_delta;
     pid->output = limitOutput(pid->output, pid->output_limit);
+    pid->last_error = pid->error;
 
 
     return pid->output;

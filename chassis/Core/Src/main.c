@@ -52,10 +52,12 @@ PID postion_pid;
 PID speed_pid;
 
 float Encoder_Speed = 0;
-float Target_val = 500;  // 目标总的脉冲�??
-float Speed = 30;         // 实际速度
-float Position = 0;
-int16_t Temp;
+float Target_val = 500;  // 目标总的脉冲�??
+float Speed = 0;         // 实际速度
+float Position = 40000;
+int16_t Temp=0;
+char uart_buffer1[50];  // 缓冲区用于存储要发送的字符串
+char uart_buffer2[50];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -71,26 +73,26 @@ int16_t Encoder_Get(void)
 }
 
 // 设置 PWM
-void Set_Pwm(int motor_pwm)
+void Set_Pwm(float motor_pwm)
 {
-    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, motor_pwm);
+    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, (int)motor_pwm);
 }
 
 void MotorControl(void)
 {
     Encoder_Speed = Encoder_Get();                       // 1.获取电机1s的脉冲数，即速度
-    Position += Encoder_Speed;                           // 累计实际脉冲数，即�?�路�??
-    Speed = pidPosisionCalc(&postion_pid, Target_val, Position); // 2.位置�?? PID 计算
-    Speed = pidIncrementCalc(&speed_pid, Speed, Encoder_Speed);  // 增量�?? PID 计算
-    Set_Pwm(Speed);                                      // 3.输出 PWM 给电�??
+    Position += Encoder_Speed;                           // 累计实际脉冲数，即�?�路�??
+    Speed = pidPosisionCalc(&postion_pid, Target_val, Position); // 2.位置�?? PID 计算
+    Speed = pidIncrementCalc(&speed_pid, Speed, Encoder_Speed);  // 增量�?? PID 计算
+    Set_Pwm(Speed);                                      // 3.输出 PWM 给电�??
 }
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  if (htim->Instance == TIM2) // �?查是否为 TIM2 的中�?
-  {
-    MotorControl(); // 调用电机控制函数
-  }
-}
+// void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+// {
+//   if (htim->Instance == TIM2) // �?查是否为 TIM2 的中�?
+//   {
+//     MotorControl(); // 调用电机控制函数
+//   }
+// }
 
 /* USER CODE END PFP */
 
@@ -135,14 +137,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
   main_cpp();
 
-  // 启动编码器模式的定时�??
+  // 启动编码器模式的定时�??
 	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1); // 启动PWM
   HAL_TIM_Encoder_Start(&htim8, TIM_CHANNEL_ALL);
-  HAL_TIM_Base_Start_IT(&htim2);  // 启动定时�??2中断
+  HAL_TIM_Base_Start_IT(&htim2);  // 启动定时�??2中断
 
-  // 初始�?? PID 控制�??
-  pidInitPosition(&postion_pid, 1.0, 0.1, 0.01, 300, 200); // 位置�?? PID 参数
-  pidInitIncrement(&speed_pid, 1.0, 0.1, 0.01, 300, 200);  // 增量�?? PID 参数
+  // 初始�?? PID 控制�??
+  pidInitPosition(&postion_pid, 10.0, 3, 0.01, 300, 10); // 位置�?? PID 参数
+  pidInitIncrement(&speed_pid, 10, 3, 0.01, 300, 10);  // 增量�?? PID 参数
 
   /* USER CODE END 2 */
 
@@ -150,6 +152,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    MotorControl(); // 调用电机控制函数
+    // snprintf(uart_buffer1, sizeof(uart_buffer1), "Speed: %.2f\r\n", Speed);
+    // HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer1, strlen(uart_buffer1), HAL_MAX_DELAY);
+snprintf(uart_buffer2, sizeof(uart_buffer2), "encoder: %d\n", Temp);
+HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer2, strlen(uart_buffer2), HAL_MAX_DELAY);
+
+
+    HAL_Delay(50); // 根据需要调整延时
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
