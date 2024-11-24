@@ -64,27 +64,27 @@ char uart_buffer2[50];
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
-int16_t Encoder_Get(void)
+void Encoder_Get(void)
 {
 
-    Temp = __HAL_TIM_GET_COUNTER(&htim8); // 获取编码器当前�??
-    __HAL_TIM_SET_COUNTER(&htim8, 0);     // 将编码器计数器清0
-    return Temp;
+    Temp = __HAL_TIM_GET_COUNTER(&htim1); // 获取编码器当前�??
+    __HAL_TIM_SET_COUNTER(&htim1, 0);     // 将编码器计数器清0
+
 }
 
 // 设置 PWM
 void Set_Pwm(float motor_pwm)
 {
-    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, (int)motor_pwm);
+    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, (uint16_t)motor_pwm);
 }
 
 void MotorControl(void)
 {
-    Encoder_Speed = Encoder_Get();                       // 1.获取电机1s的脉冲数，即速度
+    Encoder_Get();                       // 1.获取电机1s的脉冲数，即速度
     Position += Encoder_Speed;                           // 累计实际脉冲数，即�?�路�??
-    Speed = pidPosisionCalc(&postion_pid, Target_val, Position); // 2.位置�?? PID 计算
-    Speed = pidIncrementCalc(&speed_pid, Speed, Encoder_Speed);  // 增量�?? PID 计算
-    Set_Pwm(Speed);                                      // 3.输出 PWM 给电�??
+//    Speed = pidPosisionCalc(&postion_pid, Target_val, Position); // 2.位置�?? PID 计算
+    Speed = pidIncrementCalc(&speed_pid, 50, Temp);  // 增量�?? PID 计算
+    Set_Pwm(Speed*10000);                                      // 3.输出 PWM 给电�??
 }
 // void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 // {
@@ -155,7 +155,7 @@ int main(void)
     MotorControl(); // 调用电机控制函数
     // snprintf(uart_buffer1, sizeof(uart_buffer1), "Speed: %.2f\r\n", Speed);
     // HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer1, strlen(uart_buffer1), HAL_MAX_DELAY);
-snprintf(uart_buffer2, sizeof(uart_buffer2), "encoder: %d\n", Temp);
+snprintf(uart_buffer2, sizeof(uart_buffer2), "%d\n", Temp);
 HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer2, strlen(uart_buffer2), HAL_MAX_DELAY);
 
 
