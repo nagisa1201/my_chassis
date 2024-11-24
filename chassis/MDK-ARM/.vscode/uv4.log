@@ -1,0 +1,13 @@
+*** Using Compiler 'V6.19', folder: 'E:\tools2\KEIL\ARM\ARMCLANG\Bin'
+Build target 'chassis'
+Note: source file '..\Core\Src\main.cpp' - object file renamed from 'chassis\main.o' to 'chassis\main_1.o'.Note: source file '../Core/Src/main.c' - object file renamed from 'chassis\main.o' to 'chassis\main_1.o'.compiling main.cpp...
+compiling main.c...
+linking...
+chassis\chassis.axf: Warning: L6304W: Duplicate input file chassis\main_1.o ignored.
+chassis\chassis.axf: Error: L6218E: Undefined symbol main_cpp (referred from main_1.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 1 warning and 1 error messages.
+"chassis\chassis.axf" - 1 Error(s), 1 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:03
