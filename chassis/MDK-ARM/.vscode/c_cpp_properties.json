@@ -3,17 +3,17 @@
         {
             "name": "chassis",
             "includePath": [
-                "f:\\project\\git\\my_chassis\\chassis\\Core\\Inc",
-                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
-                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
-                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
-                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Include",
-                "f:\\project\\git\\my_chassis\\chassis\\Hardware",
-                "F:\\tools\\keil\\ARM\\ARMCC\\include",
-                "F:\\tools\\keil\\ARM\\ARMCC\\include\\rw",
-                "f:\\project\\git\\my_chassis\\chassis\\MDK-ARM",
-                "f:\\project\\git\\my_chassis\\chassis\\Core\\Src",
-                "f:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Src"
+                "e:\\project\\git\\my_chassis\\chassis\\Core\\Inc",
+                "e:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
+                "e:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
+                "e:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
+                "e:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Include",
+                "e:\\project\\git\\my_chassis\\chassis\\Hardware",
+                "E:\\tools2\\KEIL\\ARM\\ARMCC\\include",
+                "E:\\tools2\\KEIL\\ARM\\ARMCC\\include\\rw",
+                "e:\\project\\git\\my_chassis\\chassis\\MDK-ARM",
+                "e:\\project\\git\\my_chassis\\chassis\\Core\\Src",
+                "e:\\project\\git\\my_chassis\\chassis\\Drivers\\STM32F4xx_HAL_Driver\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
