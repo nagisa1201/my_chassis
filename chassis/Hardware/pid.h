@@ -11,17 +11,16 @@
 #include "common.h"
 
 template <typename T1,typename T2>
+struct Pidparam_t
 {
-    struct Pidparam_t
-    {
-        T2 Kp;
-        T2 Ki;
-        T2 Kd;
-        T1 Integralmax;
-        T1 outputmax;
-        T1 outputmin;
-    }
-}
+    T2 Kp;
+    T2 Ki;
+    T2 Kd;
+    T1 Integralmax;
+    T1 outputmax;
+    T1 outputmin;
+};
+
 
 template <typename T1,typename T2>
 class Pid_basetemplate_t
@@ -32,18 +31,16 @@ class Pid_basetemplate_t
         Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd);
         Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd,T1 Integralmax,T1 outputmax,T1 outputmin);
         //等待后续开发的构造函数
-        Pid_basetemplate_t(Pidparam_t<T,T2> param):Kp(param.Kp),Ki(param.Ki),Kd(param.Kd),Integralmax(param.Integralmax),outputmax(param.outputmax),outputmin(param.outputmin)
+        Pid_basetemplate_t(Pidparam_t<T1,T2> param):_Kp(param.Kp),_Ki(param.Ki),_Kd(param.Kd),_Integralmax(param.Integralmax),_outputmax(param.outputmax),_outputmin(param.outputmin)
         {
-            _PrevError = 0;
             _LastError = 0;
             _Error = 0;
             _DError = 0;
         }
 
+
         void outputLimit(T1 outputmax,T1 outputmin);
         T1 pidCalc(T1 Target_val,T1 Actual_val);
-
-
 
 
         T2 _Kp;
@@ -52,17 +49,18 @@ class Pid_basetemplate_t
         T1 _Integralmax;
         T1 _outputmax;
         T1 _outputmin;
+
+
     protected:
         T1 _LastError;
         T1 _Error;
         T1 _DError;
         T1 _SumError;
-
-}
+};
 
 
 template <typename T1,typename T2>
-Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
+void Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
 {
     _outputmax = outputmax;
     _outputmin = outputmin;
@@ -70,7 +68,7 @@ Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
 
 
 template <typename T1,typename T2>
-Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
+T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
 {
     _Error = Target_val - Actual_val;
     _SumError += _Error;
@@ -94,20 +92,31 @@ template <typename T1,typename T2>
 class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
 {
     public:
-        Pid_Incremental_template_t(Pidparam_t<T, T2> config):pid_base_template_t<T1, T2>(config) {};
-
+        Pid_Incremental_template_t(Pidparam_t<T1, T2> config):Pid_basetemplate_t<T1, T2>(config) {};
         T1 pidCalc(T1 Target_val,T1 Actual_val);
+
     private:
         T1 _PrevError;
-}
+};
 
 template <typename T1,typename T2>
-Pid_Incremental_template_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
+T1 Pid_Incremental_template_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
 {
-    _Error = Target_val - Actual_val;
-    T1 output = _Kp*(_Error - _LastError) + _Ki*_Error + _Kd*(_Error - 2*_PrevError + _LastError);】
-    _PrevError = _LastError;
-    _LastError = _Error;
+    this->_Error = Target_val - Actual_val;
+    T1 output = 0;
+    //模板类protected成员变量一定要加this->，否则会报错
+    output += this->_Kp*(this->_Error - this->_LastError) + this->_Ki*this->_Error + this->_Kd*(this->_Error - 2*this->_PrevError + this->_LastError);
+    this->_PrevError = this->_LastError;
+    this->_LastError = this->_Error;
+    if(output > this->_outputmax)
+    {
+        output =this->_outputmax;
+    }
+    else if(output < this->_outputmin)
+    {
+        output =this->_outputmin;
+    }
     return output;
 }
 
+#endif

@@ -4,6 +4,8 @@ int main_cpp()
 {
     Motor::MotorInterface_t motor;
     motor.MotorpinInit(&htim8, TIM_CHANNEL_1);
-    motor.Motor_speed_set(1000);
-    motor.Motor_start();
+    Motor::Motor_speed_set motor1;
+    motor1.Motor_speedset(1000);
+    motor1.Motor_start();
+    return 0;
 }

@@ -64,23 +64,6 @@ namespace Motor
     };
 
 
-    class Motor_speed_control :public Motor_speed_set
-    {
-        public:
-            // 电机速度控制
-            void Motor_speedcontrol(float target_speed, float current_speed)
-            {
-                // 速度PID
-                pid_base_template_t<float, float> speed_pid(5, 2, 0, 0, 1000);
-                // 设置目标速度
-                speed_pid.target_ = target_speed;
-                // 计算PID
-                float output = speed_pid.cal(target_speed, current_speed);
-                // 设置电机速度
-                Motor_speedset(output);
-            }
-    };
-
 }
 
 #endif

@@ -1,12 +1,15 @@
 #ifndef __MAINCPP_H
 #define __MAINCPP_H
+
 #ifdef __cplusplus
 #include "common.h"
-extern "C"
-{
+extern "C" {
 #endif
-    int main_cpp();
+
+int main_cpp(void);
+
 #ifdef __cplusplus
 }
 #endif
+
 #endif
