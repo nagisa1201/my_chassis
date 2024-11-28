@@ -53,11 +53,11 @@ class Pid_basetemplate_t
         T1 _Integralmax;
         T1 _outputmax;
         T1 _outputmin;
-    private:
-        T1 _PrevError;
+    protected:
         T1 _LastError;
         T1 _Error;
         T1 _DError;
+        T1 _SumError;
 
 }
 
@@ -68,3 +68,34 @@ Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
     _outputmax = outputmax;
     _outputmin = outputmin;
 }
+
+template <typename T1,typename T2>
+Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
+{
+    _Error = Target_val - Actual_val;
+    _SumError += _Error;
+    _DError = _Error - _LastError;
+    _LastError = _Error;
+    if(_SumError > _Integralmax)
+    {
+        _SumError = _Integralmax;
+    }
+    else if(_SumError < -_Integralmax)
+    {
+        _SumError = -_Integralmax;
+    }
+    T1 output = _Kp*_Error + _Ki*_SumError + _Kd*_DError;
+    return output;
+}
+
+template <typename T1,typename T2>
+class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
+{
+    public:
+        Pid_Incremental_template_t(Pidparam_t<T, T2> config):pid_base_template_t<T1, T2>(config) {};
+
+        T1 pidCalc(T1 Target_val,T1 Actual_val);
+    private:
+        T1 _PrevError;
+}
+
