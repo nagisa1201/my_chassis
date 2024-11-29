@@ -93,14 +93,14 @@ class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
 {
     public:
         Pid_Incremental_template_t(Pidparam_t<T1, T2> config):Pid_basetemplate_t<T1, T2>(config) {};
-        T1 pidCalc(T1 Target_val,T1 Actual_val);
+        T1 pidIncrementalCalc(T1 Target_val,T1 Actual_val);
 
     private:
         T1 _PrevError;
 };
 
 template <typename T1,typename T2>
-T1 Pid_Incremental_template_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
+T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Target_val,T1 Actual_val)
 {
     this->_Error = Target_val - Actual_val;
     T1 output = 0;

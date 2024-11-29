@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-11-09 21:14:09
+ * @LastEditTime: 2024-11-29 17:35:38
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -20,6 +20,7 @@
 #define __MOTOR_H
 #include "common.h"
 #include "pid.h"
+#include "Encoder.h"
 namespace Motor
 {
     class MotorInterface_t
@@ -36,8 +37,8 @@ namespace Motor
         protected:
             TIM_HandleTypeDef *_htim;  // 定时器句柄
             uint32_t _Channel;         // 定时器通道
-            uint16_t _period_load;     // 定时器的自动重装载值
-            uint16_t _compare_arr;     // 定时器的比较值
+
+
     };
 
     class Motor_speed_set :public MotorInterface_t
@@ -61,8 +62,21 @@ namespace Motor
                 HAL_TIM_PWM_Start(_htim, _Channel); // 启动PWM
                 __HAL_TIM_SET_COMPARE(_htim, _Channel, _compare_arr); // 设置比较值
             }
+        private:
+            uint16_t _period_load;     // 定时器的自动重装载值
+            uint16_t _compare_arr;     // 定时器的比较值
     };
+    class Motor_control :public MotorInterface_t
+    {
+        public:
+            void pidControlV(float Target_val);
 
+
+
+        protected:
+            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({5, 2, 0, -5000, 5000, 2000});
+            float _target_val; 
+    };
 
 }
 

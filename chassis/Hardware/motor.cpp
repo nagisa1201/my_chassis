@@ -1,4 +1,5 @@
 #include "motor.h"
+#include "Encoder.h"
 // using namespace Motor;
 // {
     
