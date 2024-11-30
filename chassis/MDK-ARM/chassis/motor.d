@@ -34,4 +34,4 @@ chassis/motor.o: ../Hardware/motor.cpp ../Hardware/motor.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_tim.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   ../Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h \
-  ../Hardware/pid.h ../Hardware/Encoder.h
+  ../Hardware/Encoder.h ../Hardware/pid.h

@@ -1,3 +1,11 @@
+/*
+ * @Author: Nagisa 2964793117@qq.com
+ * @Date: 2024-11-29 17:29:00
+ * @LastEditors: Nagisa 2964793117@qq.com
+ * @LastEditTime: 2024-11-30 15:10:11
+ * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\Encoder.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #ifndef __ENCODER_H
 #define __ENCODER_H
 
@@ -8,22 +16,21 @@
 #define PI 3.1415926
 namespace Motor
 {
-    class Encoder_base_t : public MotorInterface_t
+    class Encoder_base_t
     {   
         public:
 
         ~Encoder_base_t(){};
-        Encoder_base_t(TIM_HandleTypeDef *htimx)//在构造函数里初始化各寄存器值
+        Encoder_base_t(TIM_HandleTypeDef *htimx)
         {   
-            _htim=htimx;
+            _htim = htimx;
             _period_load = _htim->Init.Period;
             // 获取定时器PSC和ARR值
             _timer_psc = _htim->Instance->PSC;
         }
       
-        void EncoderpinInit(TIM_HandleTypeDef *htimx)
+        void EncoderpinInit()
         {
-            _htim = htimx;
              HAL_TIM_Encoder_Start(_htim, TIM_CHANNEL_ALL); 
         }
         void clockCntGet()
@@ -35,10 +42,10 @@ namespace Motor
 
         
         protected:
-            TIM_HandleTypeDef *_htim;  // 定时器句柄
+            TIM_HandleTypeDef *_htim;  // 编码器定时器
             uint32_t _period_load;//定时器的自动重装载值
-            uint32_t _timer_psc;//定时器的预分频值
-            uint32_t _pulse_count;//当前计数值
+            uint32_t _timer_psc;//编码器时钟的预分频值
+            uint32_t _pulse_count;//当前编码器时钟计数值
 
     };
     class EncoderInterface_t : public Encoder_base_t
@@ -46,7 +53,15 @@ namespace Motor
         public:
 
             ~EncoderInterface_t(){};
-           EncoderInterface_t(TIM_HandleTypeDef *htimx, float reduction_ratio, float encoder_ppr, float r): Encoder_base_t(htimx), _reduction_ratio(reduction_ratio), _encoder_ppr(encoder_ppr), _r(r) {}
+            EncoderInterface_t(TIM_HandleTypeDef *htimx, float reduction_ratio, float encoder_ppr, float e_rpm,float r, float reload_ms):Encoder_base_t(htimx)
+            {
+                _reduction_ratio = reduction_ratio;
+                _encoder_ppr = encoder_ppr;
+                _e_rpm = e_rpm;
+                _e_pulsev= e_rpm / 60 ;//额定转速从转每分钟转化为转每秒
+                _r = r;
+                _reload_ms = reload_ms;
+            }
     /*
         在 C++ 中，子类是对父类的扩展，但是父类的构造函数仍然负责初始化父类部分的数据成员，
         而子类负责扩展和初始化子类的成员。具体来说，子类的构造函数必须显式调用父类的构造函数，
@@ -54,8 +69,8 @@ namespace Motor
     */
             void CalculateSpeed()
             {
-                // 计算电机转速（单位：脉冲每秒）
-                _pulse_v = _pulse_count / (_encoder_ppr* 4 * _reduction_ratio / _timer_psc);
+                // 计算电机转速（单位：转每秒）
+                _pulse_v = _pulse_count / (_encoder_ppr* 4 * _reduction_ratio / _timer_psc) * 1000 / _reload_ms;
                 _angular_v = _pulse_v * 2 * PI ;
                 _velocity = _angular_v * _r;
             }
@@ -63,11 +78,14 @@ namespace Motor
             float _pulse_v;
             float _angular_v;
             float _velocity;
-
-        private:
+            float _e_pulsev;
             float _r;
+        protected:
             float _reduction_ratio;
             float _encoder_ppr;
+            float _e_rpm;
+   
+            float _reload_ms;
 
     };
 }

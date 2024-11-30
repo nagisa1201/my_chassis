@@ -51,7 +51,13 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+  void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
+  {
+    if(htim->Instance == TIM2)
+    {
+      OnceMain();
+    }
+  }
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -91,8 +97,10 @@ int main(void)
   MX_TIM8_Init();
   MX_TIM1_Init();
   MX_UART4_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   main_cpp();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

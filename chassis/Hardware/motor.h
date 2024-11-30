@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-11-29 21:05:22
+ * @LastEditTime: 2024-11-30 15:26:45
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -22,61 +22,48 @@
 #include "pid.h"
 
 namespace Motor
-{
-    class MotorInterface_t
+{   
+    class Motor_base_t
     {
         public:
+            ~Motor_base_t(){};
             // 构造函数初始化TIM和通道
-            void MotorpinInit(TIM_HandleTypeDef *htimx, uint32_t Channelx)
+            Motor_base_t(TIM_HandleTypeDef *htimx, uint32_t Channelx)
             {
                 _htim = htimx;
                 _Channel = Channelx;
+                _period_load = _htim->Init.Period;
             }
 
-
+            void MotorpinInit()
+            {
+                HAL_TIM_PWM_Start(_htim, _Channel);
+            }
+            
         protected:
             TIM_HandleTypeDef *_htim;  // 定时器句柄
             uint32_t _Channel;         // 定时器通道
-            
-
+            uint16_t _period_load;     // pwm的定时器的自动重装载值
 
     };
 
-    class Motor_speed_set :public MotorInterface_t
+    class MotorInterface_t :public Motor_base_t
     {
         public:
-     // 设置电机速度
-            int Motor_speedset(float pulse)
-            {
-                // 获取定时器的自动重载值
-                _period_load = _htim->Init.Period;
-
-                // 计算比较值
-                _compare_arr = (int16_t)(pulse * 100 / 10000 * _period_load); // 转换为16位整数
-
-                return _compare_arr;
-            }
-
-            // 启动电机并设置占空比
-            void Motor_start()
-            {
-                HAL_TIM_PWM_Start(_htim, _Channel); // 启动PWM
-                __HAL_TIM_SET_COMPARE(_htim, _Channel, _compare_arr); // 设置比较值
-            }
-        private:
-            uint16_t _period_load;     // 定时器的自动重装载值
-            uint16_t _compare_arr;     // 定时器的比较值
-    };
-    class Motor_control :public MotorInterface_t
-    {
-        public:
+            ~MotorInterface_t(){};
+            MotorInterface_t(TIM_HandleTypeDef *htimx, uint32_t Channelx): Motor_base_t(htimx, Channelx){}
             void pidControlV(float Target_val);
+            void Motor_start();
 
-
+            float _output_velocity; 
+            int32_t _output_pulse_v;
 
         protected:
             Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({5, 2, 0, -5000, 5000, 2000});
-            float _target_val; 
+            float _target_val;
+            
+
+            uint16_t _dutyCycle_arr;
     };
 
 }
