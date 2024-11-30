@@ -16,6 +16,7 @@ extern "C" {
 
 int main_cpp(void);
 void OnceMain(void);
+void SerialSend();
 
 #ifdef __cplusplus
 }

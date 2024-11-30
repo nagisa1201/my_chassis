@@ -24,28 +24,29 @@ namespace Motor
         Encoder_base_t(TIM_HandleTypeDef *htimx)
         {   
             _htim = htimx;
-            _period_load = _htim->Init.Period;
-            // 获取定时器PSC和ARR值
-            _timer_psc = _htim->Instance->PSC;
         }
       
         void EncoderpinInit()
         {
-             HAL_TIM_Encoder_Start(_htim, TIM_CHANNEL_ALL); 
+             HAL_TIM_Encoder_Start(_htim, TIM_CHANNEL_ALL);
+            _period_load = _htim->Init.Period;
+            // 获取定时器PSC和ARR值
+            _timer_psc = 1+_htim->Instance->PSC;
+
         }
         void clockCntGet()
         {
-            _pulse_count = _htim->Instance->CNT;
+            _pulse_count = __HAL_TIM_GET_COUNTER(_htim);
             __HAL_TIM_SET_COUNTER(_htim, 0);  // 将计数器清零
         }
 
 
-        
+        uint16_t _pulse_count;//当前编码器时钟计数值
         protected:
             TIM_HandleTypeDef *_htim;  // 编码器定时器
-            uint32_t _period_load;//定时器的自动重装载值
-            uint32_t _timer_psc;//编码器时钟的预分频值
-            uint32_t _pulse_count;//当前编码器时钟计数值
+            uint16_t _period_load;//定时器的自动重装载值
+            uint16_t _timer_psc;//编码器时钟的预分频值
+            // uint16_t _pulse_count;//当前编码器时钟计数值
 
     };
     class EncoderInterface_t : public Encoder_base_t
@@ -70,7 +71,7 @@ namespace Motor
             void CalculateSpeed()
             {
                 // 计算电机转速（单位：转每秒）
-                _pulse_v = _pulse_count / (_encoder_ppr* 4 * _reduction_ratio / _timer_psc) * 1000 / _reload_ms;
+                _pulse_v = float(_pulse_count) / (_encoder_ppr* 4 * _reduction_ratio / _timer_psc) * 1000 / _reload_ms ;
                 _angular_v = _pulse_v * 2 * PI ;
                 _velocity = _angular_v * _r;
             }

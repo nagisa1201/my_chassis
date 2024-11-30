@@ -34,12 +34,13 @@ namespace Motor
             {
                 _htim = htimx;
                 _Channel = Channelx;
-                _period_load = _htim->Init.Period;
+
             }
 
             void MotorpinInit()
             {
                 HAL_TIM_PWM_Start(_htim, _Channel);
+                _period_load = _htim->Init.Period;//没初始化读个钩子的值
             }
             
         protected:
@@ -62,11 +63,11 @@ namespace Motor
             void Motor_start();
 
             float _output_velocity; 
-            int32_t _output_pulse_v;
+            int16_t _output_pulse_v;
             EncoderInterface_t _encoder;
         protected:
             
-            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({5, 2, 0, -5000, 5000, 2000});
+            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({5, 2, 0, -1.62, 1.62, 4});
             float _target_val;
             
 

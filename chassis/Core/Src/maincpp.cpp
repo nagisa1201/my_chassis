@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include "string.h"
 
-Motor::MotorInterface_t motor(&htim8 , TIM_CHANNEL_1, &htim2 ,28, 13, 300, 0.62 / 2, 5);
+Motor::MotorInterface_t motor(&htim8 , TIM_CHANNEL_1, &htim1 ,28, 13, 300, 0.62 / 2,5);
 char buffer[50]; 
 void OnceMain();
 
@@ -22,7 +22,7 @@ void OnceMain()
 void SerialSend()
 {
 
-    sprintf(buffer," %f\n", motor._encoder._velocity);
+    sprintf(buffer," %d\n", motor._encoder._pulse_count);
     HAL_UART_Transmit(&huart4, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 
 }
