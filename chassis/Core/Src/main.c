@@ -45,7 +45,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+extern float pulse_v;
+extern float proportion;
+extern float v;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,7 +58,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   if(htim->Instance == TIM2)
   {
     OnceMain();
-    SerialSend();
+    Serial_Printf("v: %f\r\n",v );
+    // Serial_Printf("Porportion : %f\r\n.", proportion);
+
   }
 }
 /* USER CODE END PFP */
@@ -72,7 +76,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   */
 int main(void)
 {
-
+    // Serial_Printf("Pulse_v: %f\r\n", pulse_v);
+    // Serial_Printf("Porportion : %f\r\n.", proportion);
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -110,7 +115,7 @@ int main(void)
   while (1)
   {
     // OnceMain();
-    // SerialSend();
+    // Serial_Printf("Pulse_v: %f\r\n", pulse_v);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

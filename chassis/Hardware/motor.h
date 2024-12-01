@@ -63,14 +63,15 @@ namespace Motor
             void Motor_start();
 
             float _output_velocity; 
-            int16_t _output_pulse_v;
+            float _output_pulse_v;
+            float _actual_proportion;
             EncoderInterface_t _encoder;
         protected:
             
-            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({5, 2, 0, -1.62, 1.62, 4});
+            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({2, 0, 0, 1, 5, -5});
             float _target_val;
             
-
+            
             uint16_t _dutyCycle_arr;
     };
 

@@ -16,7 +16,7 @@ extern "C" {
 
 int main_cpp(void);
 void OnceMain(void);
-void SerialSend();
+void Serial_Printf(char *format, ...);
 
 #ifdef __cplusplus
 }

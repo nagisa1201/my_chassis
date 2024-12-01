@@ -4,9 +4,11 @@
 #include "string.h"
 
 Motor::MotorInterface_t motor(&htim8 , TIM_CHANNEL_1, &htim1 ,28, 13, 300, 0.62 / 2,5);
-char buffer[50]; 
 void OnceMain();
-
+void Serial_Printf(char *format, ...);
+float pulse_v = 0;
+float proportion = 0;
+float v = 0;
 int main_cpp()
 { 
     motor._encoder.EncoderpinInit();
@@ -16,15 +18,22 @@ int main_cpp()
 
 void OnceMain()
 {
-    motor.pidControlV(0.8);
+    motor.pidControlV(1.5);
     motor.Motor_start();
+    pulse_v = motor._output_pulse_v;
+    proportion =motor._actual_proportion;
+    v = motor._encoder._velocity;
 }
-void SerialSend()
+
+void Serial_Printf(char *format, ...)
 {
-
-    sprintf(buffer," %d\n", motor._encoder._pulse_count);
-    HAL_UART_Transmit(&huart4, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
-
+    char String[100];              // 定义字符数组
+    va_list arg;                   // 定义可变参数列表数据类型的变量arg
+    va_start(arg, format);         // 从format开始，接收参数列表到arg变量
+    vsprintf(String, format, arg); // 使用vsprintf打印格式化字符串和参数列表到字符数组中
+    va_end(arg);                   // 结束变量arg
+    // Serial_SendString(String);     // 串口发送字符数组（字符串）
+    HAL_UART_Transmit(&huart4, (uint8_t *)String, strlen(String), 0xffff);
 }
 
 

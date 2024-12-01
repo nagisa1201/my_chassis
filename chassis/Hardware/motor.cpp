@@ -8,6 +8,7 @@
  */
 #include "motor.h"
 #include "Encoder.h"
+#include "common.h"
 using namespace Motor;
 
 
@@ -18,11 +19,28 @@ void MotorInterface_t::pidControlV(float Target_val)
     float actual_val = _encoder._velocity;
     _output_velocity = this->_pid.pidIncrementalCalc(Target_val,actual_val);
     _output_pulse_v = _output_velocity / _encoder._r / 2 / PI ;
+    /*
+        编码器算出真实速度，target不变，放到pid中，其中的output变了，得到输出速度，再转化为脉冲速度
+    */
 }
 
 void MotorInterface_t::Motor_start()
 {   
+    this->_actual_proportion = _output_pulse_v / _encoder._e_pulsev;
+    if(_actual_proportion > 0)
+    {
+        HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_SET);
 
-    this->_dutyCycle_arr = _output_pulse_v / _encoder._e_pulsev * _period_load;
+    }
+    else
+    {
+        HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_RESET);
+        _actual_proportion = -_actual_proportion;
+    }  
+    this->_dutyCycle_arr = _actual_proportion * _period_load;
     __HAL_TIM_SET_COMPARE(this->_htim, this->_Channel, this->_dutyCycle_arr);
+
+
 }

@@ -36,6 +36,7 @@ class Pid_basetemplate_t
             _LastError = 0;
             _Error = 0;
             _DError = 0;
+            _output = 0;
         }
 
 
@@ -49,6 +50,7 @@ class Pid_basetemplate_t
         T1 _Integralmax;
         T1 _outputmax;
         T1 _outputmin;
+        T1 _output ;
 
 
     protected:
@@ -70,7 +72,7 @@ void Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
 template <typename T1,typename T2>
 T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
 {
-    _Error = Target_val - Actual_val;
+    _Error = Actual_val-Target_val;
     _SumError += _Error;
     _DError = _Error - _LastError;
     _LastError = _Error;
@@ -82,8 +84,8 @@ T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
     {
         _SumError = -_Integralmax;
     }
-    T1 output = _Kp*_Error + _Ki*_SumError + _Kd*_DError;
-    return output;
+    _output = _Kp*_Error + _Ki*_SumError + _Kd*_DError;
+    return _output;
 }
 
 
@@ -92,7 +94,10 @@ template <typename T1,typename T2>
 class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
 {
     public:
-        Pid_Incremental_template_t(Pidparam_t<T1, T2> config):Pid_basetemplate_t<T1, T2>(config) {};
+        Pid_Incremental_template_t(Pidparam_t<T1, T2> config):Pid_basetemplate_t<T1, T2>(config) 
+        {
+            this->_PrevError = 0;
+        }
         T1 pidIncrementalCalc(T1 Target_val,T1 Actual_val);
 
     private:
@@ -102,21 +107,20 @@ class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
 template <typename T1,typename T2>
 T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Target_val,T1 Actual_val)
 {
-    this->_Error = Target_val - Actual_val;
-    T1 output = 0;
+    this->_Error = Actual_val-Target_val;
     //模板类protected成员变量一定要加this->，否则会报错
-    output += this->_Kp*(this->_Error - this->_LastError) + this->_Ki*this->_Error + this->_Kd*(this->_Error - 2*this->_PrevError + this->_LastError);
+    this->_output += this->_Kp*(this->_Error - this->_LastError) + this->_Ki*this->_Error + this->_Kd*(this->_Error - 2*this->_PrevError + this->_LastError);
     this->_PrevError = this->_LastError;
     this->_LastError = this->_Error;
-    if(output > this->_outputmax)
+    if(this->_output > this->_outputmax)
     {
-        output =this->_outputmax;
+        this->_output =this->_outputmax;
     }
-    else if(output < this->_outputmin)
+    else if(this->_output < this->_outputmin)
     {
-        output =this->_outputmin;
+        this->_output =this->_outputmin;
     }
-    return output;
+    return this->_output;
 }
 
 #endif
