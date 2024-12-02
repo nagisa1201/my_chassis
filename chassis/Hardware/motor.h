@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-11-30 17:26:34
+ * @LastEditTime: 2024-12-02 16:12:21
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -68,7 +68,8 @@ namespace Motor
             EncoderInterface_t _encoder;
         protected:
             
-            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({2, 0, 0, 1, 5, -5});
+            // Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({0.1, 0.05, 0, 10, 200, -200});
+            Pid_basetemplate_t<float, float> _pid = Pid_basetemplate_t<float, float>({0.1, 0.05, 0, 10, 200, -200});
             float _target_val;
             
             

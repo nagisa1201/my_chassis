@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-11-28 22:12:58
+ * @LastEditTime: 2024-12-02 16:12:40
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\pid.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -72,7 +72,7 @@ void Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
 template <typename T1,typename T2>
 T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
 {
-    _Error = Actual_val-Target_val;
+    _Error = Target_val - Actual_val;
     _SumError += _Error;
     _DError = _Error - _LastError;
     _LastError = _Error;
@@ -107,7 +107,7 @@ class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
 template <typename T1,typename T2>
 T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Target_val,T1 Actual_val)
 {
-    this->_Error = Actual_val-Target_val;
+    this->_Error = Target_val - Actual_val;
     //模板类protected成员变量一定要加this->，否则会报错
     this->_output += this->_Kp*(this->_Error - this->_LastError) + this->_Ki*this->_Error + this->_Kd*(this->_Error - 2*this->_PrevError + this->_LastError);
     this->_PrevError = this->_LastError;
@@ -124,3 +124,4 @@ T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Target_val,T1 Actual
 }
 
 #endif
+//target - actual若为正证明要加速，若为负证明要减速而不是反过来

@@ -1,3 +1,11 @@
+/*
+ * @Author: Nagisa 2964793117@qq.com
+ * @Date: 2024-11-29 23:02:27
+ * @LastEditors: Nagisa 2964793117@qq.com
+ * @LastEditTime: 2024-12-02 16:13:20
+ * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #include "maincpp.h"
 #include <stdio.h>
 #include <stdarg.h>
@@ -18,7 +26,7 @@ int main_cpp()
 
 void OnceMain()
 {
-    motor.pidControlV(1.5);
+    motor.pidControlV(5);
     motor.Motor_start();
     pulse_v = motor._output_pulse_v;
     proportion =motor._actual_proportion;

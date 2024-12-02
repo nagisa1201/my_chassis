@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 17:29:00
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-11-30 15:10:11
+ * @LastEditTime: 2024-12-02 16:11:33
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\Encoder.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -36,12 +36,12 @@ namespace Motor
         }
         void clockCntGet()
         {
-            _pulse_count = __HAL_TIM_GET_COUNTER(_htim);
+            _pulse_count = int16_t(__HAL_TIM_GET_COUNTER(_htim));
             __HAL_TIM_SET_COUNTER(_htim, 0);  // 将计数器清零
         }
 
 
-        uint16_t _pulse_count;//当前编码器时钟计数值
+        int16_t _pulse_count;//当前编码器时钟计数值
         protected:
             TIM_HandleTypeDef *_htim;  // 编码器定时器
             uint16_t _period_load;//定时器的自动重装载值
@@ -71,7 +71,7 @@ namespace Motor
             void CalculateSpeed()
             {
                 // 计算电机转速（单位：转每秒）
-                _pulse_v = float(_pulse_count) / (_encoder_ppr* 4 * _reduction_ratio / _timer_psc) * 1000 / _reload_ms ;
+                _pulse_v = (_pulse_count) / (_encoder_ppr* 4 * _reduction_ratio / _timer_psc) * 1000 / _reload_ms ;
                 _angular_v = _pulse_v * 2 * PI ;
                 _velocity = _angular_v * _r;
             }
