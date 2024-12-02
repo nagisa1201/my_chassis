@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-24 19:36:09
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-12-02 16:11:58
+ * @LastEditTime: 2024-12-02 16:24:38
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\motor.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -17,7 +17,7 @@ void MotorInterface_t::pidControlV(float Target_val)
     _encoder.clockCntGet();
     _encoder.CalculateSpeed();
     float actual_val = _encoder._velocity;
-    _output_velocity = this->_pid.pidIncrementalCalc(Target_val,actual_val);
+    _output_velocity = this->_pid.pidCalc(Target_val,actual_val);
     _output_pulse_v = _output_velocity / _encoder._r / 2 / PI ;
     /*
         编码器算出真实速度，target不变，放到pid中，其中的output变了，得到输出速度，再转化为脉冲速度
