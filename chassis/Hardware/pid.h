@@ -29,16 +29,23 @@ class Pid_basetemplate_t
         Pid_basetemplate_t(){};
         ~Pid_basetemplate_t(){};
         Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd);
-        Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd,T1 Integralmax,T1 outputmax,T1 outputmin);
-        //等待后续开发的构造函数
-        Pid_basetemplate_t(Pidparam_t<T1,T2> param):_Kp(param.Kp),_Ki(param.Ki),_Kd(param.Kd),_Integralmax(param.Integralmax),_outputmax(param.outputmax),_outputmin(param.outputmin)
+         Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd,T1 outputmax,T1 outputmin)
         {
+            _Kp = Kp;
+            _Ki = Ki;
+            _Kd = Kd;
+            _outputmax = outputmax;
+            _outputmin = outputmin;
+        };
+        //等待后续开发的构造函数
+        Pid_basetemplate_t(Pidparam_t<T1,T2> param):Pid_basetemplate_t(param.Kp,param.Ki,param.Kd,param.outputmax,param.outputmin)
+        { 
+            _Integralmax = param.Integralmax;
             _LastError = 0;
             _Error = 0;
             _DError = 0;
             _output = 0;
-        }
-
+        };
 
         void outputLimit(T1 outputmax,T1 outputmin);
         T1 pidCalc(T1 Target_val,T1 Actual_val);
