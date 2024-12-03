@@ -29,15 +29,23 @@ class Pid_basetemplate_t
         Pid_basetemplate_t(){};
         ~Pid_basetemplate_t(){};
         Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd);
-        Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd,T1 Integralmax,T1 outputmax,T1 outputmin);
-        //等待后续开发的构造函数
-        Pid_basetemplate_t(Pidparam_t<T1,T2> param):_Kp(param.Kp),_Ki(param.Ki),_Kd(param.Kd),_Integralmax(param.Integralmax),_outputmax(param.outputmax),_outputmin(param.outputmin)
+         Pid_basetemplate_t(T2 Kp,T2 Ki,T2 Kd,T1 outputmax,T1 outputmin)
         {
+            _Kp = Kp;
+            _Ki = Ki;
+            _Kd = Kd;
+            _outputmax = outputmax;
+            _outputmin = outputmin;
+        };
+        //等待后续开发的构造函数
+        Pid_basetemplate_t(Pidparam_t<T1,T2> param):Pid_basetemplate_t(param.Kp,param.Ki,param.Kd,param.outputmax,param.outputmin)
+        { 
+            _Integralmax = param.Integralmax;
             _LastError = 0;
             _Error = 0;
             _DError = 0;
             _output = 0;
-        }
+        };
 
 
         void outputLimit(T1 outputmax,T1 outputmin);
@@ -124,4 +132,7 @@ T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Target_val,T1 Actual
 }
 
 #endif
-//target - actual若为正证明要加速，若为负证明要减速而不是反过来
+//1.target - actual若为正证明要加速，若为负证明要减速而不是反过来
+//2.当构造函数为列表初始化时，不能通过{}来传入模板结构体
+//你尝试使用 {} 列表初始化来传递 Pidparam_t 结构体给构造函数，但遇到的问题是：在模板类中，初始化列表和构造函数的匹配可能会因为类型推导问题而失败。
+//3.模板类的protected成员变量一定要加this->，否则会报错

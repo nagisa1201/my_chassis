@@ -68,8 +68,8 @@ namespace Motor
             EncoderInterface_t _encoder;
         protected:
             
-            Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({10, 2.5, 3 , 10, 200, -200});
-
+              // Pid_Incremental_template_t<float, float> _pid = Pid_Incremental_template_t<float, float>({0.1, 0.05, 0, 10, 200, -200});
+            Pid_basetemplate_t<float, float> _pid = Pid_basetemplate_t<float, float>({0.1, 0.05, 0, 10, 200, -200});
 			
             float _target_val;
             
