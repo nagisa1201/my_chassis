@@ -16,9 +16,8 @@ void MotorInterface_t::pidControlV(float Target_val)
 {
     _encoder.clockCntGet();
     _encoder.CalculateSpeed();
-    float actual_val = _encoder._velocity;
-    _output_velocity = this->_pid.pidCalc(Target_val,actual_val);
-    _output_pulse_v = _output_velocity / _encoder._r / 2 / PI ;
+    float actual_val = _encoder._pulse_count;
+    _output_pulse_count = this->_pid.pidCalc(Target_val,actual_val);
     /*
         编码器算出真实速度，target不变，放到pid中，其中的output变了，得到输出速度，再转化为脉冲速度
     */
@@ -26,7 +25,7 @@ void MotorInterface_t::pidControlV(float Target_val)
 
 void MotorInterface_t::Motor_start()
 {   
-    this->_actual_proportion = _output_pulse_v / _encoder._e_pulsev;
+    this->_actual_proportion = _output_pulse_count / _encoder._full_CNT;
     if(_actual_proportion > 0)
     {
         HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);

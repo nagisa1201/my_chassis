@@ -54,13 +54,9 @@ namespace Motor
         public:
 
             ~EncoderInterface_t(){};
-            EncoderInterface_t(TIM_HandleTypeDef *htimx, float reduction_ratio, float encoder_ppr, float e_rpm,float r, float reload_ms):Encoder_base_t(htimx)
+            EncoderInterface_t(TIM_HandleTypeDef *htimx,int16_t full_CNT, float reload_ms):Encoder_base_t(htimx)
             {
-                _reduction_ratio = reduction_ratio;
-                _encoder_ppr = encoder_ppr;
-                _e_rpm = e_rpm;
-                _e_pulsev= e_rpm / 60 ;//额定转速从转每分钟转化为转每秒
-                _r = r;
+                _full_CNT = full_CNT;
                 _reload_ms = reload_ms;
             }
     /*
@@ -81,7 +77,9 @@ namespace Motor
             float _velocity;
             float _e_pulsev;
             float _r;
+            int16_t _full_CNT;//自行测量当电机最大功率转速时的编码器一次中断的最大CNT值
         protected:
+            
             float _reduction_ratio;
             float _encoder_ppr;
             float _e_rpm;

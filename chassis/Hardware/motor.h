@@ -55,15 +55,15 @@ namespace Motor
         public:
             ~MotorInterface_t(){};
 
-             MotorInterface_t(TIM_HandleTypeDef *htimx_pwm, uint32_t Channelx,TIM_HandleTypeDef *htimx_encoder, float reduction_ratio,
-            float encoder_ppr, float e_rpm, float r, float reload_ms): Motor_base_t(htimx_pwm, Channelx), 
-          _encoder(htimx_encoder, reduction_ratio, encoder_ppr, e_rpm, r, reload_ms) {}
+             MotorInterface_t(TIM_HandleTypeDef *htimx_pwm, uint32_t Channelx,TIM_HandleTypeDef *htimx_encoder, int16_t full_CNT, float reload_ms): Motor_base_t(htimx_pwm, Channelx), 
+          _encoder(htimx_encoder, full_CNT, reload_ms) {}
 
             void pidControlV(float Target_val);
             void Motor_start();
 
             float _output_velocity; 
             float _output_pulse_v;
+            int16_t _output_pulse_count = 0;
             float _actual_proportion;
             EncoderInterface_t _encoder;
         protected:

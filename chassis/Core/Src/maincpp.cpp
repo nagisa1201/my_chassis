@@ -11,7 +11,7 @@
 #include <stdarg.h>
 #include "string.h"
 
-Motor::MotorInterface_t motor(&htim8 , TIM_CHANNEL_1, &htim1 ,28, 13, 300, 0.62 / 2,5);
+Motor::MotorInterface_t motor(&htim8 , TIM_CHANNEL_1, &htim1 ,10000,5);
 void OnceMain();
 void Serial_Printf(char *format, ...);
 float pulse_v = 0;
