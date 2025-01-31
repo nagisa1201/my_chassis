@@ -2,45 +2,55 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-24 19:36:09
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-12-02 16:24:38
+ * @LastEditTime: 2025-02-01 00:05:55
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\motor.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "motor.h"
-#include "Encoder.h"
-#include "common.h"
 using namespace Motor;
 
-
-void MotorInterface_t::pidControlV(float Target_val)
+#if USE_COMMON_Motor
+void Motorcommon_t::setSpeed(float target)
 {
-    _encoder.clockCntGet();
-    _encoder.CalculateSpeed();
-    float actual_val = _encoder._velocity;
-    _output_velocity = this->_pid.pidCalc(Target_val,actual_val);
-    _output_pulse_v = _output_velocity / _encoder._r / 2 / PI ;
-    /*
-        编码器算出真实速度，target不变，放到pid中，其中的output变了，得到输出速度，再转化为脉冲速度
-    */
+    _vel_target = target * _Factor * _forward / (_WheelDiameter);
+    _pid.targetUpdate(_vel_target);
 }
-
-void MotorInterface_t::Motor_start()
-{   
-    this->_actual_proportion = _output_pulse_v / _encoder._e_pulsev;
-    if(_actual_proportion > 0)
+float Motorcommon_t::getLinearspeed()
+{
+    return _vel_raw.data_float * (_WheelDiameter) / (_Factor * _forward);
+}
+// void Motorcommon_t::update(void *param)
+// {
+//     // 获得编码器的值
+//     uint16_t dt = *(uint16_t*)(param);//此处void *解模板化，变为uint16_t之后解引用
+//     _encoder.clockCntGet();
+//     _vel_raw.data_float = _encoder._pulse_count / dt;
+//     // 更新速度
+//     int pwm = _pid.pidCalc((int16_t)_vel_raw.data_float);
+//     pwm_out(pwm);
+// }
+void Motorcommon_t::update()
+{
+    // 获得编码器的值
+    float dt = 0.005;//此处void *解模板化，变为uint16_t之后解引用
+    _encoder.clockCntGet();
+    _vel_raw.data_float = _encoder._pulse_count / dt;
+    // 更新速度
+    int pwm = _pid.pidCalc((int16_t)_vel_raw.data_float);
+    pwm_out(pwm);
+}
+void Motorcommon_t::pwm_out(int pwm)
+{
+    int out_speed = pwm;
+    if (out_speed > 0)
     {
-        HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_SET);
-
+        __HAL_TIM_SetCompare(_htim, _channel, out_speed);
+        HAL_GPIO_WritePin(_PH_Port, _PH_Pin, GPIO_PIN_SET);
     }
     else
     {
-        HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_RESET);
-        _actual_proportion = -_actual_proportion;
-    }  
-    this->_dutyCycle_arr = _actual_proportion * _period_load;
-    __HAL_TIM_SET_COMPARE(this->_htim, this->_Channel, this->_dutyCycle_arr);
-
-
+        __HAL_TIM_SetCompare(_htim, _channel, -out_speed);
+        HAL_GPIO_WritePin(_PH_Port, _PH_Pin, GPIO_PIN_RESET);
+    }
 }
+#endif

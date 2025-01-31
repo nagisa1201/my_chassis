@@ -2,35 +2,37 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 23:02:27
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-12-02 16:13:20
+ * @LastEditTime: 2025-02-01 01:19:20
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "maincpp.h"
+#include "motor.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include "string.h"
 
-Motor::MotorInterface_t motor(&htim8 , TIM_CHANNEL_1, &htim1 ,28, 13, 300, 0.62 / 2,5);
+
 void OnceMain();
+int main_cpp();
 void Serial_Printf(char *format, ...);
-float pulse_v = 0;
-float proportion = 0;
+
+Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin);
+
 float v = 0;
 int main_cpp()
-{ 
-    motor._encoder.EncoderpinInit();
-    motor.MotorpinInit();
+{                                     
+    // Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin);
+    
     return 0;
 }
 
 void OnceMain()
 {
-    motor.pidControlV(5);
-    motor.Motor_start();
-    pulse_v = motor._output_pulse_v;
-    proportion =motor._actual_proportion;
-    v = motor._encoder._velocity;
+    motor.setSpeed(3);
+    v=motor.getLinearspeed();
+    motor.update();                                                                                                             
+
 }
 
 void Serial_Printf(char *format, ...)

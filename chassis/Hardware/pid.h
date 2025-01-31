@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2024-12-02 16:12:40
+ * @LastEditTime: 2025-02-01 00:08:39
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\pid.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -49,8 +49,8 @@ class Pid_basetemplate_t
 
 
         void outputLimit(T1 outputmax,T1 outputmin);
-        T1 pidCalc(T1 Target_val,T1 Actual_val);
-
+        T1 pidCalc(T1 Actual_val);
+        void targetUpdate(T1 target, bool clear_integral = false);
 
         T2 _Kp;
         T2 _Ki;
@@ -59,6 +59,7 @@ class Pid_basetemplate_t
         T1 _outputmax;
         T1 _outputmin;
         T1 _output ;
+        T1 _target;
 
 
     protected:
@@ -78,9 +79,9 @@ void Pid_basetemplate_t<T1,T2>::outputLimit(T1 outputmax,T1 outputmin)
 
 
 template <typename T1,typename T2>
-T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
+T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Actual_val)
 {
-    _Error = Target_val - Actual_val;
+    _Error = _target - Actual_val;
     _SumError += _Error;
     _DError = _Error - _LastError;
     _LastError = _Error;
@@ -96,6 +97,16 @@ T1 Pid_basetemplate_t<T1,T2>::pidCalc(T1 Target_val,T1 Actual_val)
     return _output;
 }
 
+template <typename T1, typename T2>
+void Pid_basetemplate_t<T1, T2>::targetUpdate(T1 target, bool clear_integral) 
+{
+    _target = target;
+    if (clear_integral) 
+    {
+        _SumError = 0;
+    }
+}
+
 
 
 template <typename T1,typename T2>
@@ -106,16 +117,16 @@ class Pid_Incremental_template_t : public Pid_basetemplate_t<T1,T2>
         {
             this->_PrevError = 0;
         }
-        T1 pidIncrementalCalc(T1 Target_val,T1 Actual_val);
+        T1 pidIncrementalCalc(T1 Actual_val);
 
     private:
         T1 _PrevError;
 };
 
 template <typename T1,typename T2>
-T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Target_val,T1 Actual_val)
+T1 Pid_Incremental_template_t<T1,T2>::pidIncrementalCalc(T1 Actual_val)
 {
-    this->_Error = Target_val - Actual_val;
+    this->_Error = this->_target - Actual_val;
     //模板类protected成员变量一定要加this->，否则会报错
     this->_output += this->_Kp*(this->_Error - this->_LastError) + this->_Ki*this->_Error + this->_Kd*(this->_Error - 2*this->_PrevError + this->_LastError);
     this->_PrevError = this->_LastError;
