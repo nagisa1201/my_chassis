@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 17:29:00
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-01-31 22:08:57
+ * @LastEditTime: 2025-02-01 22:49:42
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\Encoder.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -35,10 +35,10 @@ namespace Motor
             void clockCntGet()
             {
                 _pulse_count = int16_t(__HAL_TIM_GET_COUNTER(_htim));
-                if (_pulse_count > 0xefff)
-                    {
-                        _pulse_count -= 0xffff;
-                    }
+                // if (_pulse_count > 0xefff)
+                //     {
+                //         _pulse_count -= 0xffff;
+                //     }
                 __HAL_TIM_SET_COUNTER(_htim, 0);  // 将计数器清零
             }
             void calculateSpeed()

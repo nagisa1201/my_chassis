@@ -14,9 +14,8 @@
 extern "C" {
 #endif
 
-int main_cpp(void);
+void main_cpp(void);
 void OnceMain(void);
-void InitializeMotor();
 void Serial_Printf(char *format, ...);
 
 #ifdef __cplusplus

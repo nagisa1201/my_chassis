@@ -14,17 +14,16 @@
 
 
 void OnceMain();
-int main_cpp();
+void main_cpp();
 void Serial_Printf(char *format, ...);
 
-Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin);
+Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin);
 
 float v = 0;
-int main_cpp()
+void main_cpp()
 {                                     
     // Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin);
-    
-    return 0;
+    motor.initMotor();
 }
 
 void OnceMain()

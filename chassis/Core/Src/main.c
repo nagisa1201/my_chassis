@@ -47,6 +47,7 @@ TIM_HandleTypeDef htim8;
 UART_HandleTypeDef huart4;
 
 /* USER CODE BEGIN PV */
+
 extern float v;
 
 /* USER CODE END PV */
@@ -59,16 +60,17 @@ static void MX_TIM1_Init(void);
 static void MX_UART4_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  if(htim->Instance == TIM2)
-  {
-    OnceMain();
-    Serial_Printf("v: %f\r\n",v );
-    // Serial_Printf("Porportion : %f\r\n.", proportion);
 
-  }
-}
+// void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+// {
+//   if(htim->Instance == TIM2)
+//   {
+//     OnceMain();
+//     Serial_Printf("v: %f\r\n",v );
+//     // Serial_Printf("Porportion : %f\r\n.", proportion);
+
+//   }
+// }
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -290,9 +292,9 @@ static void MX_TIM8_Init(void)
 
   /* USER CODE END TIM8_Init 1 */
   htim8.Instance = TIM8;
-  htim8.Init.Prescaler = 1680-1;
+  htim8.Init.Prescaler = 100-1;
   htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim8.Init.Period = 100-1;
+  htim8.Init.Period = 1000-1;
   htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim8.Init.RepetitionCounter = 0;
   htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -323,10 +325,6 @@ static void MX_TIM8_Init(void)
   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
   if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -398,10 +396,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : IN2_Pin IN1_Pin */
   GPIO_InitStruct.Pin = IN2_Pin|IN1_Pin;

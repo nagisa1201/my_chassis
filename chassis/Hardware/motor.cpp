@@ -44,13 +44,15 @@ void Motorcommon_t::pwm_out(int pwm)
     int out_speed = pwm;
     if (out_speed > 0)
     {
+        HAL_GPIO_WritePin(_PH_Port, _PH1_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_RESET);
         __HAL_TIM_SetCompare(_htim, _channel, out_speed);
-        HAL_GPIO_WritePin(_PH_Port, _PH_Pin, GPIO_PIN_SET);
     }
     else
     {
+        HAL_GPIO_WritePin(_PH_Port, _PH1_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_SET);
         __HAL_TIM_SetCompare(_htim, _channel, -out_speed);
-        HAL_GPIO_WritePin(_PH_Port, _PH_Pin, GPIO_PIN_RESET);
     }
 }
 #endif
