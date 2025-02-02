@@ -40,4 +40,18 @@ chassis/maincpp.o: ../Core/Src/maincpp.cpp ../Core/Inc\maincpp.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\stdio.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\stdarg.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
-  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\string.h
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\string.h \
+  ../Selflib\Lib_Static.h \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\utility \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\__tuple \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\initializer_list \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\cstring \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\__debug \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\new \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\exception \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\cstdlib \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\stdlib.h

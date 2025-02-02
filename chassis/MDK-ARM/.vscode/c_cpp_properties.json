@@ -9,6 +9,7 @@
                 "f:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
                 "f:\\project\\git\\my_chassis\\chassis\\Drivers\\CMSIS\\Include",
                 "f:\\project\\git\\my_chassis\\chassis\\Hardware",
+                "f:\\project\\git\\my_chassis\\chassis\\Selflib",
                 "F:\\tools\\keil\\ARM\\ARMCLANG\\include",
                 "F:\\tools\\keil\\ARM\\ARMCLANG\\include\\libcxx",
                 "f:\\project\\git\\my_chassis\\chassis\\MDK-ARM",

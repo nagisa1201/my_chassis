@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "maincpp.h": "c"
+        "maincpp.h": "c",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "type_traits": "cpp"
     }
 }

@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-01 23:04:14
+ * @LastEditTime: 2025-02-02 23:31:22
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -63,6 +63,7 @@ namespace Motor
     class Motorcommon_t :public MotorBase_t, public MotorInterface_t
     {
         public:
+            Motorcommon_t(){};//原地构造需要默构函数
             ~Motorcommon_t(){};
             // 构造函数初始化TIM和通道
             Motorcommon_t(TIM_HandleTypeDef *htim_motor, TIM_HandleTypeDef *htim_encoder,uint32_t channel_motor,GPIO_TypeDef *PH_Port,uint16_t PH1_Pin, uint16_t PH2_Pin,uint8_t id = 0): MotorBase_t(id), MotorInterface_t(id)

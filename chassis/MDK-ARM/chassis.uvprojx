@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Hardware</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Hardware;..\Selflib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -580,6 +580,21 @@
               <FileName>common.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Hardware\common.h</FilePath>
+            </File>
+            <File>
+              <FileName>Kinematic.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Hardware\Kinematic.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Selflib</GroupName>
+          <Files>
+            <File>
+              <FileName>Lib_Static.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Selflib\Lib_Static.cpp</FilePath>
             </File>
           </Files>
         </Group>
