@@ -54,4 +54,7 @@ chassis/maincpp.o: ../Core/Src/maincpp.cpp ../Core/Inc\maincpp.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\exception \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\cstdlib \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\stdlib.h
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\tuple \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\__functional_base \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\typeinfo
