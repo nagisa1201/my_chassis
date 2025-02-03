@@ -586,6 +586,11 @@
               <FileType>8</FileType>
               <FilePath>..\Hardware\Kinematic.cpp</FilePath>
             </File>
+            <File>
+              <FileName>Control.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Hardware\Control.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -595,6 +600,11 @@
               <FileName>Lib_Static.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Selflib\Lib_Static.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Lib_tuple.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Selflib\Lib_tuple.cpp</FilePath>
             </File>
           </Files>
         </Group>

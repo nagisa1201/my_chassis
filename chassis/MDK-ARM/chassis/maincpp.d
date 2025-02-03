@@ -57,4 +57,7 @@ chassis/maincpp.o: ../Core/Src/maincpp.cpp ../Core/Inc\maincpp.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\tuple \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\__functional_base \
-  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\typeinfo
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\typeinfo \
+  ../Hardware\Kinematic.h \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\math.h

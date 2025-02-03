@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-02 23:31:22
+ * @LastEditTime: 2025-02-03 19:58:21
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -43,10 +43,13 @@ namespace Motor
             {
             }
             uint8_t _id;
-            float _vel_target;
-            float _angle_target;
-            data_t _vel_raw;
-            data_t _angle_raw;
+            float _pulse_vel_target;//脉冲速度目标值
+            data_t _pulse_vel_raw;//脉冲速度实际值
+            float _linear_vel_target;//线速度目标值
+            float _linear_vel_raw;//线速度实际值
+
+            float _angle_target;//non
+            data_t _angle_raw;//non
     };
     class MotorInterface_t
     {
@@ -94,8 +97,9 @@ namespace Motor
             void setSpeed(float target);
             // void update(void *param) override;
             void update();
-            float getLinearspeed();
+            void getLinearspeed();
             void pwm_out(int pwm);
+            void setFactors(float factor, float wheel_diameter, int forward);
 
             float _Factor = 19;
             float _WheelDiameter = 0.08;

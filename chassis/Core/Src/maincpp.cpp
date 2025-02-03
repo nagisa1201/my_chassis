@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 23:02:27
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-03 13:54:12
+ * @LastEditTime: 2025-02-03 22:17:23
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,16 +12,13 @@
 #include <stdarg.h>
 #include "string.h"
 #include "Lib_Static.h"
+#include "Kinematic.h"
 
 void OnceMain();
 void main_cpp();
 void Serial_Printf(char *format, ...);
 
 Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin);
-// Static::Static_t<Motor::Motorcommon_t, 4> motors(std::make_tuple(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin)
-//                                                 ,std::make_tuple(&htim2,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin)
-//                                                 ,std::make_tuple(&htim2,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin)
-//                                                 ,std::make_tuple(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin));
 
 float v = 0;
 void main_cpp()
@@ -32,9 +29,9 @@ void main_cpp()
 
 void OnceMain()
 {
-    motor.setSpeed(3);
-    v=motor.getLinearspeed();
-    motor.update();                                                                                                             
+    // motor.setSpeed(3);
+    // v=motor.getLinearspeed();
+    // motor.update();                                                                                                             
 
 }
 

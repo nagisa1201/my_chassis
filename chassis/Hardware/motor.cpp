@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-24 19:36:09
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-01 00:05:55
+ * @LastEditTime: 2025-02-03 19:59:54
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\motor.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -10,15 +10,29 @@
 using namespace Motor;
 
 #if USE_COMMON_Motor
-void Motorcommon_t::setSpeed(float target)
+
+/**
+ * @brief 
+ * 目标vel转目标pwm
+ * @param linear_vel 
+ */
+void Motorcommon_t::setSpeed(float linear_vel)
 {
-    _vel_target = target * _Factor * _forward / (_WheelDiameter);
-    _pid.targetUpdate(_vel_target);
+    _linear_vel_target = linear_vel;
+    _pulse_vel_target = linear_vel * _Factor * _forward / (_WheelDiameter);
+    _pid.targetUpdate(_pulse_vel_target);
 }
-float Motorcommon_t::getLinearspeed()
+
+/**
+ * @brief 
+ * 实际pwm转实际vel
+ * 
+ */
+void Motorcommon_t::getLinearspeed()
 {
-    return _vel_raw.data_float * (_WheelDiameter) / (_Factor * _forward);
+    _linear_vel_raw = _pulse_vel_raw.data_float * (_WheelDiameter) / (_Factor * _forward);
 }
+
 // void Motorcommon_t::update(void *param)
 // {
 //     // 获得编码器的值
@@ -29,16 +43,26 @@ float Motorcommon_t::getLinearspeed()
 //     int pwm = _pid.pidCalc((int16_t)_vel_raw.data_float);
 //     pwm_out(pwm);
 // }
+
+/**
+ * @brief 
+ * 获取实际pwm并pid调整后输出
+ */
 void Motorcommon_t::update()
 {
     // 获得编码器的值
     float dt = 0.005;//此处void *解模板化，变为uint16_t之后解引用
     _encoder.clockCntGet();
-    _vel_raw.data_float = _encoder._pulse_count / dt;
+    _pulse_vel_raw.data_float = _encoder._pulse_count / dt;
     // 更新速度
-    int pwm = _pid.pidCalc((int16_t)_vel_raw.data_float);
+    int pwm = _pid.pidCalc((int16_t)_pulse_vel_raw.data_float);
     pwm_out(pwm);
 }
+
+/**
+ * @brief 
+ * pwm实际输出函数
+ */
 void Motorcommon_t::pwm_out(int pwm)
 {
     int out_speed = pwm;
@@ -54,5 +78,18 @@ void Motorcommon_t::pwm_out(int pwm)
         HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_SET);
         __HAL_TIM_SetCompare(_htim, _channel, -out_speed);
     }
+}
+/**
+ * @brief 
+ * 设定pwm（脉冲）vel到线速度转换参数
+ * @param factor 
+ * @param wheel_diameter 
+ * @param forward 
+ */
+ void Motorcommon_t::setFactors(float factor, float wheel_diameter, int forward)
+{
+    _Factor = factor;
+    _WheelDiameter = wheel_diameter;
+    _forward = forward;
 }
 #endif
