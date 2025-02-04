@@ -23,6 +23,7 @@
 "chassis\system_stm32f4xx.o"
 "chassis\motor.o"
 "chassis\control.o"
+"chassis\connect.o"
 "chassis\lib_static.o"
 "chassis\lib_tuple.o"
 --strict --scatter "chassis\chassis.sct"

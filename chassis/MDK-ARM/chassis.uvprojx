@@ -591,6 +591,11 @@
               <FileType>5</FileType>
               <FilePath>..\Hardware\Kinematic.h</FilePath>
             </File>
+            <File>
+              <FileName>Connect.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Hardware\Connect.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
