@@ -3006,7 +3006,6 @@ Removing Unused input sections from the image.
     Removing motor.o(.text), (0 bytes).
     Removing motor.o(.text._ZN5Motor13Motorcommon_t10setFactorsEffi), (12 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor13Motorcommon_t10setFactorsEffi), (8 bytes).
-    Removing kinematic.o(.text), (0 bytes).
     Removing control.o(.text), (0 bytes).
     Removing lib_static.o(.text), (0 bytes).
     Removing lib_tuple.o(.text), (0 bytes).
@@ -3320,7 +3319,7 @@ Removing Unused input sections from the image.
     Removing stdlib_typeinfo.cpp.o(.rodata._ZTSSt10bad_typeid), (15 bytes).
     Removing stdlib_typeinfo.cpp.o(.rodata._ZTISt10bad_typeid), (12 bytes).
 
-821 unused section(s) (total 24524 bytes) removed from the image.
+820 unused section(s) (total 24524 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3352,101 +3351,118 @@ Image Symbol Table
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c 0x00000000   Number         0  stm32f4xx_hal_tim_ex.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c 0x00000000   Number         0  stm32f4xx_hal_uart.o ABSOLUTE
     ../Hardware/Control.cpp                  0x00000000   Number         0  control.o ABSOLUTE
-    ../Hardware/Kinematic.cpp                0x00000000   Number         0  kinematic.o ABSOLUTE
     ../Hardware/motor.cpp                    0x00000000   Number         0  motor.o ABSOLUTE
     ../Selflib/Lib_Static.cpp                0x00000000   Number         0  lib_static.o ABSOLUTE
     ../Selflib/Lib_tuple.cpp                 0x00000000   Number         0  lib_tuple.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor_intlibspace.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ddtor_pointer_addr_intlibspace.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ddtor_pointer_addr.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ctype_table.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale_intlibspace.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ctype_table.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale_intlibspace.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_locale.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ddtor_pointer_addr.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_ddtor_pointer_addr_intlibspace.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  mutex_dummy.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch_hlt.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command_hlt.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit_hlt.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command_hlt.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch_hlt.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/arm_runtime.c                    0x00000000   Number         0  init_aeabi.o ABSOLUTE
     ../clib/arm_runtime.c                    0x00000000   Number         0  init_aeabi.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  _get_argv.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/bigflt.c                         0x00000000   Number         0  bigflt0.o ABSOLUTE
     ../clib/btod.s                           0x00000000   Number         0  btod.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_init.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_final_mt.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_final.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_extend_mt.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_extend.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_init_mt.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_memalign.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc_mt.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_init.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_free.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_memalign_mt.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_free_mt.o ABSOLUTE
-    ../clib/heap2.c                          0x00000000   Number         0  heap2.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_init_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_free.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc_mt.o ABSOLUTE
     ../clib/heap2.c                          0x00000000   Number         0  heap2mt.o ABSOLUTE
+    ../clib/heap2.c                          0x00000000   Number         0  heap2.o ABSOLUTE
     ../clib/heap2.c                          0x00000000   Number         0  fdtree.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  term_alloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  heapstubs.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  calloc.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  free.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  init_alloc.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hguard.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  malloc.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  heapstubs.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  calloc.o ABSOLUTE
-    ../clib/heapaux.c                        0x00000000   Number         0  heapauxa.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  term_alloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  malloc.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxa.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/locale.c                         0x00000000   Number         0  _c16rtomb.o ABSOLUTE
-    ../clib/locale.s                         0x00000000   Number         0  lc_ctype_c.o ABSOLUTE
     ../clib/locale.s                         0x00000000   Number         0  lc_numeric_c.o ABSOLUTE
+    ../clib/locale.s                         0x00000000   Number         0  lc_ctype_c.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludivv7m.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludiv10.o ABSOLUTE
-    ../clib/maybe.s                          0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
     ../clib/maybe.s                          0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
+    ../clib/maybe.s                          0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  strcmpv7em.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
     ../clib/misc.s                           0x00000000   Number         0  printf_stubs.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_fp_infnan.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  vsprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_wchar.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_fp_hex.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_fp_dec.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_pad.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_truncate.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_str.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_charcount.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_wctomb.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_longlong_dec.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_oct_ll.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_oct_int.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_oct_int_ll.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll.o ABSOLUTE
@@ -3455,78 +3471,60 @@ Image Symbol Table
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll_ptr.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll_ptr.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_longlong_dec.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_wchar.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_fp_hex.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_fp_infnan.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_charcount.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_fp_dec.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  vsprintf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_pad.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_truncate.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_str.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_oct_int_ll.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_lc.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_ll.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_llu.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_lld.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_c.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_lli.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_a.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_p.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_llx.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_g.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_s.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_e.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_llo.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_ls.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_ll.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_llu.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_lli.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_lc.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_i.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_o.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_p.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_x.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_lld.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_f.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_n.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_a.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_g.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_ls.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_x.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_o.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_f.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_l.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_s.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_c.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_e.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_i.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_outer.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_outer.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  cxa_finalize.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  aeabi_atexit.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  atexit_cxa.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  cxa_atexit.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  atexit_aeabi.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  abort.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  cxa_atexit.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  cxa_finalize.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  atexit_cxa.o ABSOLUTE
     ../clib/string.c                         0x00000000   Number         0  strlen.o ABSOLUTE
     ../fplib/d2f.s                           0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/ddiv.s                          0x00000000   Number         0  ddiv.o ABSOLUTE
@@ -4942,154 +4940,154 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000188   Data   RO            3    RESET               startup_stm32f405xx.o
-    0x08000188   0x08000188   0x00000008   Code   RO         1266  * !!!main             c_w.l(__main.o)
-    0x08000190   0x08000190   0x00000034   Code   RO         2378    !!!scatter          c_w.l(__scatter.o)
-    0x080001c4   0x080001c4   0x0000001a   Code   RO         2380    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x08000188   0x08000188   0x00000008   Code   RO         1258  * !!!main             c_w.l(__main.o)
+    0x08000190   0x08000190   0x00000034   Code   RO         2370    !!!scatter          c_w.l(__scatter.o)
+    0x080001c4   0x080001c4   0x0000001a   Code   RO         2372    !!handler_copy      c_w.l(__scatter_copy.o)
     0x080001de   0x080001de   0x00000002   PAD
-    0x080001e0   0x080001e0   0x0000001c   Code   RO         2382    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x080001fc   0x080001fc   0x00000000   Code   RO         1424    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
-    0x080001fc   0x080001fc   0x00000006   Code   RO         1413    .ARM.Collect$$_printf_percent$$00000001  c_w.l(_printf_n.o)
-    0x08000202   0x08000202   0x00000006   Code   RO         1415    .ARM.Collect$$_printf_percent$$00000002  c_w.l(_printf_p.o)
-    0x08000208   0x08000208   0x00000006   Code   RO         1420    .ARM.Collect$$_printf_percent$$00000003  c_w.l(_printf_f.o)
-    0x0800020e   0x0800020e   0x00000006   Code   RO         1421    .ARM.Collect$$_printf_percent$$00000004  c_w.l(_printf_e.o)
-    0x08000214   0x08000214   0x00000006   Code   RO         1422    .ARM.Collect$$_printf_percent$$00000005  c_w.l(_printf_g.o)
-    0x0800021a   0x0800021a   0x00000006   Code   RO         1423    .ARM.Collect$$_printf_percent$$00000006  c_w.l(_printf_a.o)
-    0x08000220   0x08000220   0x0000000a   Code   RO         1428    .ARM.Collect$$_printf_percent$$00000007  c_w.l(_printf_ll.o)
-    0x0800022a   0x0800022a   0x00000006   Code   RO         1417    .ARM.Collect$$_printf_percent$$00000008  c_w.l(_printf_i.o)
-    0x08000230   0x08000230   0x00000006   Code   RO         1418    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
-    0x08000236   0x08000236   0x00000006   Code   RO         1419    .ARM.Collect$$_printf_percent$$0000000A  c_w.l(_printf_u.o)
-    0x0800023c   0x0800023c   0x00000006   Code   RO         1416    .ARM.Collect$$_printf_percent$$0000000B  c_w.l(_printf_o.o)
-    0x08000242   0x08000242   0x00000006   Code   RO         1414    .ARM.Collect$$_printf_percent$$0000000C  c_w.l(_printf_x.o)
-    0x08000248   0x08000248   0x00000006   Code   RO         1425    .ARM.Collect$$_printf_percent$$0000000D  c_w.l(_printf_lli.o)
-    0x0800024e   0x0800024e   0x00000006   Code   RO         1426    .ARM.Collect$$_printf_percent$$0000000E  c_w.l(_printf_lld.o)
-    0x08000254   0x08000254   0x00000006   Code   RO         1427    .ARM.Collect$$_printf_percent$$0000000F  c_w.l(_printf_llu.o)
-    0x0800025a   0x0800025a   0x00000006   Code   RO         1432    .ARM.Collect$$_printf_percent$$00000010  c_w.l(_printf_llo.o)
-    0x08000260   0x08000260   0x00000006   Code   RO         1433    .ARM.Collect$$_printf_percent$$00000011  c_w.l(_printf_llx.o)
-    0x08000266   0x08000266   0x0000000a   Code   RO         1429    .ARM.Collect$$_printf_percent$$00000012  c_w.l(_printf_l.o)
-    0x08000270   0x08000270   0x00000006   Code   RO         1411    .ARM.Collect$$_printf_percent$$00000013  c_w.l(_printf_c.o)
-    0x08000276   0x08000276   0x00000006   Code   RO         1412    .ARM.Collect$$_printf_percent$$00000014  c_w.l(_printf_s.o)
-    0x0800027c   0x0800027c   0x00000006   Code   RO         1430    .ARM.Collect$$_printf_percent$$00000015  c_w.l(_printf_lc.o)
-    0x08000282   0x08000282   0x00000006   Code   RO         1431    .ARM.Collect$$_printf_percent$$00000016  c_w.l(_printf_ls.o)
-    0x08000288   0x08000288   0x00000004   Code   RO         1795    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
-    0x0800028c   0x0800028c   0x00000002   Code   RO         2254    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x0800028e   0x0800028e   0x00000004   Code   RO         1444    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x08000292   0x08000292   0x00000000   Code   RO         1447    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000292   0x08000292   0x00000008   Code   RO         1448    .ARM.Collect$$libinit$$00000005  c_w.l(libinit2.o)
-    0x0800029a   0x0800029a   0x00000000   Code   RO         1450    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x0800029a   0x0800029a   0x00000000   Code   RO         1452    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x0800029a   0x0800029a   0x00000000   Code   RO         1454    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x0800029a   0x0800029a   0x00000006   Code   RO         1455    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
-    0x080002a0   0x080002a0   0x00000000   Code   RO         1457    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x080002a0   0x080002a0   0x0000000c   Code   RO         1458    .ARM.Collect$$libinit$$00000012  c_w.l(libinit2.o)
-    0x080002ac   0x080002ac   0x00000000   Code   RO         1459    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x080002ac   0x080002ac   0x00000000   Code   RO         1461    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x080002ac   0x080002ac   0x0000000a   Code   RO         1462    .ARM.Collect$$libinit$$00000016  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1463    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1465    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1467    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1469    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1471    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1473    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1475    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1477    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1481    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1483    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000000   Code   RO         1485    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x080002b6   0x080002b6   0x00000004   Code   RO         1486    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
-    0x080002ba   0x080002ba   0x00000000   Code   RO         1487    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x080002ba   0x080002ba   0x00000002   Code   RO         1488    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x080002bc   0x080002bc   0x00000002   Code   RO         2375    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x080002be   0x080002be   0x00000006   Code   RO         2255    .ARM.Collect$$libshutdown$$00000001  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000000   Code   RO         2256    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000000   Code   RO         2258    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000000   Code   RO         2261    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000000   Code   RO         2264    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000000   Code   RO         2266    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000000   Code   RO         2269    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x080002c4   0x080002c4   0x00000002   Code   RO         2270    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x080002c6   0x080002c6   0x00000000   Code   RO         1338    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x080002c6   0x080002c6   0x00000000   Code   RO         1703    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x080002c6   0x080002c6   0x00000006   Code   RO         1715    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x080002cc   0x080002cc   0x00000000   Code   RO         1705    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x080002cc   0x080002cc   0x00000004   Code   RO         1706    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x080002d0   0x080002d0   0x00000000   Code   RO         1708    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x080002d0   0x080002d0   0x00000008   Code   RO         1709    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x080002d8   0x080002d8   0x00000002   Code   RO         2314    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x080002da   0x080002da   0x00000000   Code   RO         2345    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x080002da   0x080002da   0x00000004   Code   RO         2346    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x080002de   0x080002de   0x00000006   Code   RO         2347    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x080001e0   0x080001e0   0x0000001c   Code   RO         2374    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x080001fc   0x080001fc   0x00000000   Code   RO         1416    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
+    0x080001fc   0x080001fc   0x00000006   Code   RO         1405    .ARM.Collect$$_printf_percent$$00000001  c_w.l(_printf_n.o)
+    0x08000202   0x08000202   0x00000006   Code   RO         1407    .ARM.Collect$$_printf_percent$$00000002  c_w.l(_printf_p.o)
+    0x08000208   0x08000208   0x00000006   Code   RO         1412    .ARM.Collect$$_printf_percent$$00000003  c_w.l(_printf_f.o)
+    0x0800020e   0x0800020e   0x00000006   Code   RO         1413    .ARM.Collect$$_printf_percent$$00000004  c_w.l(_printf_e.o)
+    0x08000214   0x08000214   0x00000006   Code   RO         1414    .ARM.Collect$$_printf_percent$$00000005  c_w.l(_printf_g.o)
+    0x0800021a   0x0800021a   0x00000006   Code   RO         1415    .ARM.Collect$$_printf_percent$$00000006  c_w.l(_printf_a.o)
+    0x08000220   0x08000220   0x0000000a   Code   RO         1420    .ARM.Collect$$_printf_percent$$00000007  c_w.l(_printf_ll.o)
+    0x0800022a   0x0800022a   0x00000006   Code   RO         1409    .ARM.Collect$$_printf_percent$$00000008  c_w.l(_printf_i.o)
+    0x08000230   0x08000230   0x00000006   Code   RO         1410    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
+    0x08000236   0x08000236   0x00000006   Code   RO         1411    .ARM.Collect$$_printf_percent$$0000000A  c_w.l(_printf_u.o)
+    0x0800023c   0x0800023c   0x00000006   Code   RO         1408    .ARM.Collect$$_printf_percent$$0000000B  c_w.l(_printf_o.o)
+    0x08000242   0x08000242   0x00000006   Code   RO         1406    .ARM.Collect$$_printf_percent$$0000000C  c_w.l(_printf_x.o)
+    0x08000248   0x08000248   0x00000006   Code   RO         1417    .ARM.Collect$$_printf_percent$$0000000D  c_w.l(_printf_lli.o)
+    0x0800024e   0x0800024e   0x00000006   Code   RO         1418    .ARM.Collect$$_printf_percent$$0000000E  c_w.l(_printf_lld.o)
+    0x08000254   0x08000254   0x00000006   Code   RO         1419    .ARM.Collect$$_printf_percent$$0000000F  c_w.l(_printf_llu.o)
+    0x0800025a   0x0800025a   0x00000006   Code   RO         1424    .ARM.Collect$$_printf_percent$$00000010  c_w.l(_printf_llo.o)
+    0x08000260   0x08000260   0x00000006   Code   RO         1425    .ARM.Collect$$_printf_percent$$00000011  c_w.l(_printf_llx.o)
+    0x08000266   0x08000266   0x0000000a   Code   RO         1421    .ARM.Collect$$_printf_percent$$00000012  c_w.l(_printf_l.o)
+    0x08000270   0x08000270   0x00000006   Code   RO         1403    .ARM.Collect$$_printf_percent$$00000013  c_w.l(_printf_c.o)
+    0x08000276   0x08000276   0x00000006   Code   RO         1404    .ARM.Collect$$_printf_percent$$00000014  c_w.l(_printf_s.o)
+    0x0800027c   0x0800027c   0x00000006   Code   RO         1422    .ARM.Collect$$_printf_percent$$00000015  c_w.l(_printf_lc.o)
+    0x08000282   0x08000282   0x00000006   Code   RO         1423    .ARM.Collect$$_printf_percent$$00000016  c_w.l(_printf_ls.o)
+    0x08000288   0x08000288   0x00000004   Code   RO         1787    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
+    0x0800028c   0x0800028c   0x00000002   Code   RO         2246    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800028e   0x0800028e   0x00000004   Code   RO         1436    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x08000292   0x08000292   0x00000000   Code   RO         1439    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000292   0x08000292   0x00000008   Code   RO         1440    .ARM.Collect$$libinit$$00000005  c_w.l(libinit2.o)
+    0x0800029a   0x0800029a   0x00000000   Code   RO         1442    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0800029a   0x0800029a   0x00000000   Code   RO         1444    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800029a   0x0800029a   0x00000000   Code   RO         1446    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800029a   0x0800029a   0x00000006   Code   RO         1447    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
+    0x080002a0   0x080002a0   0x00000000   Code   RO         1449    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x080002a0   0x080002a0   0x0000000c   Code   RO         1450    .ARM.Collect$$libinit$$00000012  c_w.l(libinit2.o)
+    0x080002ac   0x080002ac   0x00000000   Code   RO         1451    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x080002ac   0x080002ac   0x00000000   Code   RO         1453    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x080002ac   0x080002ac   0x0000000a   Code   RO         1454    .ARM.Collect$$libinit$$00000016  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1455    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1457    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1459    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1461    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1463    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1465    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1467    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1469    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1473    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1475    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000000   Code   RO         1477    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x080002b6   0x080002b6   0x00000004   Code   RO         1478    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x080002ba   0x080002ba   0x00000000   Code   RO         1479    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x080002ba   0x080002ba   0x00000002   Code   RO         1480    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x080002bc   0x080002bc   0x00000002   Code   RO         2367    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x080002be   0x080002be   0x00000006   Code   RO         2247    .ARM.Collect$$libshutdown$$00000001  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000000   Code   RO         2248    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000000   Code   RO         2250    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000000   Code   RO         2253    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000000   Code   RO         2256    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000000   Code   RO         2258    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000000   Code   RO         2261    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x080002c4   0x080002c4   0x00000002   Code   RO         2262    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x080002c6   0x080002c6   0x00000000   Code   RO         1330    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x080002c6   0x080002c6   0x00000000   Code   RO         1695    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x080002c6   0x080002c6   0x00000006   Code   RO         1707    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x080002cc   0x080002cc   0x00000000   Code   RO         1697    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x080002cc   0x080002cc   0x00000004   Code   RO         1698    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x080002d0   0x080002d0   0x00000000   Code   RO         1700    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x080002d0   0x080002d0   0x00000008   Code   RO         1701    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x080002d8   0x080002d8   0x00000002   Code   RO         2306    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x080002da   0x080002da   0x00000000   Code   RO         2337    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x080002da   0x080002da   0x00000004   Code   RO         2338    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x080002de   0x080002de   0x00000006   Code   RO         2339    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x080002e4   0x080002e4   0x00000040   Code   RO            4    .text               startup_stm32f405xx.o
-    0x08000324   0x08000324   0x000000ee   Code   RO         1252    .text               c_w.l(lludivv7m.o)
+    0x08000324   0x08000324   0x000000ee   Code   RO         1244    .text               c_w.l(lludivv7m.o)
     0x08000412   0x08000412   0x00000002   PAD
-    0x08000414   0x08000414   0x00000024   Code   RO         1254    .text               c_w.l(vsprintf.o)
-    0x08000438   0x08000438   0x0000000a   Code   RO         1259    .text               c_w.l(cxa_atexit.o)
-    0x08000442   0x08000442   0x0000003e   Code   RO         1262    .text               c_w.l(strlen.o)
-    0x08000480   0x08000480   0x00000006   Code   RO         1264    .text               c_w.l(heapauxi.o)
+    0x08000414   0x08000414   0x00000024   Code   RO         1246    .text               c_w.l(vsprintf.o)
+    0x08000438   0x08000438   0x0000000a   Code   RO         1251    .text               c_w.l(cxa_atexit.o)
+    0x08000442   0x08000442   0x0000003e   Code   RO         1254    .text               c_w.l(strlen.o)
+    0x08000480   0x08000480   0x00000006   Code   RO         1256    .text               c_w.l(heapauxi.o)
     0x08000486   0x08000486   0x00000002   PAD
-    0x08000488   0x08000488   0x00000024   Code   RO         1271    .text               c_w.l(init_aeabi.o)
-    0x080004ac   0x080004ac   0x0000004e   Code   RO         1345    .text               c_w.l(_printf_pad.o)
-    0x080004fa   0x080004fa   0x00000024   Code   RO         1347    .text               c_w.l(_printf_truncate.o)
-    0x0800051e   0x0800051e   0x00000052   Code   RO         1349    .text               c_w.l(_printf_str.o)
-    0x08000570   0x08000570   0x00000078   Code   RO         1351    .text               c_w.l(_printf_dec.o)
-    0x080005e8   0x080005e8   0x00000028   Code   RO         1353    .text               c_w.l(_printf_charcount.o)
-    0x08000610   0x08000610   0x00000030   Code   RO         1355    .text               c_w.l(_printf_char_common.o)
-    0x08000640   0x08000640   0x0000000a   Code   RO         1357    .text               c_w.l(_sputc.o)
+    0x08000488   0x08000488   0x00000024   Code   RO         1263    .text               c_w.l(init_aeabi.o)
+    0x080004ac   0x080004ac   0x0000004e   Code   RO         1337    .text               c_w.l(_printf_pad.o)
+    0x080004fa   0x080004fa   0x00000024   Code   RO         1339    .text               c_w.l(_printf_truncate.o)
+    0x0800051e   0x0800051e   0x00000052   Code   RO         1341    .text               c_w.l(_printf_str.o)
+    0x08000570   0x08000570   0x00000078   Code   RO         1343    .text               c_w.l(_printf_dec.o)
+    0x080005e8   0x080005e8   0x00000028   Code   RO         1345    .text               c_w.l(_printf_charcount.o)
+    0x08000610   0x08000610   0x00000030   Code   RO         1347    .text               c_w.l(_printf_char_common.o)
+    0x08000640   0x08000640   0x0000000a   Code   RO         1349    .text               c_w.l(_sputc.o)
     0x0800064a   0x0800064a   0x00000002   PAD
-    0x0800064c   0x0800064c   0x000000bc   Code   RO         1359    .text               c_w.l(_printf_wctomb.o)
-    0x08000708   0x08000708   0x0000007c   Code   RO         1362    .text               c_w.l(_printf_longlong_dec.o)
-    0x08000784   0x08000784   0x00000070   Code   RO         1368    .text               c_w.l(_printf_oct_int_ll.o)
-    0x080007f4   0x080007f4   0x00000094   Code   RO         1388    .text               c_w.l(_printf_hex_int_ll_ptr.o)
-    0x08000888   0x08000888   0x00000188   Code   RO         1408    .text               c_w.l(__printf_flags_ss_wp.o)
-    0x08000a10   0x08000a10   0x00000016   Code   RO         1434    .text               c_w.l(abort.o)
-    0x08000a26   0x08000a26   0x0000002e   Code   RO         1439    .text               c_w.l(aeabi_atexit.o)
-    0x08000a54   0x08000a54   0x0000004e   Code   RO         1442    .text               c_w.l(rt_memclr_w.o)
+    0x0800064c   0x0800064c   0x000000bc   Code   RO         1351    .text               c_w.l(_printf_wctomb.o)
+    0x08000708   0x08000708   0x0000007c   Code   RO         1354    .text               c_w.l(_printf_longlong_dec.o)
+    0x08000784   0x08000784   0x00000070   Code   RO         1360    .text               c_w.l(_printf_oct_int_ll.o)
+    0x080007f4   0x080007f4   0x00000094   Code   RO         1380    .text               c_w.l(_printf_hex_int_ll_ptr.o)
+    0x08000888   0x08000888   0x00000188   Code   RO         1400    .text               c_w.l(__printf_flags_ss_wp.o)
+    0x08000a10   0x08000a10   0x00000016   Code   RO         1426    .text               c_w.l(abort.o)
+    0x08000a26   0x08000a26   0x0000002e   Code   RO         1431    .text               c_w.l(aeabi_atexit.o)
+    0x08000a54   0x08000a54   0x0000004e   Code   RO         1434    .text               c_w.l(rt_memclr_w.o)
     0x08000aa2   0x08000aa2   0x00000002   PAD
-    0x08000aa4   0x08000aa4   0x0000002e   Code   RO         1697    .text               libunwind_wx.l(UnwindRegistersSave.S.o)
+    0x08000aa4   0x08000aa4   0x0000002e   Code   RO         1689    .text               libunwind_wx.l(UnwindRegistersSave.S.o)
     0x08000ad2   0x08000ad2   0x00000002   PAD
-    0x08000ad4   0x08000ad4   0x0000000c   Code   RO         1698    .text               c_w.l(sys_exit.o)
-    0x08000ae0   0x08000ae0   0x00000008   Code   RO         1722    .text               c_w.l(rt_ddtor_pointer_addr_intlibspace.o)
-    0x08000ae8   0x08000ae8   0x0000005e   Code   RO         1726    .text               c_w.l(h1_alloc.o)
-    0x08000b46   0x08000b46   0x0000008a   Code   RO         1780    .text               c_w.l(lludiv10.o)
-    0x08000bd0   0x08000bd0   0x000000b2   Code   RO         1782    .text               c_w.l(_printf_intcommon.o)
-    0x08000c82   0x08000c82   0x0000041e   Code   RO         1784    .text               c_w.l(_printf_fp_dec.o)
-    0x080010a0   0x080010a0   0x000002fc   Code   RO         1786    .text               c_w.l(_printf_fp_hex.o)
-    0x0800139c   0x0800139c   0x0000002c   Code   RO         1791    .text               c_w.l(_printf_char.o)
-    0x080013c8   0x080013c8   0x0000002c   Code   RO         1793    .text               c_w.l(_printf_wchar.o)
-    0x080013f4   0x080013f4   0x00000048   Code   RO         1796    .text               c_w.l(_c16rtomb.o)
-    0x0800143c   0x0800143c   0x00000042   Code   RO         1798    .text               c_w.l(cxa_finalize.o)
-    0x0800147e   0x0800147e   0x0000000e   Code   RO         1801    .text               c_w.l(defsig_abrt_outer.o)
-    0x0800148c   0x0800148c   0x0000008a   Code   RO         1805    .text               c_w.l(rt_memcpy_v6.o)
-    0x08001516   0x08001516   0x00000044   Code   RO         1807    .text               c_w.l(rt_memclr.o)
+    0x08000ad4   0x08000ad4   0x0000000c   Code   RO         1690    .text               c_w.l(sys_exit.o)
+    0x08000ae0   0x08000ae0   0x00000008   Code   RO         1714    .text               c_w.l(rt_ddtor_pointer_addr_intlibspace.o)
+    0x08000ae8   0x08000ae8   0x0000005e   Code   RO         1718    .text               c_w.l(h1_alloc.o)
+    0x08000b46   0x08000b46   0x0000008a   Code   RO         1772    .text               c_w.l(lludiv10.o)
+    0x08000bd0   0x08000bd0   0x000000b2   Code   RO         1774    .text               c_w.l(_printf_intcommon.o)
+    0x08000c82   0x08000c82   0x0000041e   Code   RO         1776    .text               c_w.l(_printf_fp_dec.o)
+    0x080010a0   0x080010a0   0x000002fc   Code   RO         1778    .text               c_w.l(_printf_fp_hex.o)
+    0x0800139c   0x0800139c   0x0000002c   Code   RO         1783    .text               c_w.l(_printf_char.o)
+    0x080013c8   0x080013c8   0x0000002c   Code   RO         1785    .text               c_w.l(_printf_wchar.o)
+    0x080013f4   0x080013f4   0x00000048   Code   RO         1788    .text               c_w.l(_c16rtomb.o)
+    0x0800143c   0x0800143c   0x00000042   Code   RO         1790    .text               c_w.l(cxa_finalize.o)
+    0x0800147e   0x0800147e   0x0000000e   Code   RO         1793    .text               c_w.l(defsig_abrt_outer.o)
+    0x0800148c   0x0800148c   0x0000008a   Code   RO         1797    .text               c_w.l(rt_memcpy_v6.o)
+    0x08001516   0x08001516   0x00000044   Code   RO         1799    .text               c_w.l(rt_memclr.o)
     0x0800155a   0x0800155a   0x00000002   PAD
-    0x0800155c   0x0800155c   0x00000026   Code   RO         2142    .text               libunwind_wx.l(UnwindRegistersRestore.S.o)
+    0x0800155c   0x0800155c   0x00000026   Code   RO         2134    .text               libunwind_wx.l(UnwindRegistersRestore.S.o)
     0x08001582   0x08001582   0x00000002   PAD
-    0x08001584   0x08001584   0x00000008   Code   RO         2143    .text               c_w.l(libspace.o)
-    0x0800158c   0x0800158c   0x00000002   Code   RO         2146    .text               c_w.l(use_no_semi.o)
-    0x0800158e   0x0800158e   0x00000000   Code   RO         2150    .text               c_w.l(indicate_semi.o)
-    0x0800158e   0x0800158e   0x0000004a   Code   RO         2151    .text               c_w.l(sys_stackheap_outer.o)
-    0x080015d8   0x080015d8   0x00000010   Code   RO         2153    .text               c_w.l(rt_ctype_table.o)
-    0x080015e8   0x080015e8   0x00000008   Code   RO         2160    .text               c_w.l(rt_heap_descriptor_intlibspace.o)
-    0x080015f0   0x080015f0   0x00000008   Code   RO         2165    .text               c_w.l(rt_locale_intlibspace.o)
-    0x080015f8   0x080015f8   0x00000004   Code   RO         2167    .text               c_w.l(hguard.o)
-    0x080015fc   0x080015fc   0x0000008a   Code   RO         2169    .text               c_w.l(init_alloc.o)
-    0x08001686   0x08001686   0x00000028   Code   RO         2173    .text               c_w.l(calloc.o)
-    0x080016ae   0x080016ae   0x0000000e   Code   RO         2177    .text               c_w.l(h1_init.o)
-    0x080016bc   0x080016bc   0x0000004e   Code   RO         2179    .text               c_w.l(h1_free.o)
+    0x08001584   0x08001584   0x00000008   Code   RO         2135    .text               c_w.l(libspace.o)
+    0x0800158c   0x0800158c   0x00000002   Code   RO         2138    .text               c_w.l(use_no_semi.o)
+    0x0800158e   0x0800158e   0x00000000   Code   RO         2142    .text               c_w.l(indicate_semi.o)
+    0x0800158e   0x0800158e   0x0000004a   Code   RO         2143    .text               c_w.l(sys_stackheap_outer.o)
+    0x080015d8   0x080015d8   0x00000010   Code   RO         2145    .text               c_w.l(rt_ctype_table.o)
+    0x080015e8   0x080015e8   0x00000008   Code   RO         2152    .text               c_w.l(rt_heap_descriptor_intlibspace.o)
+    0x080015f0   0x080015f0   0x00000008   Code   RO         2157    .text               c_w.l(rt_locale_intlibspace.o)
+    0x080015f8   0x080015f8   0x00000004   Code   RO         2159    .text               c_w.l(hguard.o)
+    0x080015fc   0x080015fc   0x0000008a   Code   RO         2161    .text               c_w.l(init_alloc.o)
+    0x08001686   0x08001686   0x00000028   Code   RO         2165    .text               c_w.l(calloc.o)
+    0x080016ae   0x080016ae   0x0000000e   Code   RO         2169    .text               c_w.l(h1_init.o)
+    0x080016bc   0x080016bc   0x0000004e   Code   RO         2171    .text               c_w.l(h1_free.o)
     0x0800170a   0x0800170a   0x00000002   PAD
-    0x0800170c   0x0800170c   0x00000080   Code   RO         2199    .text               c_w.l(_printf_fp_infnan.o)
-    0x0800178c   0x0800178c   0x000000e4   Code   RO         2201    .text               c_w.l(bigflt0.o)
-    0x08001870   0x08001870   0x00000012   Code   RO         2229    .text               c_w.l(exit.o)
-    0x08001882   0x08001882   0x0000000a   Code   RO         2231    .text               c_w.l(defsig_exit.o)
-    0x0800188c   0x0800188c   0x00000030   Code   RO         2233    .text               c_w.l(defsig_abrt_inner.o)
-    0x080018bc   0x080018bc   0x00000064   Code   RO         2239    .text               c_w.l(rt_memcpy_w.o)
-    0x08001920   0x08001920   0x0000007c   Code   RO         2241    .text               c_w.l(strcmpv7em.o)
-    0x0800199c   0x0800199c   0x00000000   Code   RO         2318    .text               c_w.l(maybetermalloc1.o)
-    0x0800199c   0x0800199c   0x00000034   Code   RO         2320    .text               c_w.l(h1_extend.o)
-    0x080019d0   0x080019d0   0x00000032   Code   RO         2329    .text               c_w.l(defsig_general.o)
-    0x08001a02   0x08001a02   0x0000000e   Code   RO         2333    .text               c_w.l(defsig_rtmem_outer.o)
-    0x08001a10   0x08001a10   0x0000000e   Code   RO         2340    .text               c_w.l(sys_wrch.o)
+    0x0800170c   0x0800170c   0x00000080   Code   RO         2191    .text               c_w.l(_printf_fp_infnan.o)
+    0x0800178c   0x0800178c   0x000000e4   Code   RO         2193    .text               c_w.l(bigflt0.o)
+    0x08001870   0x08001870   0x00000012   Code   RO         2221    .text               c_w.l(exit.o)
+    0x08001882   0x08001882   0x0000000a   Code   RO         2223    .text               c_w.l(defsig_exit.o)
+    0x0800188c   0x0800188c   0x00000030   Code   RO         2225    .text               c_w.l(defsig_abrt_inner.o)
+    0x080018bc   0x080018bc   0x00000064   Code   RO         2231    .text               c_w.l(rt_memcpy_w.o)
+    0x08001920   0x08001920   0x0000007c   Code   RO         2233    .text               c_w.l(strcmpv7em.o)
+    0x0800199c   0x0800199c   0x00000000   Code   RO         2310    .text               c_w.l(maybetermalloc1.o)
+    0x0800199c   0x0800199c   0x00000034   Code   RO         2312    .text               c_w.l(h1_extend.o)
+    0x080019d0   0x080019d0   0x00000032   Code   RO         2321    .text               c_w.l(defsig_general.o)
+    0x08001a02   0x08001a02   0x0000000e   Code   RO         2325    .text               c_w.l(defsig_rtmem_outer.o)
+    0x08001a10   0x08001a10   0x0000000e   Code   RO         2332    .text               c_w.l(sys_wrch.o)
     0x08001a1e   0x08001a1e   0x00000002   PAD
-    0x08001a20   0x08001a20   0x00000050   Code   RO         2353    .text               c_w.l(defsig_rtmem_inner.o)
+    0x08001a20   0x08001a20   0x00000050   Code   RO         2345    .text               c_w.l(defsig_rtmem_inner.o)
     0x08001a70   0x08001a70   0x00000002   Code   RO          131    .text.BusFault_Handler  stm32f4xx_it.o
     0x08001a72   0x08001a72   0x00000002   PAD
     0x08001a74   0x08001a74   0x00000036   Code   RO          741    .text.DMA_SetConfig  stm32f4xx_hal_dma.o
@@ -5370,34 +5368,34 @@ Memory Map of the image
     0x08006e94   0x08006e94   0x00000002   Code   RO          133    .text.UsageFault_Handler  stm32f4xx_it.o
     0x08006e96   0x08006e96   0x00000002   PAD
     0x08006e98   0x08006e98   0x00000004   Code   RO           19    .text._GLOBAL__sub_I_maincpp.cpp  maincpp.o
-    0x08006e9c   0x08006e9c   0x00000002   Code   RO         1325    .text._Unwind_Complete  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006e9e   0x08006e9e   0x0000000c   Code   RO         1334    .text._Unwind_DeleteException  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006eaa   0x08006eaa   0x00000018   Code   RO         1330    .text._Unwind_GetLanguageSpecificData  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006ec2   0x08006ec2   0x00000018   Code   RO         1332    .text._Unwind_GetRegionStart  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006eda   0x08006eda   0x0000007a   Code   RO         1321    .text._Unwind_RaiseException  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006f54   0x08006f54   0x00000020   Code   RO         1327    .text._Unwind_Resume  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006f74   0x08006f74   0x00000058   Code   RO         1307    .text._Unwind_VRS_Get  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08006fcc   0x08006fcc   0x00000232   Code   RO         1305    .text._Unwind_VRS_Interpret  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x080071fe   0x080071fe   0x000000e8   Code   RO         1311    .text._Unwind_VRS_Pop  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x080072e6   0x080072e6   0x0000005a   Code   RO         1309    .text._Unwind_VRS_Set  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08007340   0x08007340   0x000000a6   Code   RO         1323    .text._ZL13unwind_phase2P13unw_context_tP12unw_cursor_tP21_Unwind_Control_Blockb  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x080073e6   0x080073e6   0x00000004   Code   RO         1883    .text._ZN10__cxxabiv116__shim_type_infoD2Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080073ea   0x080073ea   0x0000000e   Code   RO         1899    .text._ZN10__cxxabiv117__class_type_infoD0Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080073f8   0x080073f8   0x0000009e   Code   RO         1878    .text._ZN10__cxxabiv120__free_with_fallbackEPv  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x08007496   0x08007496   0x0000000e   Code   RO         1901    .text._ZN10__cxxabiv120__si_class_type_infoD0Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080074a4   0x080074a4   0x0000002a   Code   RO         1876    .text._ZN10__cxxabiv122__calloc_with_fallbackEjj  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x080074ce   0x080074ce   0x00000016   Code   RO         1872    .text._ZN10__cxxabiv122__malloc_with_fallbackEj  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x080074e4   0x080074e4   0x0000000e   Code   RO         1891    .text._ZN10__cxxabiv123__fundamental_type_infoD0Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080074f2   0x080074f2   0x000003a0   Code   RO         1287    .text._ZN10__cxxabiv1L11scan_eh_tabERNS_12_GLOBAL__N_112scan_resultsE14_Unwind_ActionbP21_Unwind_Control_BlockP15_Unwind_Context  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x08007892   0x08007892   0x0000005c   Code   RO         1291    .text._ZN10__cxxabiv1L13set_registersEP21_Unwind_Control_BlockP15_Unwind_ContextRKNS_12_GLOBAL__N_112scan_resultsE  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x080078ee   0x080078ee   0x0000001c   Code   RO         1289    .text._ZN10__cxxabiv1L14call_terminateEbP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x08006e9c   0x08006e9c   0x00000002   Code   RO         1317    .text._Unwind_Complete  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006e9e   0x08006e9e   0x0000000c   Code   RO         1326    .text._Unwind_DeleteException  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006eaa   0x08006eaa   0x00000018   Code   RO         1322    .text._Unwind_GetLanguageSpecificData  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006ec2   0x08006ec2   0x00000018   Code   RO         1324    .text._Unwind_GetRegionStart  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006eda   0x08006eda   0x0000007a   Code   RO         1313    .text._Unwind_RaiseException  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006f54   0x08006f54   0x00000020   Code   RO         1319    .text._Unwind_Resume  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006f74   0x08006f74   0x00000058   Code   RO         1299    .text._Unwind_VRS_Get  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08006fcc   0x08006fcc   0x00000232   Code   RO         1297    .text._Unwind_VRS_Interpret  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x080071fe   0x080071fe   0x000000e8   Code   RO         1303    .text._Unwind_VRS_Pop  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x080072e6   0x080072e6   0x0000005a   Code   RO         1301    .text._Unwind_VRS_Set  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08007340   0x08007340   0x000000a6   Code   RO         1315    .text._ZL13unwind_phase2P13unw_context_tP12unw_cursor_tP21_Unwind_Control_Blockb  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x080073e6   0x080073e6   0x00000004   Code   RO         1875    .text._ZN10__cxxabiv116__shim_type_infoD2Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080073ea   0x080073ea   0x0000000e   Code   RO         1891    .text._ZN10__cxxabiv117__class_type_infoD0Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080073f8   0x080073f8   0x0000009e   Code   RO         1870    .text._ZN10__cxxabiv120__free_with_fallbackEPv  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x08007496   0x08007496   0x0000000e   Code   RO         1893    .text._ZN10__cxxabiv120__si_class_type_infoD0Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080074a4   0x080074a4   0x0000002a   Code   RO         1868    .text._ZN10__cxxabiv122__calloc_with_fallbackEjj  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x080074ce   0x080074ce   0x00000016   Code   RO         1864    .text._ZN10__cxxabiv122__malloc_with_fallbackEj  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x080074e4   0x080074e4   0x0000000e   Code   RO         1883    .text._ZN10__cxxabiv123__fundamental_type_infoD0Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080074f2   0x080074f2   0x000003a0   Code   RO         1279    .text._ZN10__cxxabiv1L11scan_eh_tabERNS_12_GLOBAL__N_112scan_resultsE14_Unwind_ActionbP21_Unwind_Control_BlockP15_Unwind_Context  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x08007892   0x08007892   0x0000005c   Code   RO         1283    .text._ZN10__cxxabiv1L13set_registersEP21_Unwind_Control_BlockP15_Unwind_ContextRKNS_12_GLOBAL__N_112scan_resultsE  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x080078ee   0x080078ee   0x0000001c   Code   RO         1281    .text._ZN10__cxxabiv1L14call_terminateEbP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
     0x0800790a   0x0800790a   0x00000002   PAD
-    0x0800790c   0x0800790c   0x00000142   Code   RO         1296    .text._ZN10__cxxabiv1L18readEncodedPointerEPPKhh  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x08007a4e   0x08007a4e   0x00000014   Code   RO         1590    .text._ZN10__cxxabiv1L22exception_cleanup_funcE19_Unwind_Reason_CodeP21_Unwind_Control_Block  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08007a62   0x08007a62   0x0000003e   Code   RO         1298    .text._ZN10__cxxabiv1L24exception_spec_can_catchExPKhhPKNS_16__shim_type_infoEPvP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x08007aa0   0x08007aa0   0x00000022   Code   RO         1618    .text._ZN10__cxxabiv1L27dependent_exception_cleanupE19_Unwind_Reason_CodeP21_Unwind_Control_Block  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08007ac2   0x08007ac2   0x00000092   Code   RO         1874    .text._ZN12_GLOBAL__N_115fallback_mallocEj  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x08007b54   0x08007b54   0x00000036   Code   RO         1315    .text._ZN12_GLOBAL__N_1L14unwindOneFrameEjP21_Unwind_Control_BlockP15_Unwind_Context  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800790c   0x0800790c   0x00000142   Code   RO         1288    .text._ZN10__cxxabiv1L18readEncodedPointerEPPKhh  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x08007a4e   0x08007a4e   0x00000014   Code   RO         1582    .text._ZN10__cxxabiv1L22exception_cleanup_funcE19_Unwind_Reason_CodeP21_Unwind_Control_Block  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08007a62   0x08007a62   0x0000003e   Code   RO         1290    .text._ZN10__cxxabiv1L24exception_spec_can_catchExPKhhPKNS_16__shim_type_infoEPvP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x08007aa0   0x08007aa0   0x00000022   Code   RO         1610    .text._ZN10__cxxabiv1L27dependent_exception_cleanupE19_Unwind_Reason_CodeP21_Unwind_Control_Block  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08007ac2   0x08007ac2   0x00000092   Code   RO         1866    .text._ZN12_GLOBAL__N_115fallback_mallocEj  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x08007b54   0x08007b54   0x00000036   Code   RO         1307    .text._ZN12_GLOBAL__N_1L14unwindOneFrameEjP21_Unwind_Control_BlockP15_Unwind_Context  libunwind_wx.l(Unwind-EHABI.cpp.o)
     0x08007b8a   0x08007b8a   0x00000002   PAD
     0x08007b8c   0x08007b8c   0x0000000e   Code   RO         1191    .text._ZN18Pid_basetemplate_tIffE12targetUpdateEfb  motor.o
     0x08007b9a   0x08007b9a   0x00000002   PAD
@@ -5416,7 +5414,7 @@ Memory Map of the image
     0x08007c88   0x08007c88   0x00000054   Code   RO         1175    .text._ZN5Motor13Motorcommon_t6updateEv  motor.o
     0x08007cdc   0x08007cdc   0x0000007c   Code   RO         1177    .text._ZN5Motor13Motorcommon_t7pwm_outEi  motor.o
     0x08007d58   0x08007d58   0x0000002c   Code   RO         1171    .text._ZN5Motor13Motorcommon_t8setSpeedEf  motor.o
-    0x08007d84   0x08007d84   0x00000028   Code   RO         1224    .text._ZN5Motor13Motorcommon_t9initMotorEv  control.o
+    0x08007d84   0x08007d84   0x00000028   Code   RO         1216    .text._ZN5Motor13Motorcommon_t9initMotorEv  control.o
     0x08007dac   0x08007dac   0x00000096   Code   RO           68    .text._ZN5Motor13Motorcommon_tC2EP17TIM_HandleTypeDefS2_jP12GPIO_TypeDeftth  maincpp.o
     0x08007e42   0x08007e42   0x00000002   PAD
     0x08007e44   0x08007e44   0x0000006a   Code   RO           43    .text._ZN5Motor13Motorcommon_tC2Ev  maincpp.o
@@ -5443,257 +5441,257 @@ Memory Map of the image
     0x08007f8c   0x08007f8c   0x00000070   Code   RO           40    .text._ZN6Static8Static_tIN5Motor13Motorcommon_tELj4EEC2IJNSt3__15tupleIJP17TIM_HandleTypeDefS8_jP12GPIO_TypeDefttEEESB_SB_SB_EEEDpOT_  maincpp.o
     0x08007ffc   0x08007ffc   0x0000001a   Code   RO           81    .text._ZN6Static8Static_tIN5Motor13Motorcommon_tELj4EED2Ev  maincpp.o
     0x08008016   0x08008016   0x00000002   PAD
-    0x08008018   0x08008018   0x00000056   Code   RO         1210    .text._ZN7Control9Control_t11controlLoopEv  control.o
+    0x08008018   0x08008018   0x00000056   Code   RO         1202    .text._ZN7Control9Control_t11controlLoopEv  control.o
     0x0800806e   0x0800806e   0x00000002   PAD
-    0x08008070   0x08008070   0x00000028   Code   RO         1208    .text._ZN7Control9Control_t9initMotorEv  control.o
-    0x08008098   0x08008098   0x00000050   Code   RO         1206    .text._ZN7Control9Control_t9setTargetE5vel_t  control.o
+    0x08008070   0x08008070   0x00000028   Code   RO         1200    .text._ZN7Control9Control_t9initMotorEv  control.o
+    0x08008098   0x08008098   0x00000050   Code   RO         1198    .text._ZN7Control9Control_t9setTargetE5vel_t  control.o
     0x080080e8   0x080080e8   0x000000ac   Code   RO           34    .text._ZN7Control9Control_tC2ENS_14Control_Mode_tE  maincpp.o
     0x08008194   0x08008194   0x00000010   Code   RO           36    .text._ZN7Control9Control_tD2Ev  maincpp.o
     0x080081a4   0x080081a4   0x00000004   PAD
-    0x080081a8   0x080081a8   0x000000c8   Code   RO         1228    .text._ZN9Kinematic11Kinematic_tILj4EE14forwardCalbodyEv  control.o
-    0x08008270   0x08008270   0x0000008a   Code   RO         1222    .text._ZN9Kinematic11Kinematic_tILj4EE14inverseCalbodyEv  control.o
+    0x080081a8   0x080081a8   0x000000c8   Code   RO         1220    .text._ZN9Kinematic11Kinematic_tILj4EE14forwardCalbodyEv  control.o
+    0x08008270   0x08008270   0x0000008a   Code   RO         1214    .text._ZN9Kinematic11Kinematic_tILj4EE14inverseCalbodyEv  control.o
     0x080082fa   0x080082fa   0x00000002   PAD
-    0x080082fc   0x080082fc   0x0000002a   Code   RO         1226    .text._ZN9Kinematic11Kinematic_tILj4EE16updateCurrentvelIfJRfS3_S3_S3_EEEvDpOT0_  control.o
+    0x080082fc   0x080082fc   0x0000002a   Code   RO         1218    .text._ZN9Kinematic11Kinematic_tILj4EE16updateCurrentvelIfJRfS3_S3_S3_EEEvDpOT0_  control.o
     0x08008326   0x08008326   0x00000002   PAD
     0x08008328   0x08008328   0x0000001c   Code   RO           38    .text._ZN9Kinematic11Kinematic_tILj4EEC2ENS_12wheelclass_tEff  maincpp.o
-    0x08008344   0x08008344   0x00000008   Code   RO         1684    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE10saveVFPAsXEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800834c   0x0800834c   0x00000064   Code   RO         1666    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11getFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x080083b0   0x080083b0   0x0000006e   Code   RO         1668    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11setFloatRegEiy  libunwind_wx.l(libunwind.cpp.o)
-    0x0800841e   0x0800841e   0x00000006   Code   RO         1676    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13isSignalFrameEv  libunwind_wx.l(libunwind.cpp.o)
-    0x08008424   0x08008424   0x00000030   Code   RO         1686    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13stepWithEHABIEv  libunwind_wx.l(libunwind.cpp.o)
-    0x08008454   0x08008454   0x00000010   Code   RO         1664    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13validFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x08008464   0x08008464   0x00000010   Code   RO         1678    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getFunctionNameEPcjPj  libunwind_wx.l(libunwind.cpp.o)
-    0x08008474   0x08008474   0x00000006   Code   RO         1682    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getRegisterNameEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800847a   0x0800847a   0x000001c4   Code   RO         1690    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE23getInfoFromEHABISectionEjRKNS_18UnwindInfoSectionsE  libunwind_wx.l(libunwind.cpp.o)
-    0x0800863e   0x0800863e   0x00000054   Code   RO         1680    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE24setInfoBasedOnIPRegisterEb  libunwind_wx.l(libunwind.cpp.o)
-    0x08008692   0x08008692   0x00000050   Code   RO         1670    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE4stepEv  libunwind_wx.l(libunwind.cpp.o)
-    0x080086e2   0x080086e2   0x0000003a   Code   RO         1660    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6getRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800871c   0x0800871c   0x00000016   Code   RO         1674    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6jumptoEv  libunwind_wx.l(libunwind.cpp.o)
-    0x08008732   0x08008732   0x00000038   Code   RO         1662    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6setRegEij  libunwind_wx.l(libunwind.cpp.o)
-    0x0800876a   0x0800876a   0x0000002a   Code   RO         1672    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE7getInfoEP15unw_proc_info_t  libunwind_wx.l(libunwind.cpp.o)
-    0x08008794   0x08008794   0x0000000e   Code   RO         1658    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE8validRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x080087a2   0x080087a2   0x00000002   Code   RO         1656    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEED0Ev  libunwind_wx.l(libunwind.cpp.o)
-    0x080087a4   0x080087a4   0x00000394   Code   RO         1694    .text._ZN9libunwind13Registers_arm15getRegisterNameEi  libunwind_wx.l(libunwind.cpp.o)
-    0x08008b38   0x08008b38   0x00000032   Code   RO         1688    .text._ZN9libunwind13Registers_arm26restoreSavedFloatRegistersEv  libunwind_wx.l(libunwind.cpp.o)
-    0x08008b6a   0x08008b6a   0x00000002   Code   RO         1654    .text._ZN9libunwind20AbstractUnwindCursorD2Ev  libunwind_wx.l(libunwind.cpp.o)
-    0x08008b6c   0x08008b6c   0x00000002   Code   RO         1887    .text._ZNK10__cxxabiv116__shim_type_info5noop1Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008b6e   0x08008b6e   0x00000002   Code   RO         1889    .text._ZNK10__cxxabiv116__shim_type_info5noop2Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008b70   0x08008b70   0x00000034   Code   RO         1961    .text._ZNK10__cxxabiv117__class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008ba4   0x08008ba4   0x00000080   Code   RO         1955    .text._ZNK10__cxxabiv117__class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008c24   0x08008c24   0x0000003a   Code   RO         1923    .text._ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008c5e   0x08008c5e   0x00000056   Code   RO         1943    .text._ZNK10__cxxabiv117__class_type_info29process_static_type_above_dstEPNS_19__dynamic_cast_infoEPKvS4_i  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008cb4   0x08008cb4   0x0000006a   Code   RO         1919    .text._ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008d1e   0x08008d1e   0x00000050   Code   RO         1931    .text._ZNK10__cxxabiv117__pbase_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008d6e   0x08008d6e   0x00000094   Code   RO         1935    .text._ZNK10__cxxabiv119__pointer_type_info16can_catch_nestedEPKNS_16__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008e02   0x08008e02   0x00000190   Code   RO         1933    .text._ZNK10__cxxabiv119__pointer_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008f92   0x08008f92   0x0000004e   Code   RO         1959    .text._ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08008fe0   0x08008fe0   0x000000d0   Code   RO         1953    .text._ZNK10__cxxabiv120__si_class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080090b0   0x080090b0   0x00000044   Code   RO         1925    .text._ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080090f4   0x080090f4   0x00000100   Code   RO         1957    .text._ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080091f4   0x080091f4   0x0000000a   Code   RO         1911    .text._ZNK10__cxxabiv123__fundamental_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x080091fe   0x080091fe   0x0000004a   Code   RO         1937    .text._ZNK10__cxxabiv129__pointer_to_member_type_info16can_catch_nestedEPKNS_16__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08009248   0x08009248   0x000000a2   Code   RO         1939    .text._ZNK10__cxxabiv129__pointer_to_member_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008344   0x08008344   0x00000008   Code   RO         1676    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE10saveVFPAsXEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800834c   0x0800834c   0x00000064   Code   RO         1658    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11getFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x080083b0   0x080083b0   0x0000006e   Code   RO         1660    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11setFloatRegEiy  libunwind_wx.l(libunwind.cpp.o)
+    0x0800841e   0x0800841e   0x00000006   Code   RO         1668    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13isSignalFrameEv  libunwind_wx.l(libunwind.cpp.o)
+    0x08008424   0x08008424   0x00000030   Code   RO         1678    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13stepWithEHABIEv  libunwind_wx.l(libunwind.cpp.o)
+    0x08008454   0x08008454   0x00000010   Code   RO         1656    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13validFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x08008464   0x08008464   0x00000010   Code   RO         1670    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getFunctionNameEPcjPj  libunwind_wx.l(libunwind.cpp.o)
+    0x08008474   0x08008474   0x00000006   Code   RO         1674    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getRegisterNameEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800847a   0x0800847a   0x000001c4   Code   RO         1682    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE23getInfoFromEHABISectionEjRKNS_18UnwindInfoSectionsE  libunwind_wx.l(libunwind.cpp.o)
+    0x0800863e   0x0800863e   0x00000054   Code   RO         1672    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE24setInfoBasedOnIPRegisterEb  libunwind_wx.l(libunwind.cpp.o)
+    0x08008692   0x08008692   0x00000050   Code   RO         1662    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE4stepEv  libunwind_wx.l(libunwind.cpp.o)
+    0x080086e2   0x080086e2   0x0000003a   Code   RO         1652    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6getRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800871c   0x0800871c   0x00000016   Code   RO         1666    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6jumptoEv  libunwind_wx.l(libunwind.cpp.o)
+    0x08008732   0x08008732   0x00000038   Code   RO         1654    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6setRegEij  libunwind_wx.l(libunwind.cpp.o)
+    0x0800876a   0x0800876a   0x0000002a   Code   RO         1664    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE7getInfoEP15unw_proc_info_t  libunwind_wx.l(libunwind.cpp.o)
+    0x08008794   0x08008794   0x0000000e   Code   RO         1650    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE8validRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x080087a2   0x080087a2   0x00000002   Code   RO         1648    .text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEED0Ev  libunwind_wx.l(libunwind.cpp.o)
+    0x080087a4   0x080087a4   0x00000394   Code   RO         1686    .text._ZN9libunwind13Registers_arm15getRegisterNameEi  libunwind_wx.l(libunwind.cpp.o)
+    0x08008b38   0x08008b38   0x00000032   Code   RO         1680    .text._ZN9libunwind13Registers_arm26restoreSavedFloatRegistersEv  libunwind_wx.l(libunwind.cpp.o)
+    0x08008b6a   0x08008b6a   0x00000002   Code   RO         1646    .text._ZN9libunwind20AbstractUnwindCursorD2Ev  libunwind_wx.l(libunwind.cpp.o)
+    0x08008b6c   0x08008b6c   0x00000002   Code   RO         1879    .text._ZNK10__cxxabiv116__shim_type_info5noop1Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008b6e   0x08008b6e   0x00000002   Code   RO         1881    .text._ZNK10__cxxabiv116__shim_type_info5noop2Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008b70   0x08008b70   0x00000034   Code   RO         1953    .text._ZNK10__cxxabiv117__class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008ba4   0x08008ba4   0x00000080   Code   RO         1947    .text._ZNK10__cxxabiv117__class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008c24   0x08008c24   0x0000003a   Code   RO         1915    .text._ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008c5e   0x08008c5e   0x00000056   Code   RO         1935    .text._ZNK10__cxxabiv117__class_type_info29process_static_type_above_dstEPNS_19__dynamic_cast_infoEPKvS4_i  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008cb4   0x08008cb4   0x0000006a   Code   RO         1911    .text._ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008d1e   0x08008d1e   0x00000050   Code   RO         1923    .text._ZNK10__cxxabiv117__pbase_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008d6e   0x08008d6e   0x00000094   Code   RO         1927    .text._ZNK10__cxxabiv119__pointer_type_info16can_catch_nestedEPKNS_16__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008e02   0x08008e02   0x00000190   Code   RO         1925    .text._ZNK10__cxxabiv119__pointer_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008f92   0x08008f92   0x0000004e   Code   RO         1951    .text._ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08008fe0   0x08008fe0   0x000000d0   Code   RO         1945    .text._ZNK10__cxxabiv120__si_class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080090b0   0x080090b0   0x00000044   Code   RO         1917    .text._ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080090f4   0x080090f4   0x00000100   Code   RO         1949    .text._ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080091f4   0x080091f4   0x0000000a   Code   RO         1903    .text._ZNK10__cxxabiv123__fundamental_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x080091fe   0x080091fe   0x0000004a   Code   RO         1929    .text._ZNK10__cxxabiv129__pointer_to_member_type_info16can_catch_nestedEPKNS_16__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08009248   0x08009248   0x000000a2   Code   RO         1931    .text._ZNK10__cxxabiv129__pointer_to_member_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x080092ea   0x080092ea   0x00000002   PAD
-    0x080092ec   0x080092ec   0x00000018   Code   RO         1541    .text._ZNKSt13bad_exception4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x08009304   0x08009304   0x00000018   Code   RO         1559    .text._ZNKSt16bad_array_length4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800931c   0x0800931c   0x0000001c   Code   RO         1553    .text._ZNKSt20bad_array_new_length4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x08009338   0x08009338   0x00000014   Code   RO         1547    .text._ZNKSt9bad_alloc4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800934c   0x0800934c   0x00000004   Code   RO         1539    .text._ZNSt13bad_exceptionD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x08009350   0x08009350   0x0000000e   Code   RO         1555    .text._ZNSt16bad_array_lengthC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800935e   0x0800935e   0x00000004   Code   RO         1557    .text._ZNSt16bad_array_lengthD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x08009362   0x08009362   0x0000000e   Code   RO         1549    .text._ZNSt20bad_array_new_lengthC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x08009370   0x08009370   0x00000004   Code   RO         1551    .text._ZNSt20bad_array_new_lengthD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x08009374   0x08009374   0x0000005a   Code   RO         1692    .text._ZNSt3__113__upper_boundIRNS_6__lessIjjEEN9libunwind20EHABISectionIteratorINS4_17LocalAddressSpaceEEEjEET0_S8_S8_RKT1_T_  libunwind_wx.l(libunwind.cpp.o)
-    0x080093ce   0x080093ce   0x0000000e   Code   RO         1543    .text._ZNSt9bad_allocC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x080093dc   0x080093dc   0x00000004   Code   RO         1545    .text._ZNSt9bad_allocD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x080093e0   0x080093e0   0x00000002   Code   RO         1533    .text._ZNSt9exceptionD2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x080093e2   0x080093e2   0x00000002   Code   RO         2279    .text._ZNSt9type_infoD2Ev  libcppabi_wx.l(stdlib_typeinfo.cpp.o)
-    0x080093e4   0x080093e4   0x00000022   Code   RO         1517    .text._ZSt10unexpectedv  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x080092ec   0x080092ec   0x00000018   Code   RO         1533    .text._ZNKSt13bad_exception4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x08009304   0x08009304   0x00000018   Code   RO         1551    .text._ZNKSt16bad_array_length4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800931c   0x0800931c   0x0000001c   Code   RO         1545    .text._ZNKSt20bad_array_new_length4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x08009338   0x08009338   0x00000014   Code   RO         1539    .text._ZNKSt9bad_alloc4whatEv  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800934c   0x0800934c   0x00000004   Code   RO         1531    .text._ZNSt13bad_exceptionD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x08009350   0x08009350   0x0000000e   Code   RO         1547    .text._ZNSt16bad_array_lengthC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800935e   0x0800935e   0x00000004   Code   RO         1549    .text._ZNSt16bad_array_lengthD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x08009362   0x08009362   0x0000000e   Code   RO         1541    .text._ZNSt20bad_array_new_lengthC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x08009370   0x08009370   0x00000004   Code   RO         1543    .text._ZNSt20bad_array_new_lengthD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x08009374   0x08009374   0x0000005a   Code   RO         1684    .text._ZNSt3__113__upper_boundIRNS_6__lessIjjEEN9libunwind20EHABISectionIteratorINS4_17LocalAddressSpaceEEEjEET0_S8_S8_RKT1_T_  libunwind_wx.l(libunwind.cpp.o)
+    0x080093ce   0x080093ce   0x0000000e   Code   RO         1535    .text._ZNSt9bad_allocC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x080093dc   0x080093dc   0x00000004   Code   RO         1537    .text._ZNSt9bad_allocD0Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x080093e0   0x080093e0   0x00000002   Code   RO         1525    .text._ZNSt9exceptionD2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x080093e2   0x080093e2   0x00000002   Code   RO         2271    .text._ZNSt9type_infoD2Ev  libcppabi_wx.l(stdlib_typeinfo.cpp.o)
+    0x080093e4   0x080093e4   0x00000022   Code   RO         1509    .text._ZSt10unexpectedv  libcppabi_wx.l(cxa_handlers.cpp.o)
     0x08009406   0x08009406   0x00000002   PAD
-    0x08009408   0x08009408   0x00000080   Code   RO         1521    .text._ZSt11__terminatePFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x08009488   0x08009488   0x00000038   Code   RO         1515    .text._ZSt12__unexpectedPFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x080094c0   0x080094c0   0x0000001e   Code   RO         1519    .text._ZSt13get_terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x080094de   0x080094de   0x0000002c   Code   RO         1864    .text._ZSt13set_terminatePFvvE  libcppabi_wx.l(cxa_default_handlers.cpp.o)
-    0x0800950a   0x0800950a   0x0000001e   Code   RO         1513    .text._ZSt14get_unexpectedv  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x08009528   0x08009528   0x0000002c   Code   RO         1862    .text._ZSt14set_unexpectedPFvvE  libcppabi_wx.l(cxa_default_handlers.cpp.o)
-    0x08009554   0x08009554   0x00000046   Code   RO         1524    .text._ZSt9terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800959a   0x0800959a   0x00000004   Code   RO         1832    .text._ZdaPv        libcpp_wx.l(new.cpp.o)
-    0x0800959e   0x0800959e   0x00000004   Code   RO         1834    .text._ZdaPvRKSt9nothrow_t  libcpp_wx.l(new.cpp.o)
-    0x080095a2   0x080095a2   0x00000004   Code   RO         1836    .text._ZdaPvj       libcpp_wx.l(new.cpp.o)
-    0x080095a6   0x080095a6   0x0000000a   Code   RO         1826    .text._ZdlPv        libcpp_wx.l(new.cpp.o)
-    0x080095b0   0x080095b0   0x00000004   Code   RO         1828    .text._ZdlPvRKSt9nothrow_t  libcpp_wx.l(new.cpp.o)
-    0x080095b4   0x080095b4   0x00000004   Code   RO         1830    .text._ZdlPvj       libcpp_wx.l(new.cpp.o)
+    0x08009408   0x08009408   0x00000080   Code   RO         1513    .text._ZSt11__terminatePFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x08009488   0x08009488   0x00000038   Code   RO         1507    .text._ZSt12__unexpectedPFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x080094c0   0x080094c0   0x0000001e   Code   RO         1511    .text._ZSt13get_terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x080094de   0x080094de   0x0000002c   Code   RO         1856    .text._ZSt13set_terminatePFvvE  libcppabi_wx.l(cxa_default_handlers.cpp.o)
+    0x0800950a   0x0800950a   0x0000001e   Code   RO         1505    .text._ZSt14get_unexpectedv  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x08009528   0x08009528   0x0000002c   Code   RO         1854    .text._ZSt14set_unexpectedPFvvE  libcppabi_wx.l(cxa_default_handlers.cpp.o)
+    0x08009554   0x08009554   0x00000046   Code   RO         1516    .text._ZSt9terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800959a   0x0800959a   0x00000004   Code   RO         1824    .text._ZdaPv        libcpp_wx.l(new.cpp.o)
+    0x0800959e   0x0800959e   0x00000004   Code   RO         1826    .text._ZdaPvRKSt9nothrow_t  libcpp_wx.l(new.cpp.o)
+    0x080095a2   0x080095a2   0x00000004   Code   RO         1828    .text._ZdaPvj       libcpp_wx.l(new.cpp.o)
+    0x080095a6   0x080095a6   0x0000000a   Code   RO         1818    .text._ZdlPv        libcpp_wx.l(new.cpp.o)
+    0x080095b0   0x080095b0   0x00000004   Code   RO         1820    .text._ZdlPvRKSt9nothrow_t  libcpp_wx.l(new.cpp.o)
+    0x080095b4   0x080095b4   0x00000004   Code   RO         1822    .text._ZdlPvj       libcpp_wx.l(new.cpp.o)
     0x080095b8   0x080095b8   0x00000024   Code   RO          854    .text.__NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
     0x080095dc   0x080095dc   0x00000010   Code   RO          846    .text.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
     0x080095ec   0x080095ec   0x00000022   Code   RO          848    .text.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
     0x0800960e   0x0800960e   0x00000002   PAD
     0x08009610   0x08009610   0x00000020   Code   RO          842    .text.__NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x08009630   0x08009630   0x00000008   Code   RO         1313    .text.__aeabi_unwind_cpp_pr0  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08009638   0x08009638   0x00000008   Code   RO         1317    .text.__aeabi_unwind_cpp_pr1  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08009640   0x08009640   0x00000008   Code   RO         1319    .text.__aeabi_unwind_cpp_pr2  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08009648   0x08009648   0x0000000a   Code   RO         1300    .text.__clang_call_terminate  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x08009652   0x08009652   0x0000001c   Code   RO         1584    .text.__cxa_allocate_dependent_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800966e   0x0800966e   0x00000026   Code   RO         1578    .text.__cxa_allocate_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08009694   0x08009694   0x00000068   Code   RO         1599    .text.__cxa_begin_catch  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x080096fc   0x080096fc   0x00000058   Code   RO         1594    .text.__cxa_begin_cleanup  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08009754   0x08009754   0x000001a4   Code   RO         1293    .text.__cxa_call_unexpected  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x080098f8   0x080098f8   0x0000003a   Code   RO         1604    .text.__cxa_decrement_exception_refcount  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08009932   0x08009932   0x0000007c   Code   RO         1602    .text.__cxa_end_catch  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x080099ae   0x080099ae   0x0000000a   Code   RO         1507    .text.__cxa_get_globals  libcppabi_wx.l(cxa_exception_storage.cpp.o)
-    0x080099b8   0x080099b8   0x0000000a   Code   RO         1509    .text.__cxa_get_globals_fast  libcppabi_wx.l(cxa_exception_storage.cpp.o)
-    0x080099c2   0x080099c2   0x0000005a   Code   RO         1609    .text.__cxa_rethrow  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08009a1c   0x08009a1c   0x00000076   Code   RO         1616    .text.__cxa_rethrow_primary_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x08009a92   0x08009a92   0x00000066   Code   RO         1588    .text.__cxa_throw   libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08009630   0x08009630   0x00000008   Code   RO         1305    .text.__aeabi_unwind_cpp_pr0  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08009638   0x08009638   0x00000008   Code   RO         1309    .text.__aeabi_unwind_cpp_pr1  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08009640   0x08009640   0x00000008   Code   RO         1311    .text.__aeabi_unwind_cpp_pr2  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08009648   0x08009648   0x0000000a   Code   RO         1292    .text.__clang_call_terminate  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x08009652   0x08009652   0x0000001c   Code   RO         1576    .text.__cxa_allocate_dependent_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800966e   0x0800966e   0x00000026   Code   RO         1570    .text.__cxa_allocate_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08009694   0x08009694   0x00000068   Code   RO         1591    .text.__cxa_begin_catch  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x080096fc   0x080096fc   0x00000058   Code   RO         1586    .text.__cxa_begin_cleanup  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08009754   0x08009754   0x000001a4   Code   RO         1285    .text.__cxa_call_unexpected  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x080098f8   0x080098f8   0x0000003a   Code   RO         1596    .text.__cxa_decrement_exception_refcount  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08009932   0x08009932   0x0000007c   Code   RO         1594    .text.__cxa_end_catch  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x080099ae   0x080099ae   0x0000000a   Code   RO         1499    .text.__cxa_get_globals  libcppabi_wx.l(cxa_exception_storage.cpp.o)
+    0x080099b8   0x080099b8   0x0000000a   Code   RO         1501    .text.__cxa_get_globals_fast  libcppabi_wx.l(cxa_exception_storage.cpp.o)
+    0x080099c2   0x080099c2   0x0000005a   Code   RO         1601    .text.__cxa_rethrow  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08009a1c   0x08009a1c   0x00000076   Code   RO         1608    .text.__cxa_rethrow_primary_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x08009a92   0x08009a92   0x00000066   Code   RO         1580    .text.__cxa_throw   libcppabi_wx.l(cxa_exception.cpp.o)
     0x08009af8   0x08009af8   0x0000002c   Code   RO           11    .text.__cxx_global_var_init  maincpp.o
-    0x08009b24   0x08009b24   0x000000a2   Code   RO         1941    .text.__dynamic_cast  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x08009bc6   0x08009bc6   0x00000014   Code   RO         1336    .text.__gnu_unwind_frame  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x08009bda   0x08009bda   0x00000180   Code   RO         1285    .text.__gxx_personality_v0  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x08009d5a   0x08009d5a   0x00000004   Code   RO         1869    .text.abort_message  libcppabi_wx.l(abort_message.cpp.o)
-    0x08009d5e   0x08009d5e   0x00000052   Code   RO         1303    .text.decode_eht_entry  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08009b24   0x08009b24   0x000000a2   Code   RO         1933    .text.__dynamic_cast  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x08009bc6   0x08009bc6   0x00000014   Code   RO         1328    .text.__gnu_unwind_frame  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x08009bda   0x08009bda   0x00000180   Code   RO         1277    .text.__gxx_personality_v0  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x08009d5a   0x08009d5a   0x00000004   Code   RO         1861    .text.abort_message  libcppabi_wx.l(abort_message.cpp.o)
+    0x08009d5e   0x08009d5e   0x00000052   Code   RO         1295    .text.decode_eht_entry  libunwind_wx.l(Unwind-EHABI.cpp.o)
     0x08009db0   0x08009db0   0x0000006c   Code   RO           84    .text.main          main.o
     0x08009e1c   0x08009e1c   0x00000026   Code   RO           13    .text.main_cpp      maincpp.o
-    0x08009e42   0x08009e42   0x00000030   Code   RO         1632    .text.unw_get_fpreg  libunwind_wx.l(libunwind.cpp.o)
-    0x08009e72   0x08009e72   0x0000001e   Code   RO         1638    .text.unw_get_proc_info  libunwind_wx.l(libunwind.cpp.o)
-    0x08009e90   0x08009e90   0x0000002e   Code   RO         1628    .text.unw_get_reg   libunwind_wx.l(libunwind.cpp.o)
-    0x08009ebe   0x08009ebe   0x00000046   Code   RO         1626    .text.unw_init_local  libunwind_wx.l(libunwind.cpp.o)
-    0x08009f04   0x08009f04   0x00000012   Code   RO         1640    .text.unw_resume    libunwind_wx.l(libunwind.cpp.o)
-    0x08009f16   0x08009f16   0x00000006   Code   RO         1650    .text.unw_save_vfp_as_X  libunwind_wx.l(libunwind.cpp.o)
-    0x08009f1c   0x08009f1c   0x00000038   Code   RO         1634    .text.unw_set_fpreg  libunwind_wx.l(libunwind.cpp.o)
-    0x08009f54   0x08009f54   0x00000042   Code   RO         1630    .text.unw_set_reg   libunwind_wx.l(libunwind.cpp.o)
-    0x08009f96   0x08009f96   0x00000006   Code   RO         1636    .text.unw_step      libunwind_wx.l(libunwind.cpp.o)
-    0x08009f9c   0x08009f9c   0x0000003e   Code   RO         2204    CL$$btod_d2e        c_w.l(btod.o)
-    0x08009fda   0x08009fda   0x00000046   Code   RO         2206    CL$$btod_d2e_denorm_low  c_w.l(btod.o)
-    0x0800a020   0x0800a020   0x00000060   Code   RO         2205    CL$$btod_d2e_norm_op1  c_w.l(btod.o)
-    0x0800a080   0x0800a080   0x00000338   Code   RO         2214    CL$$btod_div_common  c_w.l(btod.o)
-    0x0800a3b8   0x0800a3b8   0x000000dc   Code   RO         2211    CL$$btod_e2e        c_w.l(btod.o)
-    0x0800a494   0x0800a494   0x0000002a   Code   RO         2208    CL$$btod_ediv       c_w.l(btod.o)
-    0x0800a4be   0x0800a4be   0x0000002a   Code   RO         2207    CL$$btod_emul       c_w.l(btod.o)
-    0x0800a4e8   0x0800a4e8   0x00000244   Code   RO         2213    CL$$btod_mult_common  c_w.l(btod.o)
-    0x0800a72c   0x0800a72c   0x00000030   Code   RO         2308    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
-    0x0800a75c   0x0800a75c   0x0000000e   Code   RO         1401    i._is_digit         c_w.l(__printf_wp.o)
+    0x08009e42   0x08009e42   0x00000030   Code   RO         1624    .text.unw_get_fpreg  libunwind_wx.l(libunwind.cpp.o)
+    0x08009e72   0x08009e72   0x0000001e   Code   RO         1630    .text.unw_get_proc_info  libunwind_wx.l(libunwind.cpp.o)
+    0x08009e90   0x08009e90   0x0000002e   Code   RO         1620    .text.unw_get_reg   libunwind_wx.l(libunwind.cpp.o)
+    0x08009ebe   0x08009ebe   0x00000046   Code   RO         1618    .text.unw_init_local  libunwind_wx.l(libunwind.cpp.o)
+    0x08009f04   0x08009f04   0x00000012   Code   RO         1632    .text.unw_resume    libunwind_wx.l(libunwind.cpp.o)
+    0x08009f16   0x08009f16   0x00000006   Code   RO         1642    .text.unw_save_vfp_as_X  libunwind_wx.l(libunwind.cpp.o)
+    0x08009f1c   0x08009f1c   0x00000038   Code   RO         1626    .text.unw_set_fpreg  libunwind_wx.l(libunwind.cpp.o)
+    0x08009f54   0x08009f54   0x00000042   Code   RO         1622    .text.unw_set_reg   libunwind_wx.l(libunwind.cpp.o)
+    0x08009f96   0x08009f96   0x00000006   Code   RO         1628    .text.unw_step      libunwind_wx.l(libunwind.cpp.o)
+    0x08009f9c   0x08009f9c   0x0000003e   Code   RO         2196    CL$$btod_d2e        c_w.l(btod.o)
+    0x08009fda   0x08009fda   0x00000046   Code   RO         2198    CL$$btod_d2e_denorm_low  c_w.l(btod.o)
+    0x0800a020   0x0800a020   0x00000060   Code   RO         2197    CL$$btod_d2e_norm_op1  c_w.l(btod.o)
+    0x0800a080   0x0800a080   0x00000338   Code   RO         2206    CL$$btod_div_common  c_w.l(btod.o)
+    0x0800a3b8   0x0800a3b8   0x000000dc   Code   RO         2203    CL$$btod_e2e        c_w.l(btod.o)
+    0x0800a494   0x0800a494   0x0000002a   Code   RO         2200    CL$$btod_ediv       c_w.l(btod.o)
+    0x0800a4be   0x0800a4be   0x0000002a   Code   RO         2199    CL$$btod_emul       c_w.l(btod.o)
+    0x0800a4e8   0x0800a4e8   0x00000244   Code   RO         2205    CL$$btod_mult_common  c_w.l(btod.o)
+    0x0800a72c   0x0800a72c   0x00000030   Code   RO         2300    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
+    0x0800a75c   0x0800a75c   0x0000000e   Code   RO         1393    i._is_digit         c_w.l(__printf_wp.o)
     0x0800a76a   0x0800a76a   0x00000002   PAD
-    0x0800a76c   0x0800a76c   0x0000002c   Code   RO         2227    locale$$code        c_w.l(lc_numeric_c.o)
-    0x0800a798   0x0800a798   0x0000002c   Code   RO         2325    locale$$code        c_w.l(lc_ctype_c.o)
-    0x0800a7c4   0x0800a7c4   0x00000062   Code   RO         1274    x$fpl$d2f           fz_wm.l(d2f.o)
+    0x0800a76c   0x0800a76c   0x0000002c   Code   RO         2219    locale$$code        c_w.l(lc_numeric_c.o)
+    0x0800a798   0x0800a798   0x0000002c   Code   RO         2317    locale$$code        c_w.l(lc_ctype_c.o)
+    0x0800a7c4   0x0800a7c4   0x00000062   Code   RO         1266    x$fpl$d2f           fz_wm.l(d2f.o)
     0x0800a826   0x0800a826   0x00000002   PAD
-    0x0800a828   0x0800a828   0x000002b0   Code   RO         1277    x$fpl$ddiv          fz_wm.l(ddiv.o)
-    0x0800aad8   0x0800aad8   0x00000154   Code   RO         1280    x$fpl$dmul          fz_wm.l(dmul.o)
-    0x0800ac2c   0x0800ac2c   0x0000009c   Code   RO         1489    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
-    0x0800acc8   0x0800acc8   0x0000000c   Code   RO         1491    x$fpl$dretinf       fz_wm.l(dretinf.o)
-    0x0800acd4   0x0800acd4   0x00000056   Code   RO         1282    x$fpl$f2d           fz_wm.l(f2d.o)
-    0x0800ad2a   0x0800ad2a   0x0000008c   Code   RO         1493    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
-    0x0800adb6   0x0800adb6   0x0000000a   Code   RO         1811    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0800adc0   0x0800adc0   0x0000000a   Code   RO         1495    x$fpl$fretinf       fz_wm.l(fretinf.o)
-    0x0800adca   0x0800adca   0x00000004   Code   RO         1497    x$fpl$printf1       fz_wm.l(printf1.o)
-    0x0800adce   0x0800adce   0x00000004   Code   RO         1499    x$fpl$printf2       fz_wm.l(printf2.o)
-    0x0800add2   0x0800add2   0x00000000   Code   RO         1505    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x0800a828   0x0800a828   0x000002b0   Code   RO         1269    x$fpl$ddiv          fz_wm.l(ddiv.o)
+    0x0800aad8   0x0800aad8   0x00000154   Code   RO         1272    x$fpl$dmul          fz_wm.l(dmul.o)
+    0x0800ac2c   0x0800ac2c   0x0000009c   Code   RO         1481    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
+    0x0800acc8   0x0800acc8   0x0000000c   Code   RO         1483    x$fpl$dretinf       fz_wm.l(dretinf.o)
+    0x0800acd4   0x0800acd4   0x00000056   Code   RO         1274    x$fpl$f2d           fz_wm.l(f2d.o)
+    0x0800ad2a   0x0800ad2a   0x0000008c   Code   RO         1485    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
+    0x0800adb6   0x0800adb6   0x0000000a   Code   RO         1803    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0800adc0   0x0800adc0   0x0000000a   Code   RO         1487    x$fpl$fretinf       fz_wm.l(fretinf.o)
+    0x0800adca   0x0800adca   0x00000004   Code   RO         1489    x$fpl$printf1       fz_wm.l(printf1.o)
+    0x0800adce   0x0800adce   0x00000004   Code   RO         1491    x$fpl$printf2       fz_wm.l(printf2.o)
+    0x0800add2   0x0800add2   0x00000000   Code   RO         1497    x$fpl$usenofp       fz_wm.l(usenofp.o)
     0x0800add2   0x0800add2   0x00000002   PAD
-    0x0800add4   0x0800add4   0x0000000c   Data   RO         1328    .ARM.extab.text._Unwind_Resume  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800add4   0x0800add4   0x0000000c   Data   RO         1320    .ARM.extab.text._Unwind_Resume  libunwind_wx.l(Unwind-EHABI.cpp.o)
     0x0800ade0   0x0800ade0   0x00000028   Data   RO           69    .ARM.extab.text._ZN5Motor13Motorcommon_tC2EP17TIM_HandleTypeDefS2_jP12GPIO_TypeDeftth  maincpp.o
     0x0800ae08   0x0800ae08   0x00000028   Data   RO           44    .ARM.extab.text._ZN5Motor13Motorcommon_tC2Ev  maincpp.o
     0x0800ae30   0x0800ae30   0x00000034   Data   RO           41    .ARM.extab.text._ZN6Static8Static_tIN5Motor13Motorcommon_tELj4EEC2IJNSt3__15tupleIJP17TIM_HandleTypeDefS8_jP12GPIO_TypeDefttEEESB_SB_SB_EEEDpOT_  maincpp.o
-    0x0800ae64   0x0800ae64   0x00000048   Data   RO         1522    .ARM.extab.text._ZSt11__terminatePFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800aeac   0x0800aeac   0x00000020   Data   RO         1525    .ARM.extab.text._ZSt9terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800aecc   0x0800aecc   0x00000030   Data   RO         1579    .ARM.extab.text.__cxa_allocate_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800aefc   0x0800aefc   0x00000030   Data   RO         1600    .ARM.extab.text.__cxa_begin_catch  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800af2c   0x0800af2c   0x00000030   Data   RO         1595    .ARM.extab.text.__cxa_begin_cleanup  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800af5c   0x0800af5c   0x000000a4   Data   RO         1294    .ARM.extab.text.__cxa_call_unexpected  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b000   0x0800b000   0x0000003c   Data   RO         1605    .ARM.extab.text.__cxa_decrement_exception_refcount  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b03c   0x0800b03c   0x00000008   Data   RO         1360    .constdata          c_w.l(_printf_wctomb.o)
-    0x0800b044   0x0800b044   0x00000028   Data   RO         1389    .constdata          c_w.l(_printf_hex_int_ll_ptr.o)
-    0x0800b06c   0x0800b06c   0x00000011   Data   RO         1409    .constdata          c_w.l(__printf_flags_ss_wp.o)
-    0x0800b07d   0x0800b07d   0x00000026   Data   RO         1787    .constdata          c_w.l(_printf_fp_hex.o)
+    0x0800ae64   0x0800ae64   0x00000048   Data   RO         1514    .ARM.extab.text._ZSt11__terminatePFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800aeac   0x0800aeac   0x00000020   Data   RO         1517    .ARM.extab.text._ZSt9terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800aecc   0x0800aecc   0x00000030   Data   RO         1571    .ARM.extab.text.__cxa_allocate_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800aefc   0x0800aefc   0x00000030   Data   RO         1592    .ARM.extab.text.__cxa_begin_catch  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800af2c   0x0800af2c   0x00000030   Data   RO         1587    .ARM.extab.text.__cxa_begin_cleanup  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800af5c   0x0800af5c   0x000000a4   Data   RO         1286    .ARM.extab.text.__cxa_call_unexpected  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b000   0x0800b000   0x0000003c   Data   RO         1597    .ARM.extab.text.__cxa_decrement_exception_refcount  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b03c   0x0800b03c   0x00000008   Data   RO         1352    .constdata          c_w.l(_printf_wctomb.o)
+    0x0800b044   0x0800b044   0x00000028   Data   RO         1381    .constdata          c_w.l(_printf_hex_int_ll_ptr.o)
+    0x0800b06c   0x0800b06c   0x00000011   Data   RO         1401    .constdata          c_w.l(__printf_flags_ss_wp.o)
+    0x0800b07d   0x0800b07d   0x00000026   Data   RO         1779    .constdata          c_w.l(_printf_fp_hex.o)
     0x0800b0a3   0x0800b0a3   0x00000001   PAD
-    0x0800b0a4   0x0800b0a4   0x00000094   Data   RO         2202    .constdata          c_w.l(bigflt0.o)
+    0x0800b0a4   0x0800b0a4   0x00000094   Data   RO         2194    .constdata          c_w.l(bigflt0.o)
     0x0800b138   0x0800b138   0x00000010   Data   RO         1158    .rodata.AHBPrescTable  system_stm32f4xx.o
     0x0800b148   0x0800b148   0x00000008   Data   RO         1159    .rodata.APBPrescTable  system_stm32f4xx.o
-    0x0800b150   0x0800b150   0x00000008   Data   RO         1988    .rodata._ZTIDn      libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b158   0x0800b158   0x0000000c   Data   RO         1964    .rodata._ZTIN10__cxxabiv116__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b164   0x0800b164   0x0000000c   Data   RO         1966    .rodata._ZTIN10__cxxabiv117__class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b170   0x0800b170   0x0000000c   Data   RO         1968    .rodata._ZTIN10__cxxabiv117__pbase_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b17c   0x0800b17c   0x0000000c   Data   RO         1970    .rodata._ZTIN10__cxxabiv119__pointer_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b188   0x0800b188   0x0000000c   Data   RO         1972    .rodata._ZTIN10__cxxabiv120__function_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b194   0x0800b194   0x0000000c   Data   RO         2135    .rodata._ZTIN10__cxxabiv120__si_class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b1a0   0x0800b1a0   0x0000000c   Data   RO         1980    .rodata._ZTIN10__cxxabiv123__fundamental_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b1ac   0x0800b1ac   0x0000000c   Data   RO         1974    .rodata._ZTIN10__cxxabiv129__pointer_to_member_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b1b8   0x0800b1b8   0x0000000c   Data   RO         1569    .rodata._ZTISt13bad_exception  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b1c4   0x0800b1c4   0x0000000c   Data   RO         1573    .rodata._ZTISt16bad_array_length  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b1d0   0x0800b1d0   0x0000000c   Data   RO         1575    .rodata._ZTISt20bad_array_new_length  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b1dc   0x0800b1dc   0x0000000c   Data   RO         1572    .rodata._ZTISt9bad_alloc  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b1e8   0x0800b1e8   0x00000008   Data   RO         1566    .rodata._ZTISt9exception  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b1f0   0x0800b1f0   0x00000008   Data   RO         2303    .rodata._ZTISt9type_info  libcppabi_wx.l(stdlib_typeinfo.cpp.o)
-    0x0800b1f8   0x0800b1f8   0x00000008   Data   RO         1982    .rodata._ZTIv       libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b200   0x0800b200   0x00000003   Data   RO         1987    .rodata._ZTSDn      libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b150   0x0800b150   0x00000008   Data   RO         1980    .rodata._ZTIDn      libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b158   0x0800b158   0x0000000c   Data   RO         1956    .rodata._ZTIN10__cxxabiv116__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b164   0x0800b164   0x0000000c   Data   RO         1958    .rodata._ZTIN10__cxxabiv117__class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b170   0x0800b170   0x0000000c   Data   RO         1960    .rodata._ZTIN10__cxxabiv117__pbase_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b17c   0x0800b17c   0x0000000c   Data   RO         1962    .rodata._ZTIN10__cxxabiv119__pointer_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b188   0x0800b188   0x0000000c   Data   RO         1964    .rodata._ZTIN10__cxxabiv120__function_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b194   0x0800b194   0x0000000c   Data   RO         2127    .rodata._ZTIN10__cxxabiv120__si_class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b1a0   0x0800b1a0   0x0000000c   Data   RO         1972    .rodata._ZTIN10__cxxabiv123__fundamental_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b1ac   0x0800b1ac   0x0000000c   Data   RO         1966    .rodata._ZTIN10__cxxabiv129__pointer_to_member_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b1b8   0x0800b1b8   0x0000000c   Data   RO         1561    .rodata._ZTISt13bad_exception  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b1c4   0x0800b1c4   0x0000000c   Data   RO         1565    .rodata._ZTISt16bad_array_length  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b1d0   0x0800b1d0   0x0000000c   Data   RO         1567    .rodata._ZTISt20bad_array_new_length  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b1dc   0x0800b1dc   0x0000000c   Data   RO         1564    .rodata._ZTISt9bad_alloc  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b1e8   0x0800b1e8   0x00000008   Data   RO         1558    .rodata._ZTISt9exception  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b1f0   0x0800b1f0   0x00000008   Data   RO         2295    .rodata._ZTISt9type_info  libcppabi_wx.l(stdlib_typeinfo.cpp.o)
+    0x0800b1f8   0x0800b1f8   0x00000008   Data   RO         1974    .rodata._ZTIv       libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b200   0x0800b200   0x00000003   Data   RO         1979    .rodata._ZTSDn      libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b203   0x0800b203   0x0000000d   PAD
-    0x0800b210   0x0800b210   0x00000021   Data   RO         1963    .rodata._ZTSN10__cxxabiv116__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b210   0x0800b210   0x00000021   Data   RO         1955    .rodata._ZTSN10__cxxabiv116__shim_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b231   0x0800b231   0x0000000f   PAD
-    0x0800b240   0x0800b240   0x00000022   Data   RO         1965    .rodata._ZTSN10__cxxabiv117__class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b240   0x0800b240   0x00000022   Data   RO         1957    .rodata._ZTSN10__cxxabiv117__class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b262   0x0800b262   0x0000000e   PAD
-    0x0800b270   0x0800b270   0x00000022   Data   RO         1967    .rodata._ZTSN10__cxxabiv117__pbase_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b270   0x0800b270   0x00000022   Data   RO         1959    .rodata._ZTSN10__cxxabiv117__pbase_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b292   0x0800b292   0x0000000e   PAD
-    0x0800b2a0   0x0800b2a0   0x00000024   Data   RO         1969    .rodata._ZTSN10__cxxabiv119__pointer_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b2a0   0x0800b2a0   0x00000024   Data   RO         1961    .rodata._ZTSN10__cxxabiv119__pointer_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b2c4   0x0800b2c4   0x0000000c   PAD
-    0x0800b2d0   0x0800b2d0   0x00000025   Data   RO         1971    .rodata._ZTSN10__cxxabiv120__function_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b2d0   0x0800b2d0   0x00000025   Data   RO         1963    .rodata._ZTSN10__cxxabiv120__function_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b2f5   0x0800b2f5   0x0000000b   PAD
-    0x0800b300   0x0800b300   0x00000025   Data   RO         2134    .rodata._ZTSN10__cxxabiv120__si_class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b300   0x0800b300   0x00000025   Data   RO         2126    .rodata._ZTSN10__cxxabiv120__si_class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b325   0x0800b325   0x0000000b   PAD
-    0x0800b330   0x0800b330   0x00000028   Data   RO         1979    .rodata._ZTSN10__cxxabiv123__fundamental_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b330   0x0800b330   0x00000028   Data   RO         1971    .rodata._ZTSN10__cxxabiv123__fundamental_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b358   0x0800b358   0x00000008   PAD
-    0x0800b360   0x0800b360   0x0000002e   Data   RO         1973    .rodata._ZTSN10__cxxabiv129__pointer_to_member_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b360   0x0800b360   0x0000002e   Data   RO         1965    .rodata._ZTSN10__cxxabiv129__pointer_to_member_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b38e   0x0800b38e   0x00000002   PAD
-    0x0800b390   0x0800b390   0x00000012   Data   RO         1568    .rodata._ZTSSt13bad_exception  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b390   0x0800b390   0x00000012   Data   RO         1560    .rodata._ZTSSt13bad_exception  libcppabi_wx.l(stdlib_exception.cpp.o)
     0x0800b3a2   0x0800b3a2   0x0000000e   PAD
-    0x0800b3b0   0x0800b3b0   0x00000015   Data   RO         1570    .rodata._ZTSSt16bad_array_length  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b3b0   0x0800b3b0   0x00000015   Data   RO         1562    .rodata._ZTSSt16bad_array_length  libcppabi_wx.l(stdlib_exception.cpp.o)
     0x0800b3c5   0x0800b3c5   0x0000000b   PAD
-    0x0800b3d0   0x0800b3d0   0x00000019   Data   RO         1574    .rodata._ZTSSt20bad_array_new_length  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b3e9   0x0800b3e9   0x0000000d   Data   RO         1571    .rodata._ZTSSt9bad_alloc  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b3f6   0x0800b3f6   0x0000000d   Data   RO         1565    .rodata._ZTSSt9exception  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b403   0x0800b403   0x0000000d   Data   RO         2302    .rodata._ZTSSt9type_info  libcppabi_wx.l(stdlib_typeinfo.cpp.o)
-    0x0800b410   0x0800b410   0x00000002   Data   RO         1981    .rodata._ZTSv       libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b3d0   0x0800b3d0   0x00000019   Data   RO         1566    .rodata._ZTSSt20bad_array_new_length  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b3e9   0x0800b3e9   0x0000000d   Data   RO         1563    .rodata._ZTSSt9bad_alloc  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b3f6   0x0800b3f6   0x0000000d   Data   RO         1557    .rodata._ZTSSt9exception  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b403   0x0800b403   0x0000000d   Data   RO         2294    .rodata._ZTSSt9type_info  libcppabi_wx.l(stdlib_typeinfo.cpp.o)
+    0x0800b410   0x0800b410   0x00000002   Data   RO         1973    .rodata._ZTSv       libcppabi_wx.l(private_typeinfo.cpp.o)
     0x0800b412   0x0800b412   0x00000002   PAD
-    0x0800b414   0x0800b414   0x00000028   Data   RO         2132    .rodata._ZTVN10__cxxabiv117__class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b43c   0x0800b43c   0x00000028   Data   RO         2133    .rodata._ZTVN10__cxxabiv120__si_class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b464   0x0800b464   0x0000001c   Data   RO         1978    .rodata._ZTVN10__cxxabiv123__fundamental_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b480   0x0800b480   0x00000048   Data   RO         1696    .rodata._ZTVN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEEE  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b4c8   0x0800b4c8   0x00000014   Data   RO         1567    .rodata._ZTVSt13bad_exception  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b4dc   0x0800b4dc   0x00000014   Data   RO         1563    .rodata._ZTVSt16bad_array_length  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b4f0   0x0800b4f0   0x00000014   Data   RO         1562    .rodata._ZTVSt20bad_array_new_length  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b504   0x0800b504   0x00000014   Data   RO         1561    .rodata._ZTVSt9bad_alloc  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b518   0x0800b518   0x00000008   Data   RO         1975    .rodata._ZZNK10__cxxabiv129__pointer_to_member_type_info9can_catchEPKNS_16__shim_type_infoERPvE12null_ptr_rep  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b520   0x0800b520   0x00000004   Data   RO         1976    .rodata._ZZNK10__cxxabiv129__pointer_to_member_type_info9can_catchEPKNS_16__shim_type_infoERPvE12null_ptr_rep_0  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b524   0x0800b524   0x00000020   Data   RO         2376    Region$$Table       anon$$obj.o
-    0x0800b544   0x0800b544   0x0000001c   Data   RO         2226    locale$$data        c_w.l(lc_numeric_c.o)
-    0x0800b560   0x0800b560   0x00000110   Data   RO         2324    locale$$data        c_w.l(lc_ctype_c.o)
+    0x0800b414   0x0800b414   0x00000028   Data   RO         2124    .rodata._ZTVN10__cxxabiv117__class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b43c   0x0800b43c   0x00000028   Data   RO         2125    .rodata._ZTVN10__cxxabiv120__si_class_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b464   0x0800b464   0x0000001c   Data   RO         1970    .rodata._ZTVN10__cxxabiv123__fundamental_type_infoE  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b480   0x0800b480   0x00000048   Data   RO         1688    .rodata._ZTVN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEEE  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b4c8   0x0800b4c8   0x00000014   Data   RO         1559    .rodata._ZTVSt13bad_exception  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b4dc   0x0800b4dc   0x00000014   Data   RO         1555    .rodata._ZTVSt16bad_array_length  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b4f0   0x0800b4f0   0x00000014   Data   RO         1554    .rodata._ZTVSt20bad_array_new_length  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b504   0x0800b504   0x00000014   Data   RO         1553    .rodata._ZTVSt9bad_alloc  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b518   0x0800b518   0x00000008   Data   RO         1967    .rodata._ZZNK10__cxxabiv129__pointer_to_member_type_info9can_catchEPKNS_16__shim_type_infoERPvE12null_ptr_rep  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b520   0x0800b520   0x00000004   Data   RO         1968    .rodata._ZZNK10__cxxabiv129__pointer_to_member_type_info9can_catchEPKNS_16__shim_type_infoERPvE12null_ptr_rep_0  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b524   0x0800b524   0x00000020   Data   RO         2368    Region$$Table       anon$$obj.o
+    0x0800b544   0x0800b544   0x0000001c   Data   RO         2218    locale$$data        c_w.l(lc_numeric_c.o)
+    0x0800b560   0x0800b560   0x00000110   Data   RO         2316    locale$$data        c_w.l(lc_ctype_c.o)
     0x0800b670   0x0800b670   0x00000004   Data   RO           23    .init_array         maincpp.o
-    0x0800b674   0x0800b670   0x00000008   Data   RO         1716    .ARM.exidx          c_w.l(__rtentry4.o)
+    0x0800b674   0x0800b670   0x00000008   Data   RO         1708    .ARM.exidx          c_w.l(__rtentry4.o)
     0x0800b67c   0x0800b670   0x00000008   Data   RO           16    .ARM.exidx.text.OnceMain  maincpp.o
     0x0800b684   0x0800b670   0x00000008   Data   RO          140    .ARM.exidx.text.PendSV_Handler  stm32f4xx_it.o
     0x0800b68c   0x0800b670   0x00000008   Data   RO           18    .ARM.exidx.text.Serial_Printf  maincpp.o
     0x0800b694   0x0800b670   0x00000008   Data   RO          867    .ARM.exidx.text.SysTick_Config  stm32f4xx_hal_cortex.o
     0x0800b69c   0x0800b670   0x00000008   Data   RO           20    .ARM.exidx.text._GLOBAL__sub_I_maincpp.cpp  maincpp.o
-    0x0800b6a4   0x0800b670   0x00000008   Data   RO         1331    .ARM.exidx.text._Unwind_GetLanguageSpecificData  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6ac   0x0800b670   0x00000008   Data   RO         1322    .ARM.exidx.text._Unwind_RaiseException  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6b4   0x0800b670   0x00000008   Data   RO         1329    .ARM.exidx.text._Unwind_Resume  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6bc   0x0800b670   0x00000008   Data   RO         1308    .ARM.exidx.text._Unwind_VRS_Get  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6c4   0x0800b670   0x00000008   Data   RO         1306    .ARM.exidx.text._Unwind_VRS_Interpret  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6cc   0x0800b670   0x00000008   Data   RO         1312    .ARM.exidx.text._Unwind_VRS_Pop  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6d4   0x0800b670   0x00000008   Data   RO         1310    .ARM.exidx.text._Unwind_VRS_Set  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6dc   0x0800b670   0x00000008   Data   RO         1324    .ARM.exidx.text._ZL13unwind_phase2P13unw_context_tP12unw_cursor_tP21_Unwind_Control_Blockb  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b6e4   0x0800b670   0x00000008   Data   RO         1884    .ARM.exidx.text._ZN10__cxxabiv116__shim_type_infoD2Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b6ec   0x0800b670   0x00000008   Data   RO         1288    .ARM.exidx.text._ZN10__cxxabiv1L11scan_eh_tabERNS_12_GLOBAL__N_112scan_resultsE14_Unwind_ActionbP21_Unwind_Control_BlockP15_Unwind_Context  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b6f4   0x0800b670   0x00000008   Data   RO         1292    .ARM.exidx.text._ZN10__cxxabiv1L13set_registersEP21_Unwind_Control_BlockP15_Unwind_ContextRKNS_12_GLOBAL__N_112scan_resultsE  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b6fc   0x0800b670   0x00000008   Data   RO         1290    .ARM.exidx.text._ZN10__cxxabiv1L14call_terminateEbP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b704   0x0800b670   0x00000008   Data   RO         1299    .ARM.exidx.text._ZN10__cxxabiv1L24exception_spec_can_catchExPKhhPKNS_16__shim_type_infoEPvP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b70c   0x0800b670   0x00000008   Data   RO         1619    .ARM.exidx.text._ZN10__cxxabiv1L27dependent_exception_cleanupE19_Unwind_Reason_CodeP21_Unwind_Control_Block  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b714   0x0800b670   0x00000008   Data   RO         1875    .ARM.exidx.text._ZN12_GLOBAL__N_115fallback_mallocEj  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x0800b71c   0x0800b670   0x00000008   Data   RO         1316    .ARM.exidx.text._ZN12_GLOBAL__N_1L14unwindOneFrameEjP21_Unwind_Control_BlockP15_Unwind_Context  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6a4   0x0800b670   0x00000008   Data   RO         1323    .ARM.exidx.text._Unwind_GetLanguageSpecificData  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6ac   0x0800b670   0x00000008   Data   RO         1314    .ARM.exidx.text._Unwind_RaiseException  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6b4   0x0800b670   0x00000008   Data   RO         1321    .ARM.exidx.text._Unwind_Resume  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6bc   0x0800b670   0x00000008   Data   RO         1300    .ARM.exidx.text._Unwind_VRS_Get  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6c4   0x0800b670   0x00000008   Data   RO         1298    .ARM.exidx.text._Unwind_VRS_Interpret  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6cc   0x0800b670   0x00000008   Data   RO         1304    .ARM.exidx.text._Unwind_VRS_Pop  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6d4   0x0800b670   0x00000008   Data   RO         1302    .ARM.exidx.text._Unwind_VRS_Set  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6dc   0x0800b670   0x00000008   Data   RO         1316    .ARM.exidx.text._ZL13unwind_phase2P13unw_context_tP12unw_cursor_tP21_Unwind_Control_Blockb  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b6e4   0x0800b670   0x00000008   Data   RO         1876    .ARM.exidx.text._ZN10__cxxabiv116__shim_type_infoD2Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b6ec   0x0800b670   0x00000008   Data   RO         1280    .ARM.exidx.text._ZN10__cxxabiv1L11scan_eh_tabERNS_12_GLOBAL__N_112scan_resultsE14_Unwind_ActionbP21_Unwind_Control_BlockP15_Unwind_Context  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b6f4   0x0800b670   0x00000008   Data   RO         1284    .ARM.exidx.text._ZN10__cxxabiv1L13set_registersEP21_Unwind_Control_BlockP15_Unwind_ContextRKNS_12_GLOBAL__N_112scan_resultsE  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b6fc   0x0800b670   0x00000008   Data   RO         1282    .ARM.exidx.text._ZN10__cxxabiv1L14call_terminateEbP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b704   0x0800b670   0x00000008   Data   RO         1291    .ARM.exidx.text._ZN10__cxxabiv1L24exception_spec_can_catchExPKhhPKNS_16__shim_type_infoEPvP21_Unwind_Control_Block  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b70c   0x0800b670   0x00000008   Data   RO         1611    .ARM.exidx.text._ZN10__cxxabiv1L27dependent_exception_cleanupE19_Unwind_Reason_CodeP21_Unwind_Control_Block  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b714   0x0800b670   0x00000008   Data   RO         1867    .ARM.exidx.text._ZN12_GLOBAL__N_115fallback_mallocEj  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x0800b71c   0x0800b670   0x00000008   Data   RO         1308    .ARM.exidx.text._ZN12_GLOBAL__N_1L14unwindOneFrameEjP21_Unwind_Control_BlockP15_Unwind_Context  libunwind_wx.l(Unwind-EHABI.cpp.o)
     0x0800b724   0x0800b670   0x00000008   Data   RO         1192    .ARM.exidx.text._ZN18Pid_basetemplate_tIffE12targetUpdateEfb  motor.o
     0x0800b72c   0x0800b670   0x00000008   Data   RO           55    .ARM.exidx.text._ZN18Pid_basetemplate_tIffEC2E10Pidparam_tIffE  maincpp.o
     0x0800b734   0x0800b670   0x00000008   Data   RO           59    .ARM.exidx.text._ZN18Pid_basetemplate_tIffEC2Efffff  maincpp.o
     0x0800b73c   0x0800b670   0x00000008   Data   RO         1176    .ARM.exidx.text._ZN5Motor13Motorcommon_t6updateEv  motor.o
     0x0800b744   0x0800b670   0x00000008   Data   RO         1178    .ARM.exidx.text._ZN5Motor13Motorcommon_t7pwm_outEi  motor.o
     0x0800b74c   0x0800b670   0x00000008   Data   RO         1172    .ARM.exidx.text._ZN5Motor13Motorcommon_t8setSpeedEf  motor.o
-    0x0800b754   0x0800b670   0x00000008   Data   RO         1225    .ARM.exidx.text._ZN5Motor13Motorcommon_t9initMotorEv  control.o
+    0x0800b754   0x0800b670   0x00000008   Data   RO         1217    .ARM.exidx.text._ZN5Motor13Motorcommon_t9initMotorEv  control.o
     0x0800b75c   0x0800b670   0x00000008   Data   RO           70    .ARM.exidx.text._ZN5Motor13Motorcommon_tC2EP17TIM_HandleTypeDefS2_jP12GPIO_TypeDeftth  maincpp.o
     0x0800b764   0x0800b670   0x00000008   Data   RO           45    .ARM.exidx.text._ZN5Motor13Motorcommon_tC2Ev  maincpp.o
     0x0800b76c   0x0800b670   0x00000008   Data   RO           47    .ARM.exidx.text._ZN5Motor13Motorcommon_tD2Ev  maincpp.o
@@ -5705,75 +5703,75 @@ Memory Map of the image
     0x0800b79c   0x0800b670   0x00000008   Data   RO           67    .ARM.exidx.text._ZN6Static8Static_tIN5Motor13Motorcommon_tELj4EE21_construct_from_tupleINSt3__15tupleIJP17TIM_HandleTypeDefS8_jP12GPIO_TypeDefttEEEJLj0ELj1ELj2ELj3ELj4ELj5EEEEvjOT_NS5_16integer_sequenceIjJXspT0_EEEE  maincpp.o
     0x0800b7a4   0x0800b670   0x00000008   Data   RO           42    .ARM.exidx.text._ZN6Static8Static_tIN5Motor13Motorcommon_tELj4EEC2IJNSt3__15tupleIJP17TIM_HandleTypeDefS8_jP12GPIO_TypeDefttEEESB_SB_SB_EEEDpOT_  maincpp.o
     0x0800b7ac   0x0800b670   0x00000008   Data   RO           82    .ARM.exidx.text._ZN6Static8Static_tIN5Motor13Motorcommon_tELj4EED2Ev  maincpp.o
-    0x0800b7b4   0x0800b670   0x00000008   Data   RO         1211    .ARM.exidx.text._ZN7Control9Control_t11controlLoopEv  control.o
-    0x0800b7bc   0x0800b670   0x00000008   Data   RO         1209    .ARM.exidx.text._ZN7Control9Control_t9initMotorEv  control.o
+    0x0800b7b4   0x0800b670   0x00000008   Data   RO         1203    .ARM.exidx.text._ZN7Control9Control_t11controlLoopEv  control.o
+    0x0800b7bc   0x0800b670   0x00000008   Data   RO         1201    .ARM.exidx.text._ZN7Control9Control_t9initMotorEv  control.o
     0x0800b7c4   0x0800b670   0x00000008   Data   RO           35    .ARM.exidx.text._ZN7Control9Control_tC2ENS_14Control_Mode_tE  maincpp.o
     0x0800b7cc   0x0800b670   0x00000008   Data   RO           37    .ARM.exidx.text._ZN7Control9Control_tD2Ev  maincpp.o
-    0x0800b7d4   0x0800b670   0x00000008   Data   RO         1685    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE10saveVFPAsXEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b7dc   0x0800b670   0x00000008   Data   RO         1667    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11getFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b7e4   0x0800b670   0x00000008   Data   RO         1669    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11setFloatRegEiy  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b7ec   0x0800b670   0x00000008   Data   RO         1677    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13isSignalFrameEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b7f4   0x0800b670   0x00000008   Data   RO         1687    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13stepWithEHABIEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b7fc   0x0800b670   0x00000008   Data   RO         1665    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13validFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b804   0x0800b670   0x00000008   Data   RO         1679    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getFunctionNameEPcjPj  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b80c   0x0800b670   0x00000008   Data   RO         1683    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getRegisterNameEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b814   0x0800b670   0x00000008   Data   RO         1691    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE23getInfoFromEHABISectionEjRKNS_18UnwindInfoSectionsE  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b81c   0x0800b670   0x00000008   Data   RO         1681    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE24setInfoBasedOnIPRegisterEb  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b824   0x0800b670   0x00000008   Data   RO         1671    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE4stepEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b82c   0x0800b670   0x00000008   Data   RO         1661    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6getRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b834   0x0800b670   0x00000008   Data   RO         1675    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6jumptoEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b83c   0x0800b670   0x00000008   Data   RO         1663    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6setRegEij  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b844   0x0800b670   0x00000008   Data   RO         1673    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE7getInfoEP15unw_proc_info_t  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b84c   0x0800b670   0x00000008   Data   RO         1659    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE8validRegEi  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b854   0x0800b670   0x00000008   Data   RO         1689    .ARM.exidx.text._ZN9libunwind13Registers_arm26restoreSavedFloatRegistersEv  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b85c   0x0800b670   0x00000008   Data   RO         1655    .ARM.exidx.text._ZN9libunwind20AbstractUnwindCursorD2Ev  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b864   0x0800b670   0x00000008   Data   RO         1888    .ARM.exidx.text._ZNK10__cxxabiv116__shim_type_info5noop1Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b86c   0x0800b670   0x00000008   Data   RO         1920    .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b874   0x0800b670   0x00000008   Data   RO         1932    .ARM.exidx.text._ZNK10__cxxabiv117__pbase_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b87c   0x0800b670   0x00000008   Data   RO         1934    .ARM.exidx.text._ZNK10__cxxabiv119__pointer_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b884   0x0800b670   0x00000008   Data   RO         1960    .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b88c   0x0800b670   0x00000008   Data   RO         1926    .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b894   0x0800b670   0x00000008   Data   RO         1958    .ARM.exidx.text._ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b89c   0x0800b670   0x00000008   Data   RO         1912    .ARM.exidx.text._ZNK10__cxxabiv123__fundamental_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b8a4   0x0800b670   0x00000008   Data   RO         1693    .ARM.exidx.text._ZNSt3__113__upper_boundIRNS_6__lessIjjEEN9libunwind20EHABISectionIteratorINS4_17LocalAddressSpaceEEEjEET0_S8_S8_RKT1_T_  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b8ac   0x0800b670   0x00000008   Data   RO         1544    .ARM.exidx.text._ZNSt9bad_allocC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
-    0x0800b8b4   0x0800b670   0x00000008   Data   RO         1518    .ARM.exidx.text._ZSt10unexpectedv  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800b8bc   0x0800b670   0x00000008   Data   RO         1523    .ARM.exidx.text._ZSt11__terminatePFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800b8c4   0x0800b670   0x00000008   Data   RO         1516    .ARM.exidx.text._ZSt12__unexpectedPFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800b8cc   0x0800b670   0x00000008   Data   RO         1520    .ARM.exidx.text._ZSt13get_terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800b8d4   0x0800b670   0x00000008   Data   RO         1526    .ARM.exidx.text._ZSt9terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
-    0x0800b8dc   0x0800b670   0x00000008   Data   RO         1833    .ARM.exidx.text._ZdaPv  libcpp_wx.l(new.cpp.o)
+    0x0800b7d4   0x0800b670   0x00000008   Data   RO         1677    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE10saveVFPAsXEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b7dc   0x0800b670   0x00000008   Data   RO         1659    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11getFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b7e4   0x0800b670   0x00000008   Data   RO         1661    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE11setFloatRegEiy  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b7ec   0x0800b670   0x00000008   Data   RO         1669    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13isSignalFrameEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b7f4   0x0800b670   0x00000008   Data   RO         1679    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13stepWithEHABIEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b7fc   0x0800b670   0x00000008   Data   RO         1657    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE13validFloatRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b804   0x0800b670   0x00000008   Data   RO         1671    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getFunctionNameEPcjPj  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b80c   0x0800b670   0x00000008   Data   RO         1675    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE15getRegisterNameEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b814   0x0800b670   0x00000008   Data   RO         1683    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE23getInfoFromEHABISectionEjRKNS_18UnwindInfoSectionsE  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b81c   0x0800b670   0x00000008   Data   RO         1673    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE24setInfoBasedOnIPRegisterEb  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b824   0x0800b670   0x00000008   Data   RO         1663    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE4stepEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b82c   0x0800b670   0x00000008   Data   RO         1653    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6getRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b834   0x0800b670   0x00000008   Data   RO         1667    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6jumptoEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b83c   0x0800b670   0x00000008   Data   RO         1655    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE6setRegEij  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b844   0x0800b670   0x00000008   Data   RO         1665    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE7getInfoEP15unw_proc_info_t  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b84c   0x0800b670   0x00000008   Data   RO         1651    .ARM.exidx.text._ZN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEE8validRegEi  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b854   0x0800b670   0x00000008   Data   RO         1681    .ARM.exidx.text._ZN9libunwind13Registers_arm26restoreSavedFloatRegistersEv  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b85c   0x0800b670   0x00000008   Data   RO         1647    .ARM.exidx.text._ZN9libunwind20AbstractUnwindCursorD2Ev  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b864   0x0800b670   0x00000008   Data   RO         1880    .ARM.exidx.text._ZNK10__cxxabiv116__shim_type_info5noop1Ev  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b86c   0x0800b670   0x00000008   Data   RO         1912    .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b874   0x0800b670   0x00000008   Data   RO         1924    .ARM.exidx.text._ZNK10__cxxabiv117__pbase_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b87c   0x0800b670   0x00000008   Data   RO         1926    .ARM.exidx.text._ZNK10__cxxabiv119__pointer_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b884   0x0800b670   0x00000008   Data   RO         1952    .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b88c   0x0800b670   0x00000008   Data   RO         1918    .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b894   0x0800b670   0x00000008   Data   RO         1950    .ARM.exidx.text._ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b89c   0x0800b670   0x00000008   Data   RO         1904    .ARM.exidx.text._ZNK10__cxxabiv123__fundamental_type_info9can_catchEPKNS_16__shim_type_infoERPv  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b8a4   0x0800b670   0x00000008   Data   RO         1685    .ARM.exidx.text._ZNSt3__113__upper_boundIRNS_6__lessIjjEEN9libunwind20EHABISectionIteratorINS4_17LocalAddressSpaceEEEjEET0_S8_S8_RKT1_T_  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b8ac   0x0800b670   0x00000008   Data   RO         1536    .ARM.exidx.text._ZNSt9bad_allocC2Ev  libcppabi_wx.l(stdlib_exception.cpp.o)
+    0x0800b8b4   0x0800b670   0x00000008   Data   RO         1510    .ARM.exidx.text._ZSt10unexpectedv  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800b8bc   0x0800b670   0x00000008   Data   RO         1515    .ARM.exidx.text._ZSt11__terminatePFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800b8c4   0x0800b670   0x00000008   Data   RO         1508    .ARM.exidx.text._ZSt12__unexpectedPFvvE  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800b8cc   0x0800b670   0x00000008   Data   RO         1512    .ARM.exidx.text._ZSt13get_terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800b8d4   0x0800b670   0x00000008   Data   RO         1518    .ARM.exidx.text._ZSt9terminatev  libcppabi_wx.l(cxa_handlers.cpp.o)
+    0x0800b8dc   0x0800b670   0x00000008   Data   RO         1825    .ARM.exidx.text._ZdaPv  libcpp_wx.l(new.cpp.o)
     0x0800b8e4   0x0800b670   0x00000008   Data   RO          855    .ARM.exidx.text.__NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
-    0x0800b8ec   0x0800b670   0x00000008   Data   RO         1314    .ARM.exidx.text.__aeabi_unwind_cpp_pr0  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b8f4   0x0800b670   0x00000008   Data   RO         1301    .ARM.exidx.text.__clang_call_terminate  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b8fc   0x0800b670   0x00000008   Data   RO         1585    .ARM.exidx.text.__cxa_allocate_dependent_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b904   0x0800b670   0x00000008   Data   RO         1580    .ARM.exidx.text.__cxa_allocate_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b90c   0x0800b670   0x00000008   Data   RO         1601    .ARM.exidx.text.__cxa_begin_catch  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b914   0x0800b670   0x00000008   Data   RO         1596    .ARM.exidx.text.__cxa_begin_cleanup  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b91c   0x0800b670   0x00000008   Data   RO         1295    .ARM.exidx.text.__cxa_call_unexpected  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b924   0x0800b670   0x00000008   Data   RO         1606    .ARM.exidx.text.__cxa_decrement_exception_refcount  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b92c   0x0800b670   0x00000008   Data   RO         1603    .ARM.exidx.text.__cxa_end_catch  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b934   0x0800b670   0x00000008   Data   RO         1508    .ARM.exidx.text.__cxa_get_globals  libcppabi_wx.l(cxa_exception_storage.cpp.o)
-    0x0800b93c   0x0800b670   0x00000008   Data   RO         1610    .ARM.exidx.text.__cxa_rethrow  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b944   0x0800b670   0x00000008   Data   RO         1617    .ARM.exidx.text.__cxa_rethrow_primary_exception  libcppabi_wx.l(cxa_exception.cpp.o)
-    0x0800b94c   0x0800b670   0x00000008   Data   RO         1589    .ARM.exidx.text.__cxa_throw  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b8ec   0x0800b670   0x00000008   Data   RO         1306    .ARM.exidx.text.__aeabi_unwind_cpp_pr0  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b8f4   0x0800b670   0x00000008   Data   RO         1293    .ARM.exidx.text.__clang_call_terminate  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b8fc   0x0800b670   0x00000008   Data   RO         1577    .ARM.exidx.text.__cxa_allocate_dependent_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b904   0x0800b670   0x00000008   Data   RO         1572    .ARM.exidx.text.__cxa_allocate_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b90c   0x0800b670   0x00000008   Data   RO         1593    .ARM.exidx.text.__cxa_begin_catch  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b914   0x0800b670   0x00000008   Data   RO         1588    .ARM.exidx.text.__cxa_begin_cleanup  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b91c   0x0800b670   0x00000008   Data   RO         1287    .ARM.exidx.text.__cxa_call_unexpected  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b924   0x0800b670   0x00000008   Data   RO         1598    .ARM.exidx.text.__cxa_decrement_exception_refcount  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b92c   0x0800b670   0x00000008   Data   RO         1595    .ARM.exidx.text.__cxa_end_catch  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b934   0x0800b670   0x00000008   Data   RO         1500    .ARM.exidx.text.__cxa_get_globals  libcppabi_wx.l(cxa_exception_storage.cpp.o)
+    0x0800b93c   0x0800b670   0x00000008   Data   RO         1602    .ARM.exidx.text.__cxa_rethrow  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b944   0x0800b670   0x00000008   Data   RO         1609    .ARM.exidx.text.__cxa_rethrow_primary_exception  libcppabi_wx.l(cxa_exception.cpp.o)
+    0x0800b94c   0x0800b670   0x00000008   Data   RO         1581    .ARM.exidx.text.__cxa_throw  libcppabi_wx.l(cxa_exception.cpp.o)
     0x0800b954   0x0800b670   0x00000008   Data   RO           12    .ARM.exidx.text.__cxx_global_var_init  maincpp.o
-    0x0800b95c   0x0800b670   0x00000008   Data   RO         1942    .ARM.exidx.text.__dynamic_cast  libcppabi_wx.l(private_typeinfo.cpp.o)
-    0x0800b964   0x0800b670   0x00000008   Data   RO         1337    .ARM.exidx.text.__gnu_unwind_frame  libunwind_wx.l(Unwind-EHABI.cpp.o)
-    0x0800b96c   0x0800b670   0x00000008   Data   RO         1286    .ARM.exidx.text.__gxx_personality_v0  libcppabi_wx.l(cxa_personality.cpp.o)
-    0x0800b974   0x0800b670   0x00000008   Data   RO         1870    .ARM.exidx.text.abort_message  libcppabi_wx.l(abort_message.cpp.o)
-    0x0800b97c   0x0800b670   0x00000008   Data   RO         1304    .ARM.exidx.text.decode_eht_entry  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b95c   0x0800b670   0x00000008   Data   RO         1934    .ARM.exidx.text.__dynamic_cast  libcppabi_wx.l(private_typeinfo.cpp.o)
+    0x0800b964   0x0800b670   0x00000008   Data   RO         1329    .ARM.exidx.text.__gnu_unwind_frame  libunwind_wx.l(Unwind-EHABI.cpp.o)
+    0x0800b96c   0x0800b670   0x00000008   Data   RO         1278    .ARM.exidx.text.__gxx_personality_v0  libcppabi_wx.l(cxa_personality.cpp.o)
+    0x0800b974   0x0800b670   0x00000008   Data   RO         1862    .ARM.exidx.text.abort_message  libcppabi_wx.l(abort_message.cpp.o)
+    0x0800b97c   0x0800b670   0x00000008   Data   RO         1296    .ARM.exidx.text.decode_eht_entry  libunwind_wx.l(Unwind-EHABI.cpp.o)
     0x0800b984   0x0800b670   0x00000008   Data   RO           85    .ARM.exidx.text.main  main.o
     0x0800b98c   0x0800b670   0x00000008   Data   RO           14    .ARM.exidx.text.main_cpp  maincpp.o
-    0x0800b994   0x0800b670   0x00000008   Data   RO         1633    .ARM.exidx.text.unw_get_fpreg  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b99c   0x0800b670   0x00000008   Data   RO         1639    .ARM.exidx.text.unw_get_proc_info  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9a4   0x0800b670   0x00000008   Data   RO         1629    .ARM.exidx.text.unw_get_reg  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9ac   0x0800b670   0x00000008   Data   RO         1627    .ARM.exidx.text.unw_init_local  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9b4   0x0800b670   0x00000008   Data   RO         1641    .ARM.exidx.text.unw_resume  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9bc   0x0800b670   0x00000008   Data   RO         1651    .ARM.exidx.text.unw_save_vfp_as_X  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9c4   0x0800b670   0x00000008   Data   RO         1635    .ARM.exidx.text.unw_set_fpreg  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9cc   0x0800b670   0x00000008   Data   RO         1631    .ARM.exidx.text.unw_set_reg  libunwind_wx.l(libunwind.cpp.o)
-    0x0800b9d4   0x0800b670   0x00000008   Data   RO         1637    .ARM.exidx.text.unw_step  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b994   0x0800b670   0x00000008   Data   RO         1625    .ARM.exidx.text.unw_get_fpreg  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b99c   0x0800b670   0x00000008   Data   RO         1631    .ARM.exidx.text.unw_get_proc_info  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9a4   0x0800b670   0x00000008   Data   RO         1621    .ARM.exidx.text.unw_get_reg  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9ac   0x0800b670   0x00000008   Data   RO         1619    .ARM.exidx.text.unw_init_local  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9b4   0x0800b670   0x00000008   Data   RO         1633    .ARM.exidx.text.unw_resume  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9bc   0x0800b670   0x00000008   Data   RO         1643    .ARM.exidx.text.unw_save_vfp_as_X  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9c4   0x0800b670   0x00000008   Data   RO         1627    .ARM.exidx.text.unw_set_fpreg  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9cc   0x0800b670   0x00000008   Data   RO         1623    .ARM.exidx.text.unw_set_reg  libunwind_wx.l(libunwind.cpp.o)
+    0x0800b9d4   0x0800b670   0x00000008   Data   RO         1629    .ARM.exidx.text.unw_step  libunwind_wx.l(libunwind.cpp.o)
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800b9e0, Size: 0x00000d48, Max: 0x0001c000, ABSOLUTE)
@@ -5781,17 +5779,17 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x0800b9e0   0x00000004   Data   RW         1157    .data.SystemCoreClock  system_stm32f4xx.o
-    0x20000004   0x0800b9e4   0x00000004   Data   RW         1866    .data.__cxa_terminate_handler  libcppabi_wx.l(cxa_default_handlers.cpp.o)
-    0x20000008   0x0800b9e8   0x00000004   Data   RW         1867    .data.__cxa_unexpected_handler  libcppabi_wx.l(cxa_default_handlers.cpp.o)
+    0x20000004   0x0800b9e4   0x00000004   Data   RW         1858    .data.__cxa_terminate_handler  libcppabi_wx.l(cxa_default_handlers.cpp.o)
+    0x20000008   0x0800b9e8   0x00000004   Data   RW         1859    .data.__cxa_unexpected_handler  libcppabi_wx.l(cxa_default_handlers.cpp.o)
     0x2000000c   0x0800b9ec   0x00000001   Data   RW          976    .data.uwTickFreq    stm32f4xx_hal.o
     0x2000000d   0x0800b9ed   0x00000003   PAD
     0x20000010   0x0800b9f0   0x00000004   Data   RW          975    .data.uwTickPrio    stm32f4xx_hal.o
     0x20000014   0x0800b9f4   0x00000004   PAD
-    0x20000018        -       0x00000060   Zero   RW         2144    .bss                c_w.l(libspace.o)
-    0x20000078        -       0x0000000c   Zero   RW         1511    .bss._ZN10__cxxabiv1L10eh_globalsE  libcppabi_wx.l(cxa_exception_storage.cpp.o)
-    0x20000084        -       0x00000200   Zero   RW         1881    .bss._ZN12_GLOBAL__N_14heapE  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x20000284        -       0x00000004   Zero   RW         1880    .bss._ZN12_GLOBAL__N_1L8freelistE  libcppabi_wx.l(fallback_malloc.cpp.o)
-    0x20000288        -       0x00000001   Zero   RW         1652    .bss._ZN9libunwind17LocalAddressSpace17sThisAddressSpaceE  libunwind_wx.l(libunwind.cpp.o)
+    0x20000018        -       0x00000060   Zero   RW         2136    .bss                c_w.l(libspace.o)
+    0x20000078        -       0x0000000c   Zero   RW         1503    .bss._ZN10__cxxabiv1L10eh_globalsE  libcppabi_wx.l(cxa_exception_storage.cpp.o)
+    0x20000084        -       0x00000200   Zero   RW         1873    .bss._ZN12_GLOBAL__N_14heapE  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x20000284        -       0x00000004   Zero   RW         1872    .bss._ZN12_GLOBAL__N_1L8freelistE  libcppabi_wx.l(fallback_malloc.cpp.o)
+    0x20000288        -       0x00000001   Zero   RW         1644    .bss._ZN9libunwind17LocalAddressSpace17sThisAddressSpaceE  libunwind_wx.l(libunwind.cpp.o)
     0x20000289   0x0800b9f4   0x00000003   PAD
     0x2000028c        -       0x000002bc   Zero   RW           21    .bss.control        maincpp.o
     0x20000548        -       0x00000048   Zero   RW          107    .bss.htim1          main.o
@@ -5819,9 +5817,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       626          8         24          0          0      25466   control.o
+       626          8         24          0          0      18257   control.o
       1340         16          8          0        504      11711   main.o
-      1026          4        296          0        704      50560   maincpp.o
+      1026          4        296          0        704      43351   maincpp.o
        442          4         32          0          0       9706   motor.o
         64         26        392          0       1536        820   startup_stm32f405xx.o
        280          0          0          5          4       7898   stm32f4xx_hal.o
@@ -5837,7 +5835,7 @@ Image component sizes
        142          0         24          4          0       2729   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-     23898        202        832         12       2752     237070   Object Totals
+     23898        202        832         12       2752     222652   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        234          0          0          3          4          0   (incl. Padding)
 
@@ -6000,8 +5998,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     44108       1556       3472         20       3380     240134   Grand Totals
-     44108       1556       3472         20       3380     240134   ELF Image Totals
+     44108       1556       3472         20       3380     225716   Grand Totals
+     44108       1556       3472         20       3380     225716   ELF Image Totals
      44108       1556       3472         20          0          0   ROM Totals
 
 ==============================================================================

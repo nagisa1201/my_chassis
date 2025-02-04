@@ -582,14 +582,14 @@
               <FilePath>..\Hardware\common.h</FilePath>
             </File>
             <File>
-              <FileName>Kinematic.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Hardware\Kinematic.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Control.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Hardware\Control.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kinematic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Hardware\Kinematic.h</FilePath>
             </File>
           </Files>
         </Group>

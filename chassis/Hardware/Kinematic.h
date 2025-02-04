@@ -10,11 +10,11 @@
 #define __KINEMATIC_H
 
 #define USE_MECANUM_WHEEL 1
-#include "stdint.h"
-#include "math.h"
+
 #include "motor.h"
-#include "Lib_Static.h"
-#include "main.h"
+#include <cstddef> //size_t
+#include <utility> //std::forward
+
 
 #define PI 3.1415926
 

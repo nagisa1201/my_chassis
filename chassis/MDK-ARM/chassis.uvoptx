@@ -564,7 +564,7 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>23</FileNumber>
       <FileType>8</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Hardware\motor.cpp</PathWithFileName>
@@ -615,20 +615,20 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Hardware\Kinematic.cpp</PathWithFileName>
-      <FilenameWithoutPath>Kinematic.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\Hardware\Control.cpp</PathWithFileName>
+      <FilenameWithoutPath>Control.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>5</GroupNumber>
       <FileNumber>28</FileNumber>
-      <FileType>8</FileType>
+      <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Hardware\Control.cpp</PathWithFileName>
-      <FilenameWithoutPath>Control.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\Hardware\Kinematic.h</PathWithFileName>
+      <FilenameWithoutPath>Kinematic.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -644,7 +644,7 @@
       <GroupNumber>6</GroupNumber>
       <FileNumber>29</FileNumber>
       <FileType>8</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Selflib\Lib_Static.cpp</PathWithFileName>

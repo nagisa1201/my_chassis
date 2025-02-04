@@ -22,7 +22,6 @@
 "chassis\stm32f4xx_hal_uart.o"
 "chassis\system_stm32f4xx.o"
 "chassis\motor.o"
-"chassis\kinematic.o"
 "chassis\control.o"
 "chassis\lib_static.o"
 "chassis\lib_tuple.o"
