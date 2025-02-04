@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 23:02:27
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-03 22:17:23
+ * @LastEditTime: 2025-02-04 12:30:26
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,26 +13,27 @@
 #include "string.h"
 #include "Lib_Static.h"
 #include "Kinematic.h"
+#include "Control.h"
 
 void OnceMain();
 void main_cpp();
 void Serial_Printf(char *format, ...);
 
-Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin,IN2_Pin);
+Control::Control_t control(Control::HalfCloseLoop);
 
 float v = 0;
 void main_cpp()
 {                                     
-    // Motor::Motorcommon_t motor(&htim8,&htim1,TIM_CHANNEL_1,IN1_GPIO_Port,IN1_Pin);
-    motor.initMotor();
+    control.initMotor();
+    control.setTarget({10, 10, 10});
+
 }
 
 void OnceMain()
 {
-    // motor.setSpeed(3);
-    // v=motor.getLinearspeed();
-    // motor.update();                                                                                                             
-
+    control.controlLoop();
+    // Serial_Printf("vx:%f,vy:%f,w:%f\n", control._kinematic._current_xyw.vx, control._kinematic._current_xyw.vy, control._kinematic._current_xyw.w);
+    // HAL_Delay(5);                                                                                                        
 }
 
 void Serial_Printf(char *format, ...)

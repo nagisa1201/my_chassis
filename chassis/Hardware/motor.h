@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-03 19:58:21
+ * @LastEditTime: 2025-02-04 13:51:58
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -26,13 +26,6 @@ class EncoderInterface_t;
 
 namespace Motor
 {   
-    union data_t
-    {
-        uint8_t data_raw[4];
-        float data_float;
-        int32_t data_int;
-        // int16_t data_int16;
-    };
     class MotorBase_t
     {
         public:
@@ -44,12 +37,12 @@ namespace Motor
             }
             uint8_t _id;
             float _pulse_vel_target;//脉冲速度目标值
-            data_t _pulse_vel_raw;//脉冲速度实际值
+            float _pulse_vel_raw;//脉冲速度实际值
             float _linear_vel_target;//线速度目标值
             float _linear_vel_raw;//线速度实际值
 
             float _angle_target;//non
-            data_t _angle_raw;//non
+            float _angle_raw;//non
     };
     class MotorInterface_t
     {
@@ -94,7 +87,7 @@ namespace Motor
                 // 获取定时器PSC和ARR值
                 _encoder._timer_psc = 1+_htim->Instance->PSC;
             }
-            void setSpeed(float target);
+            void setSpeed(float linear_vel);
             // void update(void *param) override;
             void update();
             void getLinearspeed();

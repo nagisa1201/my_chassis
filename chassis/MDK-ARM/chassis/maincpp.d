@@ -60,4 +60,4 @@ chassis/maincpp.o: ../Core/Src/maincpp.cpp ../Core/Inc\maincpp.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\typeinfo \
   ../Hardware\Kinematic.h \
   F:\tools\keil\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
-  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\math.h
+  F:\tools\keil\ARM\ARMCLANG\Bin\..\include\math.h ../Hardware\Control.h
