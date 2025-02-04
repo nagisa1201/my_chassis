@@ -106,7 +106,7 @@ namespace Motor
             uint16_t _PH2_Pin;
             // uint16_t _period_load;     // pwm的定时器的自动重装载值
             Encoder_t _encoder;//or Encoder_t(TIM_HandleTypeDef *htimx, float reduction_ratio, float encoder_ppr, float e_rpm,float r, float reload_ms)
-            Pid_basetemplate_t<float, float> _pid = Pid_basetemplate_t<float, float>({0.3, 0, 0, 10, 20, -20});
+            Pid_basetemplate_t<float, float> _pid = Pid_basetemplate_t<float, float>({5, 0, 2, 20, 1000, -1000});
     };
 }
 

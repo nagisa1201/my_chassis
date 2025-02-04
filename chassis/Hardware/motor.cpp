@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-24 19:36:09
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-04 13:52:27
+ * @LastEditTime: 2025-02-04 21:30:59
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\motor.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -69,14 +69,14 @@ void Motorcommon_t::pwm_out(int pwm)
     int out_speed = pwm;
     if (out_speed > 0)
     {
-        HAL_GPIO_WritePin(_PH_Port, _PH1_Pin, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(_PH_Port, _PH1_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_SET);
         __HAL_TIM_SetCompare(_htim, _channel, out_speed);
     }
     else
     {
-        HAL_GPIO_WritePin(_PH_Port, _PH1_Pin, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(_PH_Port, _PH1_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(_PH_Port, _PH2_Pin, GPIO_PIN_RESET);
         __HAL_TIM_SetCompare(_htim, _channel, -out_speed);
     }
 }

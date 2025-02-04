@@ -2,6 +2,14 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 23:02:27
  * @LastEditors: Nagisa 2964793117@qq.com
+ * @LastEditTime: 2025-02-04 21:23:40
+ * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/*
+ * @Author: Nagisa 2964793117@qq.com
+ * @Date: 2024-11-29 23:02:27
+ * @LastEditors: Nagisa 2964793117@qq.com
  * @LastEditTime: 2025-02-04 12:30:26
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -25,7 +33,7 @@ float v = 0;
 void main_cpp()
 {                                     
     control.initMotor();
-    control.setTarget({10, 10, 10});
+    control.setTarget({20, 20, 20});
 
 }
 

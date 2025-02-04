@@ -38,6 +38,9 @@ extern "C" {
 /* USER CODE BEGIN ET */
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim5;
 extern TIM_HandleTypeDef htim8;
 
 extern UART_HandleTypeDef huart4;
@@ -63,10 +66,22 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define IN2_Pin GPIO_PIN_2
-#define IN2_GPIO_Port GPIOC
-#define IN1_Pin GPIO_PIN_3
-#define IN1_GPIO_Port GPIOC
+#define BIN1_Pin GPIO_PIN_0
+#define BIN1_GPIO_Port GPIOC
+#define BIN2_Pin GPIO_PIN_1
+#define BIN2_GPIO_Port GPIOC
+#define AIN1_Pin GPIO_PIN_2
+#define AIN1_GPIO_Port GPIOC
+#define AIN2_Pin GPIO_PIN_3
+#define AIN2_GPIO_Port GPIOC
+#define DIN1_Pin GPIO_PIN_4
+#define DIN1_GPIO_Port GPIOA
+#define DIN2_Pin GPIO_PIN_5
+#define DIN2_GPIO_Port GPIOA
+#define CIN1_Pin GPIO_PIN_4
+#define CIN1_GPIO_Port GPIOC
+#define CIN2_Pin GPIO_PIN_5
+#define CIN2_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

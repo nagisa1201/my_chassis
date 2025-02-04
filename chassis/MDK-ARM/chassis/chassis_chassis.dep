@@ -1,9 +1,9 @@
 Dependencies for Project 'chassis', Target 'chassis': (DO NOT MODIFY !)
-F (startup_stm32f405xx.s)(0x679E3078)(--cpu Cortex-M4.fp -g-I.\RTE\_chassis-IF:\tools\keil\ARM\CMSIS\5.0.1\CMSIS\Include-IF:\tools\keil\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 524"--pd "_RTE_ SETA 1"--pd "STM32F405xx SETA 1"--list startup_stm32f405xx.lst--xref -o chassis\startup_stm32f405xx.o--depend chassis\startup_stm32f405xx.d)
-F (..\Core\Src\maincpp.cpp)(0x67A1B31A)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/maincpp.o -MD)
+F (startup_stm32f405xx.s)(0x67A21673)(--cpu Cortex-M4.fp -g-I.\RTE\_chassis-IF:\tools\keil\ARM\CMSIS\5.0.1\CMSIS\Include-IF:\tools\keil\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 524"--pd "_RTE_ SETA 1"--pd "STM32F405xx SETA 1"--list startup_stm32f405xx.lst--xref -o chassis\startup_stm32f405xx.o--depend chassis\startup_stm32f405xx.d)
+F (..\Core\Src\maincpp.cpp)(0x67A214DC)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/maincpp.o -MD)
 I (..\Core\Inc\maincpp.h)(0x679E285D)
 I (..\Hardware\common.h)(0x679E1E9D)
-I (..\Core\Inc\main.h)(0x679E3077)
+I (..\Core\Inc\main.h)(0x67A21672)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x6749BC87)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x66F8AA24)
@@ -38,7 +38,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66F8AA24)
-I (..\Hardware\motor.h)(0x67A1AAFE)
+I (..\Hardware\motor.h)(0x67A21217)
 I (..\Hardware\pid.h)(0x679E1E9D)
 I (..\Hardware\Encoder.h)(0x67A1AC9F)
 I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\stdio.h)(0x561C442A)
@@ -66,9 +66,9 @@ I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\typeinfo)(0x589D0B74)
 I (..\Hardware\Kinematic.h)(0x67A19AA4)
 I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\math.h)(0x58A9C1F2)
 I (F:\tools\keil\ARM\ARMCLANG\include\math.h)(0x58A47FFE)
-I (..\Hardware\Control.h)(0x67A1B349)
-F (../Core/Src/main.c)(0x679E30B4)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/main.o -MD)
-I (..\Core\Inc\main.h)(0x679E3077)
+I (..\Hardware\Control.h)(0x67A21603)
+F (../Core/Src/main.c)(0x67A21672)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/main.o -MD)
+I (..\Core\Inc\main.h)(0x67A21672)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x6749BC87)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x66F8AA24)
@@ -101,7 +101,7 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66F8AA24)
 I (..\Core\Inc\maincpp.h)(0x679E285D)
 F (../Core/Src/stm32f4xx_it.c)(0x674AC21F)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/stm32f4xx_it.o -MD)
-I (..\Core\Inc\main.h)(0x679E3077)
+I (..\Core\Inc\main.h)(0x67A21672)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x6749BC87)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x66F8AA24)
@@ -133,8 +133,8 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_it.h)(0x674AC21F)
-F (../Core/Src/stm32f4xx_hal_msp.c)(0x679E3077)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/stm32f4xx_hal_msp.o -MD)
-I (..\Core\Inc\main.h)(0x679E3077)
+F (../Core/Src/stm32f4xx_hal_msp.c)(0x67A21460)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/stm32f4xx_hal_msp.o -MD)
+I (..\Core\Inc\main.h)(0x67A21672)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x6749BC87)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x66F8AA24)
@@ -692,9 +692,9 @@ I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x66F8AA24)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x66F8AA24)
-F (..\Hardware\motor.cpp)(0x67A1AB1B)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/motor.o -MD)
-I (..\Hardware\motor.h)(0x67A1AAFE)
-I (..\Core\Inc\main.h)(0x679E3077)
+F (..\Hardware\motor.cpp)(0x67A21693)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/motor.o -MD)
+I (..\Hardware\motor.h)(0x67A21217)
+I (..\Core\Inc\main.h)(0x67A21672)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x6749BC87)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x66F8AA24)
@@ -737,7 +737,7 @@ F (..\Hardware\Encoder.h)(0x67A1AC9F)()
 F (..\Hardware\common.h)(0x679E1E9D)()
 F (..\Hardware\Kinematic.cpp)(0x67A19AB0)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/kinematic.o -MD)
 F (..\Hardware\Control.cpp)(0x67A1B420)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Hardware -I ../Selflib-I./RTE/_chassis-IF:/tools/keil/ARM/CMSIS/5.0.1/CMSIS/Include-IF:/tools/keil/Keil/STM32F4xx_DFP/2.5.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F405xx -DUSE_HAL_DRIVER -DSTM32F405xx-o chassis/control.o -MD)
-I (..\Hardware\Control.h)(0x67A1B349)
+I (..\Hardware\Control.h)(0x67A21603)
 I (..\Hardware\Kinematic.h)(0x67A19AA4)
 I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\stdint.h)(0x57E9B0FE)
 I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\__config)(0x58B875EA)
@@ -748,8 +748,8 @@ I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\type_traits)(0x58B808AE)
 I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\cstddef)(0x589D0B74)
 I (F:\tools\keil\ARM\ARMCLANG\include\stddef.h)(0x588CAFD2)
 I (F:\tools\keil\ARM\ARMCLANG\include\libcxx\__nullptr)(0x586D95D2)
-I (..\Hardware\motor.h)(0x67A1AAFE)
-I (..\Core\Inc\main.h)(0x679E3077)
+I (..\Hardware\motor.h)(0x67A21217)
+I (..\Core\Inc\main.h)(0x67A21672)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x66F8AA24)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x6749BC87)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x66F8AA24)
