@@ -29,17 +29,23 @@ void Serial_Printf(char *format, ...);
 
 Control::Control_t control(Control::HalfCloseLoop);
 
-float v = 0;
+#if DEBUG
+vel_t debug_target = {0, 0, 0};
+#endif  
+
 void main_cpp()
 {                                     
     control.initMotor();
-    control.setTarget({20, 20, 20});
+    control.setTarget({20, 20, 20}); 
 
 }
 
 void OnceMain()
 {
     control.controlLoop();
+    #if DEBUG
+    control.setTarget({debug_target.vx,debug_target.vy,debug_target.w});
+    #endif  
     // Serial_Printf("vx:%f,vy:%f,w:%f\n", control._kinematic._current_xyw.vx, control._kinematic._current_xyw.vy, control._kinematic._current_xyw.w);
     // HAL_Delay(5);                                                                                                        
 }

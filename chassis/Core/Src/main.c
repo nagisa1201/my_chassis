@@ -51,8 +51,6 @@ UART_HandleTypeDef huart4;
 
 /* USER CODE BEGIN PV */
 
-extern float v;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -131,7 +129,6 @@ int main(void)
   while (1)
   {
     OnceMain();
-    Serial_Printf("Pulse_v: %f\r\n", v);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
