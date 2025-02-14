@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-29 23:02:27
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-04 21:23:40
+ * @LastEditTime: 2025-02-14 21:32:58
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Core\Src\maincpp.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -44,7 +44,8 @@ void OnceMain()
 {
     control.controlLoop();
     #if DEBUG
-    control.setTarget({debug_target.vx,debug_target.vy,debug_target.w});
+    // control.setTarget({debug_target.vx,debug_target.vy,debug_target.w});
+    control.debugSingleMotor();
     #endif  
     // Serial_Printf("vx:%f,vy:%f,w:%f\n", control._kinematic._current_xyw.vx, control._kinematic._current_xyw.vy, control._kinematic._current_xyw.w);
     // HAL_Delay(5);                                                                                                        

@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2025-02-02 21:53:47
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-04 11:42:28
+ * @LastEditTime: 2025-02-14 21:35:55
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\Kinematic.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -75,6 +75,9 @@ namespace Kinematic
      * @brief 
      * 左上1右上0
      * 左下2右下3   从车身目标速度到轮子目标速度的逆向解算
+     * O型状态下，x轴正方向向前，y轴正方向向右
+     * X型状态下，x轴正方向向前，y轴正方向向左
+     * 两者w均为逆时针旋转为正方向
      */
     #if USE_MECANUM_WHEEL
     template<size_t number>
@@ -83,10 +86,10 @@ namespace Kinematic
         switch (_wheel)
         {
         case O_shape:
-            _linear_vel_target[0] = _target_xyw.vy - _target_xyw.vx + _target_xyw.w * (_track_length + _track_width);
-            _linear_vel_target[1] = _target_xyw.vy + _target_xyw.vx - _target_xyw.w * (_track_length + _track_width);
-            _linear_vel_target[2] = _target_xyw.vy - _target_xyw.vx - _target_xyw.w * (_track_length + _track_width);
-            _linear_vel_target[3] = _target_xyw.vy + _target_xyw.vx + _target_xyw.w * (_track_length + _track_width);
+            _linear_vel_target[0] = _target_xyw.vx + _target_xyw.vy + _target_xyw.w * (_track_length + _track_width);
+            _linear_vel_target[1] = _target_xyw.vx - _target_xyw.vy - _target_xyw.w * (_track_length + _track_width);
+            _linear_vel_target[2] = _target_xyw.vx + _target_xyw.vy - _target_xyw.w * (_track_length + _track_width);
+            _linear_vel_target[3] = _target_xyw.vx - _target_xyw.vy + _target_xyw.w * (_track_length + _track_width);
             break;
         case X_shape:
             _linear_vel_target[0] = _target_xyw.vx + _target_xyw.vy + _target_xyw.w * (_track_length + _track_width);
@@ -111,9 +114,9 @@ namespace Kinematic
         float v3 = _linear_vel_raw[3];
         switch (_wheel)
         {
-            case O_shape:
-                _current_xyw.vx = (v1 - v0 + v3 - v2) / 4.0;
-                _current_xyw.vy = (v0 + v1 + v2 + v3) / 4.0;
+            case O_shape://待修正
+                _current_xyw.vx = (v0 + v1 + v2 + v3) / 4.0;
+                _current_xyw.vy = (v1 - v0 + v3 - v2) / 4.0;
                 _current_xyw.w = (v0 - v1 - v2 + v3) / (4.0 * (_track_length + _track_width));
                 break;
             case X_shape:

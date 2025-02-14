@@ -84,7 +84,7 @@ static void MX_TIM5_Init(void);
 
 /**
   * @brief  The application entry point.
-  * @retval int
+  * @retval int1
   */
 int main(void)
 {

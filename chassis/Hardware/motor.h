@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2024-11-09 15:31:14
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-04 13:51:58
+ * @LastEditTime: 2025-02-14 13:44:14
  * @FilePath: \MDK-ARMf:\project\cubemax\chassis\Hardware\motor.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -94,8 +94,8 @@ namespace Motor
             void pwm_out(int pwm);
             void setFactors(float factor, float wheel_diameter, int forward);
 
-            float _Factor = 19;
-            float _WheelDiameter = 0.08;
+            float _Factor = 60;
+            float _WheelDiameter = 0.06;
             int _forward = 1;
 
         protected:
@@ -106,7 +106,7 @@ namespace Motor
             uint16_t _PH2_Pin;
             // uint16_t _period_load;     // pwm的定时器的自动重装载值
             Encoder_t _encoder;//or Encoder_t(TIM_HandleTypeDef *htimx, float reduction_ratio, float encoder_ppr, float e_rpm,float r, float reload_ms)
-            Pid_basetemplate_t<float, float> _pid = Pid_basetemplate_t<float, float>({5, 0, 2, 20, 1000, -1000});
+            Pid_basetemplate_t<float, float> _pid = Pid_basetemplate_t<float, float>({6, 0, 2, 20, 1000, -1000});
     };
 }
 

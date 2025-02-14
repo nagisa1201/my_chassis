@@ -2,7 +2,7 @@
  * @Author: Nagisa 2964793117@qq.com
  * @Date: 2025-02-03 16:08:23
  * @LastEditors: Nagisa 2964793117@qq.com
- * @LastEditTime: 2025-02-04 21:22:23
+ * @LastEditTime: 2025-02-14 20:40:54
  * @FilePath: \MDK-ARMf:\project\git\my_chassis\chassis\Hardware\Control.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -11,7 +11,7 @@
 #include "Kinematic.h"
 #include "Lib_Static.h"
 #include "motor.h"
-
+#define DEBUG 1
 
 namespace Control
 {
@@ -41,10 +41,17 @@ namespace Control
         void controlLoop();
 
 
-        Kinematic::Kinematic_t<4> _kinematic=Kinematic::Kinematic_t<4>(Kinematic::O_shape,0.2,0.2);
+        Kinematic::Kinematic_t<4> _kinematic=Kinematic::Kinematic_t<4>(Kinematic::O_shape,0.09,0.22);
         Static::Static_t<Motor::Motorcommon_t,4> _motors;
+        
+        #if DEBUG
+        float debug_target_group[4]={0};
+        void debugSingleMotor();
+        #endif
+        
         private:
         Control_Mode_t _mode;
+
     };
 }
 #endif //__CONTROL_H
